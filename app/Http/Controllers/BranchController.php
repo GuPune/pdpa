@@ -27,7 +27,7 @@ class BranchController extends Controller
      */
     public function create()
     {
-        //
+        return view('page.branch.create');
     }
 
     /**
@@ -38,7 +38,7 @@ class BranchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('page.branch.create');
     }
 
     /**

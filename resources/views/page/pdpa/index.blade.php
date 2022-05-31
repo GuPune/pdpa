@@ -102,3 +102,8 @@
     </section>
 </aside>
 @endsection
+<script>
+    $(document).ready(function() {
+        $('#table').dataTable();
+    });
+    </script>

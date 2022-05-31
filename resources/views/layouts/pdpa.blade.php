@@ -29,6 +29,7 @@
     <link href="{{ asset('template/vendors/datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/pages/only_dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/pages/tables.css') }}" rel="stylesheet">
+    <link href="{{ asset('template/vendors/datatables/css/dataTables.bootstrap.css') }}" rel="stylesheet">
 
 
 
@@ -54,8 +55,12 @@
     <script src="{{ asset("template/vendors/chartjs/Chart.js") }}"></script>
     <script src="{{ asset("template/assets/js/pages/todolist.js") }}"></script>
     <script src="{{ asset("template/assets/js/pages/dashboard.js") }}"></script>
+    <script src="{{ asset("template/vendors/datatables/js/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("template/vendors/datatables/js/dataTables.bootstrap.js") }}"></script>
 
-    <script src="js/jquery.easingpie.js"></script>
+
+
+
 
 
 
