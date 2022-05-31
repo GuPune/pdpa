@@ -23,5 +23,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/branch', 'App\Http\Controllers\BranchController');
+Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
 Route::resource('/report', 'App\Http\Controllers\ReportController');
 Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');

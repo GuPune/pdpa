@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CoreFunction\Datatable;
+use App\Models\Branch;
+
+
+use DataTables;
+
 
 class BranchController extends Controller
 {
@@ -15,7 +21,7 @@ class BranchController extends Controller
     {
         //
 
-   
+
 
         return view('page.branch.index');
     }
@@ -85,4 +91,18 @@ class BranchController extends Controller
     {
         //
     }
+
+
+    public function getDatashoptable(Request $request)
+    {
+
+
+
+        $data = Branch::where('status','Y')->get();
+
+
+
+        return DataTables::of($data)->make(true);
+    }
+
 }

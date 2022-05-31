@@ -1,0 +1,33 @@
+<?php
+
+namespace App\CoreFunction;
+
+
+use Illuminate\Database\Eloquent\Model;
+use App;
+use App\Models\Branch;
+use DB;
+use Log;
+
+
+
+
+class Datatable extends Model
+{
+
+    public static function listdata($request = null)
+    {
+
+
+        $data = Branch::where('status','Y')->get();
+        \Log::info($data);
+        return $data;
+    }
+
+
+
+
+
+
+
+}

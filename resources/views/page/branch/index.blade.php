@@ -16,7 +16,7 @@
             <li>
                 <a href="#">ตารางข้อมูล</a>
             </li>
-           
+
         </ol>
     </section>
     <section class="content paddingleft_right15">
@@ -26,44 +26,39 @@
                     <h4 class="panel-title">
                         <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i> Users List
                     </h4>
+
                 </div>
                 <br />
+                <div class="col-md-offset-0 col-md-12">
+                    <button type="submit" class="btn btn-primary">เพิ่มสาขา</button>
+                </div>
+
+                <br />
+
+
                 <div class="panel-body">
+
+
+
+
                     <table class="table table-bordered " id="datatables-example">
                         <thead>
                             <tr class="filters">
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th>ลำดับ</th>
+                                <th>รหัสสาขา</th>
                                 <th>
-                                    User E-mail
+                                    ชื่อสาขา
                                 </th>
-                                <th>Status</th>
-                                <th>Created At</th>
-                                <th>Actions</th>
+                                <th>จัดการ</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                                            <td>John</td>
-                                                            <td>Doe</td>
-                                                            <td>
-                                                                admin@admin.com
-                                                            </td>
-                                                            <td>Activated</td>
-                                                            <td>
-                                                                1 month ago
-                                                            </td>
-                                                            <td>
-                                                                <a href="view_user.html">
-                                                                    <i class="livicon" data-name="info" data-size="18" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="view user"></i>
-                                                                </a>
-                                                                <a href="#" data-toggle="modal" data-target="#delete_confirm">
-                                                                    <i class="livicon" data-name="user-remove" data-size="18" data-loop="true" data-c="#f56954" data-hc="#f56954" title="delete user"></i>
-                                                                </a>
-                                                            </td>
+
                                                         </tr>
                             </tbody>
-                    
+
                     </table>
                     <!-- Modal for showing delete confirmation -->
                     <div class="modal fade" id="delete_confirm" tabindex="-1" role="dialog" aria-labelledby="user_delete_confirm_title" aria-hidden="true">
@@ -92,14 +87,68 @@
         <!-- row-->
     </section>
 </aside>
-
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript">
-     
-    $(document).ready( function () {
-       $('#datatables-example').DataTable({
-       
-          });
-       });
+
+
+function RefreshTable(data) {
+
+
+
+
+data._token = "{{ csrf_token() }}";
+return data;
+
+}
+
+var searchData = {};
+
+var table = $('#datatables-example').DataTable({
+    processing: true,
+    serverSide: true,
+
+    ajax: {
+        url:  "{!! route('branch.data') !!}",
+        method: 'POST',
+        data: RefreshTable,
+    },
+    columns: [
+        {data: 'id'},
+        {data: 'code'},
+        {data: 'name'},
+        {data: 'action', name: 'action', orderable:false, serachable:false},
+
+    ],catch (Error) {
+                if (typeof console != "undefined") {
+                    console.log(Error);
+                }
+    },
+    columnDefs: [{
+                targets: [0,3],
+                orderable: false,
+                searchable: false
+            },
+
+            {
+                    targets: 3,
+                    orderable: false,
+                    searchable: false,
+                    render: function (data, type, row) {
+console.log('row');
+                        var btnEdit = '<a   href="/archives/1/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> แก้ไข</a>';
+                         return btnEdit;
+                    }
+                },
+        ]
+
+
+
+});
+
+
+
    </script>
 @endsection
 
