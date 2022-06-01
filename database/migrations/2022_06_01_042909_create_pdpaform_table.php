@@ -22,6 +22,8 @@ class CreatePdpaformTable extends Migration
             $table->integer('branch_id');
             $table->text('linenoti');
             $table->text('qrcode');
+            $table->text('agree');
+            $table->text('token');
             $table->string('status');
             $table->timestamps();
         });

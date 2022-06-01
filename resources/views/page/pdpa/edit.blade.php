@@ -11,7 +11,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="livicon" data-name="clock" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                           เพิ่มแบบฟอร์ม
+                           แก้ไขแบบฟอร์ม
                         </h3>
                         <span class="pull-right">
                             <i class="glyphicon glyphicon-chevron-up clickable"></i>
@@ -28,22 +28,23 @@
                                     <div class="col-md-10">
                                         <select class="form-control" name="branch_id" id="branch_id">
                                             @foreach($branch as $branchs)
-                                                <option value="{{$branchs->id}}">{{$branchs->name}} </option>
+                                                <option value="{{$branchs->id}}" @if($item->branch_id == $branchs->id) {{'selected'}} @endif>{{$branchs->name}} </option>
                                             @endforeach
                                         </select>
                                       </div>
                                 </div>
+                                <input id="id" name="id" type="hidden" placeholder="รหัสแบบฟอร์ม" class="form-control" value="{{$item->id}}" required>
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="name">รหัสแบบฟอร์ม</label>
                                     <div class="col-md-10">
-                                        <input id="code_form" name="code_form" type="text" placeholder="รหัสแบบฟอร์ม" class="form-control" required>
+                                        <input id="code_form" name="code_form" type="text" placeholder="รหัสแบบฟอร์ม" class="form-control" value="{{$item->code_form}}" required>
                                         <div class="help-block-code">กรุณากรอกรหัสแบบฟอร์ม</div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="name">หมายเหตุ</label>
                                     <div class="col-md-10">
-                                        <input id="note" name="note" type="text" placeholder="หมายเหตุ" class="form-control" required>
+                                        <input id="note" name="note" type="text" placeholder="หมายเหตุ" class="form-control"  value="{{$item->note}}" required>
                                         <div class="help-block-note">กรุณากรอกหมายเหตุ</div>
                                     </div>
                                 </div>
@@ -51,7 +52,7 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email">Line แจ้งเตือน</label>
                                     <div class="col-md-10">
-                                        <input id="linenoti" name="linenoti" type="text" placeholder="Line แจ้งเตือน" class="form-control" required>
+                                        <input id="linenoti" name="linenoti" type="text" placeholder="Line แจ้งเตือน" class="form-control"  value="{{$item->linenoti}}" required>
                                         <div class="help-block-linenoti">กรุณากรอกLine Notify</div>
                                     </div>
                                 </div>
@@ -61,7 +62,7 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email">ข้อความ Consent *</label>
                                     <div class="col-md-10">
-                                        <textarea name="details"  id="details"></textarea>
+                                        <textarea name="details"  id="details"> {{$item->des}} </textarea>
                                         <div class="help-block-details">กรุณากรอกข้อความ</div>
                                 </div>
 
@@ -69,7 +70,7 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email">ข้อความยินยอม</label>
                                     <div class="col-md-10">
-                                        <input id="agree" name="agree" type="text" placeholder="ข้อความยินยอม" class="form-control" required>
+                                        <input id="agree" name="agree" type="text" placeholder="ข้อความยินยอม"  value="{{$item->agree}}" class="form-control" required>
                                         <div class="help-block-agree">กรุณากรอกข้อความ</div>
                                     </div>
                                 </div>
@@ -155,6 +156,7 @@ if(code == ''){
 
 let valform = validateForm();
   if(valform === true){
+    var id = $('#id').val();
 var code = $('#code_form').val();
 var note = $('#note').val();
 var linenoti = $('#linenoti').val();
@@ -173,12 +175,12 @@ var branch_id = $('#branch_id').val();
 
       $.ajax({
           dataType: 'json',
-          type:'POST',
+          type:'PUT',
           data: {
                                 '_token': "{{ csrf_token() }}",
                                 code_form:code,note:note,linenoti:linenoti,agree:agree,detail:detail,branch_id:branch_id
                             },
-          url: '/pdpa',
+          url: '/pdpa/' + id,
           success: function(datas){
             swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
             window.location.href = '/pdpa'

@@ -11,11 +11,11 @@
     @endif
     <section class="content-header">
         <!--section starts-->
-        <h1>ข้อมูลสาขา</h1>
+        <h1>ข้อมูลแบบฟอร์ม</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">
-                    <i class="livicon" data-name="home" data-size="14" data-loop="true"></i> ข้อมูลสาขา
+                    <i class="livicon" data-name="home" data-size="14" data-loop="true"></i> ข้อมูลแบบฟอร์ม
                 </a>
             </li>
             <li>
@@ -37,32 +37,49 @@
                 <div class="col-md-offset-0 col-md-12">
                     <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
                         <a href="/pdpa/create" class="btn btn-success">
-                            เพิ่มForm
+                            เพิ่มแบบฟอร์ม
                         </a>
                     </div>
                 </div>
                 <br />
                 <div class="panel-body">
-
-
-
-
                     <table class="table table-bordered " id="datatables-example">
                         <thead>
                             <tr class="filters">
                                 <th>ลำดับ</th>
-                                <th>รหัสสาขา</th>
+                                <th>รหัสแบบฟอร์ม</th>
                                 <th>
-                                    ชื่อสาขา
+                                    สาขา
+                                </th>
+                                <th>
+                                    หมายเหตุ
+                                </th>
+                                <th>
+                                    QR
                                 </th>
                                 <th>จัดการ</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($item as $k => $items)
                             <tr>
 
-                                                        </tr>
+                                <td class="text-center">{{ ++$k }}</td>
+                                <td class="text-center">{{ $items->code_form }}</td>
+                                <td class="text-center">{{ $items->branchform->name }}</td>
+                                <td class="text-center">{{ $items->note }}</td>
+                                <td class="text-center">  {!! QrCode::size(250)->generate('http://127.0.0.1:8000/{{$items->token}}'); !!}</td>
+                                <td class="text-center">
+                                    <a class="btn btn-outline-dark btn-sm" href="/pdpa/{{ $items->id }}/edit" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
+                                        <i class="fa fa-edit">แก้ไข</i>
+                                    </a>
+
+                                    <a   href="#"  class="btn btn-outline-dark btn-sm btn-delete" data-id="{{$items->id}}"><i class="fa fa-trash"></i> ลบ</a>
+                                   
+                                </td>
+                            </tr>
+                        @endforeach
                             </tbody>
 
                     </table>
@@ -114,56 +131,12 @@ return data;
 
 }
 
-var searchData = {};
-
-var table = $('#datatables-example').DataTable({
-    processing: true,
-    serverSide: true,
-
-    ajax: {
-        url:  "{!! route('branch.data') !!}",
-        method: 'POST',
-        data: RefreshTable,
-    },
-    columns: [
-        {data: 'id'},
-        {data: 'code'},
-        {data: 'name'},
-        {data: 'action', name: 'action', orderable:false, serachable:false},
-
-    ],catch (Error) {
-                if (typeof console != "undefined") {
-                    console.log(Error);
-                }
-    },
-    columnDefs: [{
-                targets: [0,3],
-                orderable: false,
-                searchable: false
-            },
-
-            {
-                    targets: 3,
-                    orderable: false,
-                    searchable: false,
-                    render: function (data, type, row) {
-
-                        var btnEdit = '<a   href="/branch/'+ row.id +'/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> แก้ไข</a>';
-                        var btnDel = '<a   href="#" data-id="'+ row.id +'"  class="btn btn-outline-dark btn-sm btn-delete"><i class="fa fa-trash"></i> ลบ</a>';
-
-                         return btnEdit + btnDel;
-                    }
-                },
-        ]
-
-
-
-});
 
 
 $('body').on('click', '.btn-delete', function (e) {
 
 var id = $(this).attr('data-id');
+
 
 deleteConf(id)
 
@@ -198,7 +171,7 @@ function deleteConf(id) {
                                 '_token': "{{ csrf_token() }}",
                                 id: id
                             },
-                            url: '/branch/' + id,
+                            url: '/pdpa/' + id,
                             success: function(datas){
                            
                             location.reload();
@@ -211,7 +184,6 @@ function deleteConf(id) {
                 }
             });
         } // error form show text
-
 
 
    </script>

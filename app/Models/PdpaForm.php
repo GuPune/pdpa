@@ -21,7 +21,14 @@ class PdpaForm extends Model
         'branch_id',
         'linenoti',
         'qrcode',
+        'agree',
+        'token',
         'status',
     ];
+
+    public function branchform()
+    {
+        return $this->hasOne(Branch::class,'id','branch_id');
+    }
 
 }
