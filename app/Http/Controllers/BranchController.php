@@ -44,7 +44,16 @@ class BranchController extends Controller
      */
     public function store(Request $request)
     {
-        return view('page.branch.create');
+
+
+
+        $save = Branch::create([
+            'code' => $request->code,
+            'name' => $request->name,
+            'status' => 'Y'
+        ]);
+        return redirect()->route('branch.index')
+        ->with('success','เพิ่มข้อมูลสำเร็จ');
     }
 
     /**
@@ -67,6 +76,13 @@ class BranchController extends Controller
     public function edit($id)
     {
         //
+
+        $find = Branch::find($id);
+
+   
+
+       
+        return view('page.branch.edit')->with('item',$find);
     }
 
     /**
@@ -79,6 +95,15 @@ class BranchController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+
+        $upd = Branch::find($id)->update([
+            'code' => $request->code,
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('branch.index')
+        ->with('success','แก้ข้อมูลสำเร็จ');
     }
 
     /**
@@ -90,19 +115,35 @@ class BranchController extends Controller
     public function destroy($id)
     {
         //
+
+        $delup = Branch::find($id)->update([
+            'status' => 'D'
+        ]);
+
+        return response()->json([
+            'msg_return' => 'ลบสำเร็จ',
+            'code_return' => 1
+
+        ]);
     }
 
 
     public function getDatashoptable(Request $request)
     {
 
-
-
         $data = Branch::where('status','Y')->get();
-
-
-
         return DataTables::of($data)->make(true);
     }
+
+    public function delupdate(Request $request)
+    {
+
+ \Log::info($request->all());
+
+ 
+    }
+
+
+    
 
 }

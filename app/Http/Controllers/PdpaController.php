@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use Illuminate\Http\Request;
 
 class PdpaController extends Controller
@@ -26,6 +27,8 @@ class PdpaController extends Controller
     public function create()
     {
         //
+        $typebranch = Branch::all();
+        return view('page.pdpa.create')->with('branch',$typebranch);
     }
 
     /**
@@ -37,6 +40,8 @@ class PdpaController extends Controller
     public function store(Request $request)
     {
         //
+ 
+    
     }
 
     /**

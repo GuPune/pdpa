@@ -3,7 +3,12 @@
 @section('content')
 <aside class="right-side">
 
-
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissable margin5">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Success:</strong> {{ $message }}
+    </div>
+    @endif
     <section class="content-header">
         <!--section starts-->
         <h1>ข้อมูลสาขา</h1>
@@ -24,18 +29,19 @@
             <div class="panel panel-primary ">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i> Users List
+                        <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i> ตารางข้อมูล
                     </h4>
 
                 </div>
                 <br />
                 <div class="col-md-offset-0 col-md-12">
-                    <button type="submit" class="btn btn-primary">เพิ่มสาขา</button>
+                    <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
+                        <a href="/branch/create" class="btn btn-success">
+                            เพิ่มสาขา
+                        </a>
+                    </div>
                 </div>
-
                 <br />
-
-
                 <div class="panel-body">
 
 
@@ -88,11 +94,16 @@
     </section>
 </aside>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script type="text/javascript">
 
-
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+ 
 function RefreshTable(data) {
 
 
@@ -136,9 +147,11 @@ var table = $('#datatables-example').DataTable({
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {
-console.log('row');
-                        var btnEdit = '<a   href="/archives/1/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> แก้ไข</a>';
-                         return btnEdit;
+
+                        var btnEdit = '<a   href="/branch/'+ row.id +'/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> แก้ไข</a>';
+                        var btnDel = '<a   href="#" data-id="'+ row.id +'"  class="btn btn-outline-dark btn-sm btn-delete"><i class="fa fa-trash"></i> ลบ</a>';
+
+                         return btnEdit + btnDel;
                     }
                 },
         ]
@@ -146,6 +159,58 @@ console.log('row');
 
 
 });
+
+
+$('body').on('click', '.btn-delete', function (e) {
+
+var id = $(this).attr('data-id');
+
+deleteConf(id)
+
+});
+
+function deleteConf(id) {
+            swal({
+                title: "คุณต้องการลบจริงหรือไม่?",
+                text: "ข้อมูลไม่สามารถกู้คืนได้!",
+                icon: "warning",
+                buttons: [
+                    'ยกเลิกลบรายการ',
+                    'ลบรายการ'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'ลบรายการ!',
+                        text: 'ลบรายการเรียบร้อย',
+                        icon: 'success'
+                    }).then(function() {
+                        $.ajaxSetup({
+                             headers: {
+                                   'X-CSSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                 }
+                                });
+                        $.ajax({
+                            dataType: 'json',
+                            type:'DELETE',
+                            data: {
+                                '_token': "{{ csrf_token() }}",
+                                id: id
+                            },
+                            url: '/branch/' + id,
+                            success: function(datas){
+                           
+                            location.reload();
+                            }
+
+                        })
+                    });
+                } else {
+                    swal("ยกเลิก", "ยกเลิกรายการ", "error");
+                }
+            });
+        } // error form show text
 
 
 

@@ -26,3 +26,7 @@ Route::resource('/branch', 'App\Http\Controllers\BranchController');
 Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
 Route::resource('/report', 'App\Http\Controllers\ReportController');
 Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');
+
+Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'delupdate'])->name('branchdel.data');
+
+Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');

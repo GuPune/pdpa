@@ -11,7 +11,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="livicon" data-name="clock" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                           เพิ่มสาขา
+                           แก้ไข
                         </h3>
                         <span class="pull-right">
                             <i class="glyphicon glyphicon-chevron-up clickable"></i>
@@ -19,24 +19,28 @@
                         </span>
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" action="{{ route('branch.store') }}" method="POST">
+                        <form class="form-horizontal" action="{{ route('branch.update',$item->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             <fieldset>
                                 <!-- Name input-->
+                                
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="name">รหัสสาขา</label>
                                     <div class="col-md-9">
-                                        <input id="code" name="code" type="text" placeholder="รหัสสาขา" class="form-control" required></div>
+                                        <input id="code" name="code" type="text" placeholder="รหัสสาขา" class="form-control" value="{{$item->code}}" required></div>
                                 </div>
                                 <!-- Email input-->
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="email">ชื่อ</label>
                                     <div class="col-md-9">
-                                        <input id="name" name="name" type="text" placeholder="ชื่อสาขา" class="form-control" required></div>
+                                        <input id="name" name="name" type="text" placeholder="ชื่อสาขา" class="form-control"   value="{{$item->name}}" required></div>
                                 </div>
                            
                                 <div class="form-group">
                                     <div class="col-md-12 text-right">
+                                        <input id="id" name="id" type="hidden" value="{{$item->id}}" required>
+
                                         <button type="submit" class="btn btn-responsive btn-primary btn-sm">บันทึก</button>
                                     </div>
                                 </div>
