@@ -67,7 +67,6 @@ class PdpaController extends Controller
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1
-
         ]);
  
     
@@ -132,7 +131,6 @@ class PdpaController extends Controller
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1
-
         ]);
 
 
@@ -146,8 +144,7 @@ class PdpaController extends Controller
      */
     public function destroy($id)
     {
-        //
-        \Log::info($id);
+   
 
         $delup = PdpaForm::find($id)->update([
             'status' => 'D'

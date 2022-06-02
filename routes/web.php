@@ -32,3 +32,6 @@ Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');
 Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'delupdate'])->name('branchdel.data');
 
 Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
+
+
+Route::get('/consent/{id}', [App\Http\Controllers\ConsentController::class, 'show'])->name('consent.data');
