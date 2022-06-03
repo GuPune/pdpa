@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\PdpaForm;
 use Illuminate\Http\Request;
 
@@ -49,11 +50,29 @@ class ConsentController extends Controller
         //
 
         $getpapd = PdpaForm::where('token',$id)->first();
+        $collection = collect($getpapd);
 
-       
+        if($getpapd){
+            $getpapd->branch_id;
+            $branc = Branch::where('id',$getpapd->branch_id)->first();
+
+            $collection->prepend($branc->name, 'branch');
+
+        }else {
+         
+
+            return abort(500);
+
+        }
 
 
-    return view('page.consent.index');
+ 
+
+    
+
+    
+
+    return view('page.consent.index')->with('item',$collection);
     }
 
     /**
