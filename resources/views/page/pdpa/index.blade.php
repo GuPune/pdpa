@@ -69,7 +69,7 @@
                                 <td class="text-center">{{ $items->code_form }}</td>
                                 <td class="text-center">{{ $items->branchform->name }}</td>
                                 <td class="text-center">{{ $items->note }}</td>
-                                <td class="text-center">  {!! QrCode::size(250)->generate('http://127.0.0.1:8000/{{$items->token}}'); !!}</td>
+                                <td class="text-center">  {!! QrCode::size(250)->generate('http://cmsecom2.idtest.work/consent/{{$items->token}}'); !!}</td>
                                 <td class="text-center">
                                     <a class="btn btn-outline-dark btn-sm" href="/pdpa/{{ $items->id }}/edit" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
                                         <i class="fa fa-edit">แก้ไข</i>
