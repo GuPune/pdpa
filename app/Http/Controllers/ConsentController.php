@@ -120,6 +120,7 @@ $ip = $request->ip();
 $macAddr = exec('getmac');
 \Log::info($ip );
 \Log::info($macAddr);
+\Log::info($request->all());
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1
