@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\PdpaForm;
 use Illuminate\Http\Request;
 use App\Helpers\UserSystemInfoHelper;
+use App\Models\Consent;
 use Stevebauman\Location\Facades\Location;
 
 
@@ -114,15 +115,6 @@ class ConsentController extends Controller
 
     public function saveconsent(Request $request)
     {
-        //
-     //   $macAddr = exec('getmac');
-
-
-$ip = $request->ip();
-$location = Location::get($ip);
-
-
-$macAddr = exec('getmac');
 
 
 $getip = UserSystemInfoHelper::get_ip();
@@ -130,10 +122,34 @@ $getbrowser = UserSystemInfoHelper::get_browsers();
 $getdevice = UserSystemInfoHelper::get_device();
 $getos = UserSystemInfoHelper::get_os();
 
-\Log::info($getip);
-\Log::info($getbrowser);
-\Log::info($getdevice);
-\Log::info($getos);
+$getfom = PdpaForm::where('token',$request->token)->first();
+$branch = Branch::where('id',$getfom->branch_id)->first();
+
+
+$save = Consent::create([
+    'pdpaform_id' => $getfom->code_form,
+    'branch_id' => $getfom->branch_id,
+    'telephone' => $request->number,
+    'ip' => $getip,
+    'browser' => $getbrowser,
+    'device' => $getdevice,
+    'os' => $getos,
+    'details' => $request->userAgent,
+    'status' => 'Y'
+]);
+
+$datas = [];
+$datas['telephone'] = $request->number;
+$datas['ip'] = $getip;
+$datas['branch_name'] = $branch->name;
+$datas['line_token'] = $getfom->linenoti;
+
+
+
+$linealert = UserSystemInfoHelper::Lineconfirm($datas);
+
+
+
 
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',

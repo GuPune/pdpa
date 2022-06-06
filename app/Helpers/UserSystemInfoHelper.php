@@ -164,4 +164,57 @@ class UserSystemInfoHelper
   				}
 
   	}
+
+
+      public static function Lineconfirm($request = null)
+{
+
+    \Log::info($request);
+
+   $telephone = $request['telephone'];
+   $ip = $request['ip'];
+   $branch_name = $request['branch_name'];
+   $line_token = $request['line_token'];
+//    $address = $request['address'];
+//    $province_id = $request['province_id'];
+//    $districts_id = $request['districts_id'];
+//    $sub_districts_id = $request['sub_districts_id'];
+//    $zipcode = $request['zipcode'];
+//    $name = $request['name'];
+
+
+    $str = "ถึงสาขา $branch_name มีการยินยอม consent
+📋 หมายเลขโทรศัพท์ : $telephone
+📋 เลข IP : $ip
+----------------------------------
+";
+
+
+
+
+    $message =  $str;
+    $lineapi = 'PksJj5pFXFA8sH2R719jpLOpcrIoYPtPslUODV4RWbF'; // ใส่ token key ที่ได้มา
+    $mms =  trim($message); // ข้อความที่ต้องการส่ง
+    date_default_timezone_set("Asia/Bangkok");
+    $chOne = curl_init();
+    curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+    // SSL USE
+    curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0);
+    //POST
+    curl_setopt( $chOne, CURLOPT_POST, 1);
+
+    curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$mms");
+
+    curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
+
+    $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$line_token.'', );
+    curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+
+    curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1);
+    $result = curl_exec( $chOne );
+
+
+    return $result;
+}
 }
