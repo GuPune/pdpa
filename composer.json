@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "simplesoftwareio/simple-qrcode": "^4.2",
+        "stevebauman/location": "^6.5",
         "yajra/laravel-datatables-oracle": "9.18"
     },
     "require-dev": {
