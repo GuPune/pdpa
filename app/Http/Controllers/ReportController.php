@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consent;
 use Illuminate\Http\Request;
+use DataTables;
 
 class ReportController extends Controller
 {
@@ -82,4 +84,16 @@ class ReportController extends Controller
     {
         //
     }
+
+
+    public function getDataalltable(Request $request)
+    {
+        
+        $data = Consent::where('status','Y')->get();
+        return DataTables::of($data)->make(true);
+    }
+
+
+
+    
 }

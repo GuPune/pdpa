@@ -138,7 +138,7 @@ class BranchController extends Controller
     public function delupdate(Request $request)
     {
 
- \Log::info($request->all());
+
 
  
     }
