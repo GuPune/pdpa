@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Branch;
-use App\Models\PdpaForm;
 use Illuminate\Http\Request;
 
-class ConsentController extends Controller
+class ThanskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,8 @@ class ConsentController extends Controller
      */
     public function index()
     {
-        //
+    
+        return view('page.thanks.index');
     }
 
     /**
@@ -48,31 +47,6 @@ class ConsentController extends Controller
     public function show($id)
     {
         //
-
-        $getpapd = PdpaForm::where('token',$id)->first();
-        $collection = collect($getpapd);
-
-        if($getpapd){
-            $getpapd->branch_id;
-            $branc = Branch::where('id',$getpapd->branch_id)->first();
-
-            $collection->prepend($branc->name, 'branch');
-
-        }else {
-         
-
-            return abort(500);
-
-        }
-
-
- 
-
-    
-
-    
-
-    return view('page.consent.index')->with('item',$collection);
     }
 
     /**
@@ -108,24 +82,4 @@ class ConsentController extends Controller
     {
         //
     }
-
-    public function saveconsent(Request $request)
-    {
-        //
-     //   $macAddr = exec('getmac');
-
-
-$ip = $request->ip();
-
-$macAddr = exec('getmac');
-\Log::info($ip );
-\Log::info($macAddr);
-        return response()->json([
-            'msg_return' => 'บันทึกสำเร็จ',
-            'code_return' => 1
-        ]);
-    }
-
-
-    
 }

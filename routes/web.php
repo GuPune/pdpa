@@ -26,12 +26,11 @@ Route::resource('/branch', 'App\Http\Controllers\BranchController');
 Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
 Route::resource('/report', 'App\Http\Controllers\ReportController');
 Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');
-
-
-
+Route::resource('/thanks', 'App\Http\Controllers\ThanskController');
 Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'delupdate'])->name('branchdel.data');
 
 Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
 
 
 Route::get('/consent/{id}', [App\Http\Controllers\ConsentController::class, 'show'])->name('consent.data');
+Route::post('saveconsent', [App\Http\Controllers\ConsentController::class, 'saveconsent'])->name('saveconsent.data');
