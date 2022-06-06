@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Branch;
 use App\Models\PdpaForm;
 use Illuminate\Http\Request;
+use App\Helpers\UserSystemInfoHelper;
 use Stevebauman\Location\Facades\Location;
 
 
@@ -120,11 +121,20 @@ class ConsentController extends Controller
 $ip = $request->ip();
 $location = Location::get($ip);
 
+
 $macAddr = exec('getmac');
-\Log::info($ip);
-\Log::info($macAddr);
-\Log::info($request->all());
-\Log::info($location);
+
+
+$getip = UserSystemInfoHelper::get_ip();
+$getbrowser = UserSystemInfoHelper::get_browsers();
+$getdevice = UserSystemInfoHelper::get_device();
+$getos = UserSystemInfoHelper::get_os();
+
+\Log::info($getip);
+\Log::info($getbrowser);
+\Log::info($getdevice);
+\Log::info($getos);
+
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1
