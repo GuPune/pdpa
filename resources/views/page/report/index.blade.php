@@ -9,6 +9,7 @@
         <strong>Success:</strong> {{ $message }}
     </div>
     @endif
+
     <section class="content-header">
         <!--section starts-->
         <h1>รายงานทั้งหมด</h1>
@@ -24,6 +25,62 @@
 
         </ol>
     </section>
+
+
+    <section class="content paddingleft_right15">
+        <div class="row">
+            <div class="panel panel-primary ">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i> ค้นหา
+                    </h4>
+
+                </div>
+                <br />
+
+                <br />
+                <div class="panel-body">
+                    <form class="form-horizontal" action="#" method="POST">
+                        @csrf
+                        <fieldset>
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="name">สาขา</label>
+                                <div class="col-md-3">
+                                    <select class="form-control" name="branch_id" id="branch_id">
+                                        @foreach($branch as $branchs)
+                                            <option value="{{$branchs->id}}">{{$branchs->name}} </option>
+                                        @endforeach
+                                    </select>
+                                 </div>
+
+                                 <div class="form-group">
+                                    <div class="col-md-3">
+                                        <input id="name" name="name" type="text" placeholder="ค้นหา" class="form-control" required></div>
+                                </div>
+
+
+
+
+                        </fieldset>
+                    </form>
+
+                    <div class="form-group">
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-responsive btn-primary btn-sm" onclick="fitter();">ค้นหา</button>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-responsive btn-success btn-sm">Export</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
     <section class="content paddingleft_right15">
         <div class="row">
             <div class="panel panel-primary ">
@@ -60,10 +117,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                        <tr>
 
-                                                        </tr>
-                            </tbody>
+                        </tr>
+                    </tbody>
 
                     </table>
                     <!-- Modal for showing delete confirmation -->
@@ -105,14 +162,35 @@ $.ajaxSetup({
 });
 
 function RefreshTable(data) {
-
-
-
-
 data._token = "{{ csrf_token() }}";
+data.branch_id = $('select[name=branch_id]').val();
+data.name = $('input[name=name]').val();
+
+
 return data;
 
 }
+
+function reloadData() {
+
+table.ajax.reload(null, false);
+}
+
+function fitter() {
+
+table.ajax.reload(null, false);
+}
+
+
+$('body').on('click', '.btn-fitter', function (event) {
+
+
+
+
+});
+
+
+
 
 var searchData = {};
 
