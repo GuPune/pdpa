@@ -129,9 +129,9 @@ class ReportController extends Controller
         if($request->name){
             $data->where('telephone', 'like', '%'.$request->name.'%')->orWhere('ip','like','%'.$request->name.'%');
         }
-  
+
        $report = $data->get();
-   
+
         foreach ($report as $key => $sky) {
             $branch = Branch::where('id',$sky->branch_id)->first();
             $form = PdpaForm::where('id',$sky->pdpaform_id)->first();
@@ -153,20 +153,28 @@ class ReportController extends Controller
 
     public function downloadPDF($id){
 
-  
+
         $con = Consent::where('id',$id)->first();
         $form = PdpaForm::where('id',$con->pdpaform_id)->first();
- 
+        $branch = Branch::where('id',$con->branch_id)->first();
+
+        $date = Carbon::createFromFormat('Y-m-d H:i:s', $con->created_at)->format('Y-m-d H:i:s');
+
         $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
-            'des' => $form->des
+            'branch' => $branch->name,
+            'note' => $form->note,
+            'des' => $form->des,
+            'agree' => $form->agree,
+            'ip' => $con->ip,
+            'number' => $con->telephone,
+            'created_at' => $date,
         ];
 
 
-    
+
         $pdf = PDF::loadView('pdf',$data);
-        return $pdf->download('test.pdf');
-  
+        return $pdf->download('pdpa.pdf');
+
       }
 
 
