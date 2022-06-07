@@ -115,7 +115,7 @@ $branch = Branch::where('id',$getfom->branch_id)->first();
 
 
 $save = Consent::create([
-    'pdpaform_id' => $getfom->code_form,
+    'pdpaform_id' => $getfom->id,
     'branch_id' => $getfom->branch_id,
     'telephone' => $request->number,
     'ip' => $getip,
@@ -146,5 +146,5 @@ $linealert = UserSystemInfoHelper::Lineconfirm($datas);
     }
 
 
-    
+
 }

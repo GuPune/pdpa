@@ -34,7 +34,7 @@
 
                 </div>
                 <br />
-         
+
                 <br />
                 <div class="panel-body">
                     <table class="table table-bordered " id="datatables-example">
@@ -103,7 +103,7 @@ $.ajaxSetup({
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
 });
- 
+
 function RefreshTable(data) {
 
 
@@ -129,7 +129,7 @@ var table = $('#datatables-example').DataTable({
         {data: 'id'},
         {data: 'pdpaform_id'},
         {data: 'branch_id'},
-        {data: 'branch_id'},
+        {data: 'note'},
         {data: 'ip'},
         {data: 'telephone'},
         {data: 'created_at'},
@@ -204,7 +204,7 @@ function deleteConf(id) {
                             },
                             url: '/branch/' + id,
                             success: function(datas){
-                           
+
                             location.reload();
                             }
 

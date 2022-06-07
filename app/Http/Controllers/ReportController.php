@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\Consent;
+use App\Models\PdpaForm;
 use Illuminate\Http\Request;
 use DataTables;
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -88,12 +91,34 @@ class ReportController extends Controller
 
     public function getDataalltable(Request $request)
     {
-        
+
+        $datas = [];
         $data = Consent::where('status','Y')->get();
-        return DataTables::of($data)->make(true);
+
+        foreach ($data as $key => $sky) {
+            $branch = Branch::where('id',$sky->branch_id)->first();
+            $form = PdpaForm::where('id',$sky->pdpaform_id)->first();
+
+            $date = Carbon::createFromFormat('Y-m-d H:i:s', $sky->created_at)->format('Y-m-d H:i:s');
+
+            $datas[$key]['id'] = $sky->id;
+            $datas[$key]['pdpaform_id'] = $form->code_form;
+            $datas[$key]['branch_id'] = $branch->name;
+            $datas[$key]['telephone'] = $sky->telephone;
+            $datas[$key]['note'] = $form->note;
+            $datas[$key]['ip'] = $sky->ip;
+            $datas[$key]['created_at'] = $date;
+
+
+        }
+
+
+
+
+      return DataTables::of($datas)->make(true);
     }
 
 
 
-    
+
 }

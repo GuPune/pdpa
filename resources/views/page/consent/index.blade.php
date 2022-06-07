@@ -56,14 +56,14 @@
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-12">
                         <div class="p-6">
-                        
+
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     {!! $item['des'] !!}
-                                    
+
                                 </div>
                             </div>
-                      
+
                         </div>
                         <input id="token" name="token" type="hidden" placeholder="Line แจ้งเตือน" class="form-control" value="{{$item['token']}}">
                         <div class="grid grid-cols-1 md:grid-cols-6">
@@ -78,10 +78,10 @@
                                           <div class="help-block-agree">กรุณาติ๊กเครื่องหมายถูก</div>
                                         </div>
                                       </div>
-                                      
+
                                 </div>
                             </div>
-                          
+
                         </div>
 
 
@@ -97,7 +97,7 @@
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
-   
+
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <h5 style="
@@ -108,10 +108,10 @@
                                         <input type="text" class="form-control" id="message-text" onkeypress='validate(event)'  placeholder="เลือกตัวเลข 0-9">
                                         <div class="help-block-number">กรุณากรอกเบอร์โทรศัพท์</div>
                                       </div>
-                                      
-                            
+
+
                                       <div class="row">
-                                
+
                                         <div class="col-md-12 text-center"><div id="modal_time"></div><div id="modal_day"></div></div>
                                       </div>
                                 </div>
@@ -121,15 +121,15 @@
                               </div>
                             </div>
                           </div>
-    
-    
-            
-            
+
+
+
+
                     </div>
                 </div>
 
 
-    
+
             </div>
         </div>
     </body>
@@ -187,7 +187,7 @@ function validate(evt) {
        $.get("https://ipinfo.io", function(response) {
             console.log(response.ip);
         }, "json")
-     
+
 
 
 
@@ -200,22 +200,22 @@ function validate(evt) {
           url: '/saveconsent',
           success: function(datas){
             swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
-         //   window.location.href = '/thanks'
-         
+             window.location.href = '/thanks'
+
           }
       })
 
- 
+
 
     });
 
 
     $('body').on('click', '.btn-save', function (e) {
-    
+
 
         const checkbox = document.getElementById('gridCheck').value
 
-       
+
         if(checkbox == 1){
             $("#exampleModal").modal()
 
@@ -232,15 +232,15 @@ var yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy + '-' + n;
 
             $("#modal_day").html(today);
-           
+
         }else {
             $("#exampleModal").modal('hide')
-        
+
              $('.help-block-agree').show();
-     
+
         }
 
-    
+
     });
 
     const checkbox = document.getElementById('gridCheck')
@@ -251,11 +251,11 @@ checkbox.addEventListener('change', (event) => {
     $('.help-block-agree').hide();
   } else {
     document.getElementById("gridCheck").value = 0;
-  
+
   }
 })
 
 
 
-    
+
        </script>
