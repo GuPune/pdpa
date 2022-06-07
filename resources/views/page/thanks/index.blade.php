@@ -25,7 +25,7 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <div class="flex justify-center">
-                        <img src="https://cmsecom2.idtest.work/img/thank.png" alt="logo" width="300" height="150">
+                        <img src="http://cmsecom2.idtest.work/img/thank.png" alt="logo" width="300" height="150">
                     </div>
                 </div>
             </div>
