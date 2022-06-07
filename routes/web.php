@@ -29,6 +29,8 @@ Route::middleware(['auth'])->group(function () {
 Route::resource('/branch', 'App\Http\Controllers\BranchController');
 Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
 Route::resource('/report', 'App\Http\Controllers\ReportController');
+
+Route::get('/downloadPDF/{id}', [App\Http\Controllers\ReportController::class, 'downloadPDF'])->name('downloadPDF');
 Route::post('report/datatables', [\App\Http\Controllers\ReportController::class, 'getDataalltable'])->name('reportall.data');
 Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');
 

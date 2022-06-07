@@ -8,6 +8,7 @@ use App\Models\PdpaForm;
 use Illuminate\Http\Request;
 use DataTables;
 use Carbon\Carbon;
+use PDF;
 
 class ReportController extends Controller
 {
@@ -122,9 +123,16 @@ class ReportController extends Controller
 
 
         $datas = [];
-        $data = Consent::where('status','Y')->where('branch_id',$request->branch_id)->get();
 
-        foreach ($data as $key => $sky) {
+        $data = Consent::where('status','Y')->where('branch_id',$request->branch_id);
+
+        if($request->name){
+            $data->where('telephone', 'like', '%'.$request->name.'%')->orWhere('ip','like','%'.$request->name.'%');
+        }
+  
+       $report = $data->get();
+   
+        foreach ($report as $key => $sky) {
             $branch = Branch::where('id',$sky->branch_id)->first();
             $form = PdpaForm::where('id',$sky->pdpaform_id)->first();
 
@@ -141,6 +149,25 @@ class ReportController extends Controller
 
       return DataTables::of($datas)->make(true);
     }
+
+
+    public function downloadPDF($id){
+
+  
+        $con = Consent::where('id',$id)->first();
+        $form = PdpaForm::where('id',$con->pdpaform_id)->first();
+ 
+        $data = [
+            'title' => 'Welcome to ItSolutionStuff.com',
+            'des' => $form->des
+        ];
+
+
+    
+        $pdf = PDF::loadView('pdf',$data);
+        return $pdf->download('test.pdf');
+  
+      }
 
 
 

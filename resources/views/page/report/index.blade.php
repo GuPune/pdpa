@@ -166,7 +166,6 @@ data._token = "{{ csrf_token() }}";
 data.branch_id = $('select[name=branch_id]').val();
 data.name = $('input[name=name]').val();
 
-
 return data;
 
 }
@@ -230,7 +229,7 @@ var table = $('#datatables-example').DataTable({
                     searchable: false,
                     render: function (data, type, row) {
 
-                        var btnview = '<a   href="/branch/'+ row.id +'/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> ดู</a>';
+                        var btnview = '<a   href="/downloadPDF/'+ row.id +'" data-id="'+ row.id +'"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> ดู</a>';
 
 
                          return btnview;
