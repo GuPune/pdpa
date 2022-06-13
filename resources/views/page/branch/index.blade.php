@@ -141,6 +141,18 @@ var table = $('#datatables-example').DataTable({
                 orderable: false,
                 searchable: false
             },
+            {
+                    targets: 0,
+                    orderable: false,
+                    searchable: false,
+                    render: function (data, type, row) {
+
+
+return row.ids;
+                  
+                        
+                    }
+                },
 
             {
                     targets: 3,

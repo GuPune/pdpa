@@ -130,9 +130,19 @@ class BranchController extends Controller
 
     public function getDatashoptable(Request $request)
     {
-
+$datas = [];
         $data = Branch::where('status','Y')->get();
-        return DataTables::of($data)->make(true);
+
+        foreach ($data as $key => $databranch) {
+            $datas[$key]['ids'] = ++$key;
+            $datas[$key]['id'] = $databranch->id;
+            $datas[$key]['code'] = $databranch->code;
+            $datas[$key]['name'] = $databranch->name;
+            $datas[$key]['status'] = $databranch->telephone;
+           
+        }
+
+        return DataTables::of($datas)->make(true);
     }
 
     public function delupdate(Request $request)
