@@ -41,7 +41,7 @@ class ReportController extends Controller
 
         // }
 
-        $typebranch = Branch::all();
+        $typebranch = Branch::where('status','Y')->get();
 
 
 
@@ -124,11 +124,15 @@ class ReportController extends Controller
 
         $datas = [];
 
-        $data = Consent::where('status','Y')->where('branch_id',$request->branch_id);
+        $data = Consent::where('status','Y');
 
         if($request->name){
             $data->where('telephone', 'like', '%'.$request->name.'%')->orWhere('ip','like','%'.$request->name.'%');
         }
+        if($request->branch_id){
+            $data->where('branch_id',$request->branch_id);
+        }
+
 
        $report = $data->get();
 
