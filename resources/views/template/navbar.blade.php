@@ -1,5 +1,5 @@
 <header class="header">
-    <a href="index.html" class="logo">
+    <a href="#" class="logo">
         <img src="img/1.png" alt="logo" width="80" height="40">
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
@@ -11,7 +11,7 @@
         </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
-      
+
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="img/authors/avatar3.jpg" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
