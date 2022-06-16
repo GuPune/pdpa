@@ -183,7 +183,7 @@ var branch_id = $('#branch_id').val();
             swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
             setTimeout(function(){
                 window.location.href = '/pdpa'
-}, 3000); //run this after 3 seconds
+}, 2000); //run this after 3 seconds
 
           }
       })
