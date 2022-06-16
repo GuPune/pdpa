@@ -14,7 +14,7 @@
                         <li>
                             <a href="#">
                                 <i class="livicon" data-name="medal" data-size="18" data-c="#00bc8c" data-hc="#00bc8c" data-loop="true"></i>
-                                <span class="title">ข้อมูลตั้งตั้น</span>
+                                <span class="title">ข้อมูลตั้งต้น</span>
                                 <span class="fa arrow"></span>
                             </a>
                             <ul class="sub-menu">
