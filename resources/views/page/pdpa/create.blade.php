@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
 
-                               
+
 
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email">ข้อความ Consent *</label>
@@ -76,18 +76,18 @@
 
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email"> <button type="button" class="btn btn-responsive btn-primary btn-lg btn-save">บันทึก</button></label>
-        
+
                                 </div>
-                           
-                    
+
+
                             </fieldset>
                         </form>
                     </div>
-                </div>    
+                </div>
             </div>
             </div>
     </section>
-   
+
 </aside>
 <style type="text/css">
 .help-block-code,.help-block-note,.help-block-linenoti,.help-block-agree,.help-block-details{
@@ -181,7 +181,10 @@ var branch_id = $('#branch_id').val();
           url: '/pdpa',
           success: function(datas){
             swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
-            window.location.href = '/pdpa'
+            setTimeout(function(){
+                window.location.href = '/pdpa'
+}, 3000); //run this after 3 seconds
+
           }
       })
 
