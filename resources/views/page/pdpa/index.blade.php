@@ -69,14 +69,14 @@
                                 <td class="text-center">{{ $items->code_form }}</td>
                                 <td class="text-center">{{ $items->branchform->name }}</td>
                                 <td class="text-center">{{ $items->note }}</td>
-                                <td class="text-center">  
+                                <td class="text-center">
                                     @php
                                          $all = $items->token;
-                                    $a = 'http://cmsecom2.idtest.work/consent/';
-                                    $b = "$a$all"; 
-                                   
-                                      
-                                      
+                                    $a = 'http://consent.iddriver.com/consent/';
+                                    $b = "$a$all";
+
+
+
                                     @endphp
                                     {!! QrCode::size(250)->generate($b); !!}</td>
                                 <td class="text-center">
@@ -85,7 +85,7 @@
                                     </a>
 
                                     <a   href="#"  class="btn btn-outline-dark btn-sm btn-delete" data-id="{{$items->id}}"><i class="fa fa-trash"></i> ลบ</a>
-                                   
+
                                 </td>
                             </tr>
                         @endforeach
@@ -129,7 +129,7 @@ $.ajaxSetup({
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
 });
- 
+
 function RefreshTable(data) {
 
 
@@ -182,7 +182,7 @@ function deleteConf(id) {
                             },
                             url: '/pdpa/' + id,
                             success: function(datas){
-                           
+
                             location.reload();
                             }
 
