@@ -186,7 +186,7 @@ var branch_id = $('#branch_id').val();
 
             setTimeout(function(){
                 window.location.href = '/pdpa'
-}, 2000); /
+}, 2000);
           }
       })
 
