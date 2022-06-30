@@ -22,7 +22,7 @@
     <link href="{{ asset('template/assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/fonts.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/styles.css') }}" rel="stylesheet">
-    
+
     <link href="{{ asset('template/vendors/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/pages/calendar_custom.css') }}" rel="stylesheet">
     <link href="{{ asset('template/vendors/bower-jvectormap/css/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet">
@@ -30,10 +30,11 @@
     <link href="{{ asset('template/assets/css/pages/only_dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/pages/tables.css') }}" rel="stylesheet">
     <link href="{{ asset('template/vendors/datatables/css/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('template/vendors/awesome-bootstrap-checkbox/css/awesome-bootstrap-checkbox.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('template/assets/css/pages/radio_checkbox.css') }}">
 
 
 
-    
     <script src="{{ asset("template/assets/js/app.js") }}"></script>
     <script src="{{ asset("template/vendors/iCheck/js/icheck.js") }}"></script>
     <script src="{{ asset("template/assets/js/pages/mail_box.js") }}"></script>
@@ -75,12 +76,12 @@
         <!-- Left side column. contains the logo and sidebar -->
         @include('template.menu')
         <!-- Right side column. Contains the navbar and content of the page -->
-     
+
         <aside>
             <div class="content-wrapper">
                 @yield('content')
             </div>
-            
+
         </aside>
         <!-- right-side -->
     </div>
@@ -88,7 +89,7 @@
         <i class="livicon" data-name="plane-up" data-size="18" data-loop="true" data-c="#fff" data-hc="white"></i>
     </a>
     <!-- global js -->
-   
+
     <!-- end of page level js -->
 </body>
 

@@ -57,14 +57,53 @@
                                     </div>
                                 </div>
 
+                                <input id="x" name="x" type="hidden" placeholder="Line แจ้งเตือน" class="form-control"  value="{{$item->typeform}}" required>
+                                <div class="form-group">
+                                    <label class="col-md-2 text-right" for="name">แสดงรายละเอียดมากขึ้น</label>
+                                    <div class="col-md-10">
+                                        <input type="radio" name="r2" class="line" value="1" onclick="handleClick(this);"  @if($item->typeform == 1) checked @endif/>
+                                        <label>แสดงแบบที่ 1
+                                        </label>
+                                        <input type="radio" name="r2" class="line" value="2" onclick="handleClick(this);"  @if($item->typeform == 2) checked @endif/>
+                                        <label>แสดงแบบที่ 2
+                                        </label>
+                                    </div>
+                                </div>
+
+
 
 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="email">ข้อความ Consent *</label>
+                                    <label class="col-md-2 control-label" for="email">สี Button</label>
+                                    <div class="col-md-10">
+                                        <input type="color" id="bt_color" name="bt_color"
+                                            value="{{$item->bt_color}}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">ชื่อปุ่ม</label>
+                                    <div class="col-md-10">
+                                        <input id="bt_name" name="bt_name" type="text" placeholder="ชื่อ ปุ่ม" class="form-control"  value="{{$item->bt_name}}" required>
+                                        <div class="help-block-linenoti">กรุณากรอกชื่อปุ่ม</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">ข้อความ Consent 1*</label>
                                     <div class="col-md-10">
                                         <textarea name="details"  id="details"> {{$item->des}} </textarea>
                                         <div class="help-block-details">กรุณากรอกข้อความ</div>
                                 </div>
+
+                                <div class="form-group" id="con2" @if($item->typeform == 1) hidden @endif>
+                                    <label class="col-md-2 control-label" for="email">ข้อความ Consent 2*</label>
+                                    <div class="col-md-10">
+                                        <textarea name="details2"  id="details2">{{$item->des2}}</textarea>
+                                        <div class="help-block-details">กรุณากรอกข้อความ</div>
+                                </div>
+                            </div>
+
 
 
                                 <div class="form-group">
@@ -77,10 +116,7 @@
 
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email"> <button type="button" class="btn btn-responsive btn-primary btn-lg btn-save">บันทึก</button></label>
-
                                 </div>
-
-
                             </fieldset>
                         </form>
                     </div>
@@ -96,6 +132,7 @@
     color: red;
     text-align: center;
 }
+
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -107,6 +144,31 @@
 
     });
 
+    CKEDITOR.replace('details2', {
+        filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+
+    });
+    //var linenoti = $('#linenoti').val();
+
+
+
+    var currentsame = document.getElementById("x");
+
+    function handleClick(myRadio) {
+
+    currentValue = myRadio.value;
+    var moreText = document.getElementById("con2")
+    var currentname = document.getElementById("x").value = myRadio.value;
+
+    if(currentValue == 2) {
+        moreText.style.display = 'inline'
+    }else {
+
+        moreText.style.display = 'none'
+    }
+}
+
     function validateForm(){
 
 var code = $('#code_form').val();
@@ -115,10 +177,6 @@ var linenoti = $('#linenoti').val();
 
 var detail = CKEDITOR.instances.details.getData();
 var agree = $('#agree').val();
-
-
-
-
 
 
 
@@ -138,6 +196,11 @@ if(detail == ''){
 if(agree == ''){
     $('.help-block-agree').show();
 }
+if(bt_name == ''){
+    $('.help-block-bt_name').show();
+}
+
+
 
 
 
@@ -146,11 +209,19 @@ if(agree == ''){
 
 if(code == ''){
     return false;
+}else if(bt_name == ''){
+    return false;
+}else if(agree == ''){
+    return false;
+}else if(note == ''){
+    return false;
 }else{
     return true;
 }
 
 }
+
+
 
     $('body').on('click', '.btn-save', function () {
 
@@ -162,9 +233,12 @@ var note = $('#note').val();
 var linenoti = $('#linenoti').val();
 var agree = $('#agree').val();
 var detail = CKEDITOR.instances.details.getData();
+var details2 = CKEDITOR.instances.details2.getData();
 var branch_id = $('#branch_id').val();
+var bt_name = $('#bt_name').val();
+var bt_color = $('#bt_color').val();
 
-
+var radicurrnet = document.getElementById("x").value;
 
 
       $.ajaxSetup({
@@ -178,15 +252,15 @@ var branch_id = $('#branch_id').val();
           type:'PUT',
           data: {
                                 '_token': "{{ csrf_token() }}",
-                                code_form:code,note:note,linenoti:linenoti,agree:agree,detail:detail,branch_id:branch_id
+                                code_form:code,note:note,linenoti:linenoti,agree:agree,detail:detail,details2:details2,branch_id:branch_id,radicurrnet:radicurrnet,bt_name:bt_name,bt_color:bt_color
                             },
           url: '/pdpa/' + id,
           success: function(datas){
             swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 
-            setTimeout(function(){
-                window.location.href = '/pdpa'
-}, 2000);
+//             setTimeout(function(){
+//                 window.location.href = '/pdpa'
+// }, 2000);
           }
       })
 

@@ -62,37 +62,98 @@
                                     {!! $item['des'] !!}
 
                                 </div>
-                            </div>
 
-                        </div>
-                        <input id="token" name="token" type="hidden" placeholder="Line แจ้งเตือน" class="form-control" value="{{$item['token']}}">
-                        <div class="grid grid-cols-1 md:grid-cols-6">
-                            <div class="p-6">
-                                <div class="flex items-center justify-center">
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck" value="0">
-                                          <label class="form-check-label" for="gridCheck">
-                                           {{$item['agree']}}
-                                          </label>
-                                          <div class="help-block-agree">กรุณาติ๊กเครื่องหมายถูก</div>
-                                        </div>
-                                      </div>
+                                <div class="ml-12" id="more">
+                                    <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                        {!! $item['des'] !!}
+                                </div>
+
+
+
 
                                 </div>
+
+
+
+
+
                             </div>
 
                         </div>
-
-
+                        @if ($item['typeform'] == 2)
                         <div class="grid grid-cols-1 md:grid-cols-6">
                             <div class="p-6">
                                 <div class="flex items-center justify-center">
-                                    <button data-v-00d461e0="" type="button" class="btn btn-success btn btn-primary btn-save">ส่งข้อมูล</button>
+                                    <button data-v-00d461e0="" type="button" onclick="myFunction()" class="btn" id="bt-more" style="background-color:{{$item['bt_color']}} ">   {{$item['bt_name']}}</button>
                                 </div>
                             </div>
                         </div>
 
+
+<div id='more-send'>
+    <input id="token" name="token" type="hidden" placeholder="Line แจ้งเตือน" class="form-control" value="{{$item['token']}}">
+    <input id="typeform" name="typeform" type="hidden" placeholder="typeform" class="form-control" value="{{$item['typeform']}}">
+    <div class="grid grid-cols-1 md:grid-cols-6">
+        <div class="p-6">
+            <div class="flex items-center justify-center">
+                <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck" value="0">
+                      <label class="form-check-label" for="gridCheck">
+                       {{$item['agree']}}
+                      </label>
+                      <div class="help-block-agree">กรุณาติ๊กเครื่องหมายถูก</div>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-6">
+        <div class="p-6">
+            <div class="flex items-center justify-center">
+                <button data-v-00d461e0="" type="button" class="btn btn-success btn btn-primary btn-save">ส่งข้อมูล</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@else
+<div>
+    <input id="token" name="token" type="hidden" placeholder="Line แจ้งเตือน" class="form-control" value="{{$item['token']}}">
+    <input id="typeform" name="typeform" type="text" placeholder="typeform" class="form-control" value="{{$item['typeform']}}">
+    <div class="grid grid-cols-1 md:grid-cols-6">
+        <div class="p-6">
+            <div class="flex items-center justify-center">
+                <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck" value="0">
+                      <label class="form-check-label" for="gridCheck">
+                       {{$item['agree']}}
+                      </label>
+                      <div class="help-block-agree">กรุณาติ๊กเครื่องหมายถูก</div>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-6">
+        <div class="p-6">
+            <div class="flex items-center justify-center">
+                <button data-v-00d461e0="" type="button" class="btn btn-success btn btn-primary btn-save">ส่งข้อมูล</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@endif
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -130,8 +191,12 @@
 
 
 
+
+
             </div>
         </div>
+
+
     </body>
 </html>
 <style type="text/css">
@@ -140,6 +205,11 @@
         color: red;
         text-align: center;
     }
+
+    #more {display: none;}
+    #more-send {display: none;}
+
+
     </style>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -150,6 +220,20 @@
 
 <script type="text/javascript">
 
+
+function myFunction() {
+
+  var moreText = document.getElementById("more");
+  var moreTextsend = document.getElementById("more-send");
+  var showbtmore = document.getElementById("bt-more");
+
+
+  moreTextsend.style.display = 'inline';
+
+  moreText.style.display = "inline";
+  showbtmore.style.display = "none";
+
+}
 
 
 window.onload = () => {

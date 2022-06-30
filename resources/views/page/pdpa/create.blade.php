@@ -57,14 +57,53 @@
                                 </div>
 
 
+                                <div class="form-group">
+                                    <label class="col-md-2 text-right" for="name">แสดงรายละเอียดมากขึ้น</label>
+                                    <div class="col-md-10">
+                                        <input type="radio" name="r2" class="line" value="1" onclick="handleClick(this);" checked/>
+                                        <label>แสดงแบบที่ 1
+                                        </label>
+                                        <input type="radio" name="r2" class="line" value="2" onclick="handleClick(this);" />
+                                        <label>แสดงแบบที่ 2
+                                        </label>
+                                    </div>
+                                </div>
+
+
+
 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="email">ข้อความ Consent *</label>
+                                    <label class="col-md-2 control-label" for="email">สี Button</label>
+                                    <div class="col-md-10">
+                                        <input type="color" id="bt_color" name="bt_color"
+                                            value="#f6b73c">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">ชื่อปุ่ม</label>
+                                    <div class="col-md-10">
+                                        <input id="bt_name" name="bt_name" type="text" placeholder="ชื่อ ปุ่ม" class="form-control" required>
+                                        <div class="help-block-linenoti">กรุณากรอกชื่อปุ่ม</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">ข้อความ Consent 1*</label>
                                     <div class="col-md-10">
                                         <textarea name="details"  id="details"></textarea>
                                         <div class="help-block-details">กรุณากรอกข้อความ</div>
                                 </div>
 
+
+                                <div class="form-group" id="con2" hidden>
+                                    <label class="col-md-2 control-label" for="email">ข้อความ Consent 2*</label>
+                                    <div class="col-md-10">
+                                        <textarea name="details2"  id="details2"></textarea>
+                                        <div class="help-block-details">กรุณากรอกข้อความ</div>
+                                </div>
+                            </div>
 
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="email">ข้อความยินยอม</label>
@@ -90,11 +129,13 @@
 
 </aside>
 <style type="text/css">
-.help-block-code,.help-block-note,.help-block-linenoti,.help-block-agree,.help-block-details{
+.help-block-code,.help-block-note,.help-block-linenoti,.help-block-agree,.help-block-details,.help-block-bt_name{
     display: none;
     color: red;
     text-align: center;
 }
+
+#con2 {display: none;}
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -106,6 +147,33 @@
 
     });
 
+    CKEDITOR.replace('details2', {
+        filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+
+    });
+
+
+
+
+    var currentValue = 1;
+function handleClick(myRadio) {
+    currentValue = myRadio.value;
+    var moreText = document.getElementById("con2")
+
+
+    if(currentValue == 2) {
+
+
+
+
+        moreText.style.display = 'inline'
+    }else {
+
+        moreText.style.display = 'none'
+    }
+}
+
     function validateForm(){
 
 var code = $('#code_form').val();
@@ -114,6 +182,7 @@ var linenoti = $('#linenoti').val();
 
 var detail = CKEDITOR.instances.details.getData();
 var agree = $('#agree').val();
+var bt_name = $('#bt_name').val();
 
 
 
@@ -137,6 +206,9 @@ if(detail == ''){
 if(agree == ''){
     $('.help-block-agree').show();
 }
+if(bt_name == ''){
+    $('.help-block-bt_name').show();
+}
 
 
 
@@ -144,6 +216,12 @@ if(agree == ''){
 
 
 if(code == ''){
+    return false;
+}else if(bt_name == ''){
+    return false;
+}else if(agree == ''){
+    return false;
+}else if(note == ''){
     return false;
 }else{
     return true;
@@ -155,12 +233,16 @@ if(code == ''){
 
 let valform = validateForm();
   if(valform === true){
+
 var code = $('#code_form').val();
 var note = $('#note').val();
 var linenoti = $('#linenoti').val();
 var agree = $('#agree').val();
 var detail = CKEDITOR.instances.details.getData();
+var details2 = CKEDITOR.instances.details2.getData();
 var branch_id = $('#branch_id').val();
+var bt_name = $('#bt_name').val();
+var bt_color = $('#bt_color').val();
 
 
 
@@ -176,13 +258,13 @@ var branch_id = $('#branch_id').val();
           type:'POST',
           data: {
                                 '_token': "{{ csrf_token() }}",
-                                code_form:code,note:note,linenoti:linenoti,agree:agree,detail:detail,branch_id:branch_id
+                                code_form:code,note:note,linenoti:linenoti,agree:agree,detail:detail,details2:details2,branch_id:branch_id,currentValue:currentValue,bt_name:bt_name,bt_color:bt_color
                             },
           url: '/pdpa',
           success: function(datas){
             swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
             setTimeout(function(){
-                window.location.href = '/pdpa'
+         window.location.href = '/pdpa'
 }, 2000); //run this after 3 seconds
 
           }

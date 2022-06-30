@@ -64,6 +64,7 @@ class ConsentController extends Controller
             return abort(500);
         }
 
+
     return view('page.consent.index')->with('item',$collection);
     }
 

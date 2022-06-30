@@ -25,6 +25,9 @@ class CreatePdpaformTable extends Migration
             $table->text('agree');
             $table->text('token');
             $table->string('status');
+            $table->string('typeform');
+            $table->string('bt_name');
+            $table->string('bt_color');
             $table->timestamps();
         });
     }

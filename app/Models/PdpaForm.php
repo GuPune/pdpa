@@ -24,6 +24,10 @@ class PdpaForm extends Model
         'agree',
         'token',
         'status',
+        'typeform',
+        'bt_name',
+        'bt_color',
+        'des2'
     ];
 
     public function branchform()

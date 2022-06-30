@@ -37,7 +37,7 @@ class PdpaController extends Controller
     {
         //
         $typebranch = Branch::all();
-        
+
         return view('page.pdpa.create')->with('branch',$typebranch);
     }
 
@@ -51,7 +51,7 @@ class PdpaController extends Controller
     {
         //
         $randomString = Str::random(30);
-    
+
         $formpdpa = PdpaForm::create([
             'code_form' => $request->code_form,
             'note' => $request->note,
@@ -60,7 +60,10 @@ class PdpaController extends Controller
             'linenoti' => $request->linenoti,
             'agree' => $request->agree,
             'status' => 'Y',
-            'token' => $randomString
+            'token' => $randomString,
+            'typeform' => $request->currentValue,
+            'bt_name' => $request->bt_name,
+            'bt_color' => $request->bt_color,
         ]);
 
 
@@ -68,8 +71,8 @@ class PdpaController extends Controller
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1
         ]);
- 
-    
+
+
     }
 
     /**
@@ -97,7 +100,7 @@ class PdpaController extends Controller
         $typebranch = Branch::all();
 
         return view('page.pdpa.edit')->with('item',$datapdpa)->with('branch',$typebranch);
-     
+
     }
 
     /**
@@ -111,9 +114,8 @@ class PdpaController extends Controller
     {
         //
 
-        \Log::info($request->all());
 
-   
+
 
         $datapdpa = PdpaForm::find($id)->update([
             'code_form' => $request->code_form,
@@ -122,10 +124,11 @@ class PdpaController extends Controller
             'agree' => $request->agree,
             'des' => $request->detail,
             'branch_id' => $request->branch_id,
+            'bt_name' => $request->bt_name,
+            'bt_color' => $request->bt_color,
+            'des2' => $request->details2,
+            'typeform' => $request->radicurrnet,
         ]);
-
-
-
 
 
         return response()->json([
@@ -144,7 +147,7 @@ class PdpaController extends Controller
      */
     public function destroy($id)
     {
-   
+
 
         $delup = PdpaForm::find($id)->update([
             'status' => 'D'
