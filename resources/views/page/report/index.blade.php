@@ -177,10 +177,6 @@ function reloadData() {
 table.ajax.reload(null, false);
 }
 
-function exportexcel() {
-
-    return Excel::download(new UsersExport, 'users.xlsx');
-}
 
 
 function fitter() {
