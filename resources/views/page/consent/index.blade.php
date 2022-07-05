@@ -67,18 +67,8 @@
                                     <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                         {!! $item['des'] !!}
                                 </div>
-
-
-
-
                                 </div>
-
-
-
-
-
                             </div>
-
                         </div>
                         @if ($item['typeform'] == 2)
                         <div class="grid grid-cols-1 md:grid-cols-6">
@@ -88,8 +78,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 <div id='more-send'>
     <input id="token" name="token" type="hidden" placeholder="Line แจ้งเตือน" class="form-control" value="{{$item['token']}}">
     <input id="typeform" name="typeform" type="hidden" placeholder="typeform" class="form-control" value="{{$item['typeform']}}">

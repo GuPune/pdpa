@@ -71,7 +71,8 @@
                             <button type="button" class="btn btn-responsive btn-primary btn-sm" onclick="fitter();">ค้นหา</button>
                         </div>
                         <div class="col-md-1">
-                            <button type="button" class="btn btn-responsive btn-success btn-sm">Export</button>
+
+                            <a class="btn btn-responsive btn-success btn-sm" href="{{ route('file-export') }}">Export</a>
                         </div>
                     </div>
                 </div>
@@ -175,6 +176,12 @@ function reloadData() {
 
 table.ajax.reload(null, false);
 }
+
+function exportexcel() {
+
+    return Excel::download(new UsersExport, 'users.xlsx');
+}
+
 
 function fitter() {
 

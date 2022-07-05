@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/branch', 'App\Http\Controllers\BranchController');
 Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
@@ -38,7 +38,7 @@ Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'de
 
 Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
 
-
+Route::get('file-export', [App\Http\Controllers\ExcelController::class, 'fileExport'])->name('file-export');
 
 
 
