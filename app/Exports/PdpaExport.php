@@ -14,12 +14,16 @@ class PdpaExport implements FromCollection,WithHeadings
     public function collection()
     {
         //
-        return Consent::select("id", "pdpaform_id", "branch_id","telephone","ip","browser","os")->get();
+
+        $x = Consent::join('branch', 'branch.id', '=', 'consent.branch_id')
+               ->get(['consent.id', 'branch.name','consent.telephone','consent.ip','consent.browser','consent.os']);
+    //    return Consent::select("id", "pdpaform_id", "branch_id","telephone","ip","browser","os")->get();
+    return $x;
     }
 
 
     public function headings(): array
     {
-        return ["ID", "Pdpaform", "Branch","Telephone","IP","BROWSER","OS"];
+        return ["ID","Branch","Telephone","IP","BROWSER","OS"];
     }
 }
