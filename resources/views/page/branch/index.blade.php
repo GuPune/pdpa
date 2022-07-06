@@ -36,7 +36,7 @@
                 <br />
                 <div class="col-md-offset-0 col-md-12">
                     <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
-                        <a href="/branch/create" class="btn btn-success">
+                        <a href="/cms/branch/create" class="btn btn-success">
                             เพิ่มสาขา
                         </a>
                     </div>
@@ -103,7 +103,7 @@ $.ajaxSetup({
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
 });
- 
+
 function RefreshTable(data) {
 
 
@@ -149,8 +149,8 @@ var table = $('#datatables-example').DataTable({
 
 
 return row.ids;
-                  
-                        
+
+
                     }
                 },
 
@@ -160,7 +160,7 @@ return row.ids;
                     searchable: false,
                     render: function (data, type, row) {
 
-                        var btnEdit = '<a   href="/branch/'+ row.id +'/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> แก้ไข</a>';
+                        var btnEdit = '<a   href="/backend/branch/'+ row.id +'/edit" data-id="1"  class="btn btn-outline-dark btn-sm"><i class="fa fa-edit"></i> แก้ไข</a>';
                         var btnDel = '<a   href="#" data-id="'+ row.id +'"  class="btn btn-outline-dark btn-sm btn-delete"><i class="fa fa-trash"></i> ลบ</a>';
 
                          return btnEdit + btnDel;
@@ -210,9 +210,9 @@ function deleteConf(id) {
                                 '_token': "{{ csrf_token() }}",
                                 id: id
                             },
-                            url: '/branch/' + id,
+                            url: '/cms/branch/' + id,
                             success: function(datas){
-                           
+
                             location.reload();
                             }
 

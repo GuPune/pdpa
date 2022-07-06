@@ -19,7 +19,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="/branch">
+                                    <a href="/cms/branch">
                                         <i class="fa fa-angle-double-right"></i> ข้อมูลสาขา
                                     </a>
                                 </li>
@@ -36,7 +36,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="/pdpa"> <i class="fa fa-angle-double-right"></i>ข้อมูลแบบฟอร์ม </a>
+                                    <a href="/cms/pdpa"> <i class="fa fa-angle-double-right"></i>ข้อมูลแบบฟอร์ม </a>
                                 </li>
 
                             </ul>
@@ -50,7 +50,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="/report">
+                                    <a href="/cms/report">
                                         <i class="fa fa-angle-double-right"></i> รายงานทั้งหมด
                                     </a>
                                 </li>

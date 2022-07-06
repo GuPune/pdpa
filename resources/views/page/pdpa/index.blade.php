@@ -36,7 +36,7 @@
                 <br />
                 <div class="col-md-offset-0 col-md-12">
                     <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
-                        <a href="/pdpa/create" class="btn btn-success">
+                        <a href="/cms/pdpa/create" class="btn btn-success">
                             เพิ่มแบบฟอร์ม
                         </a>
                     </div>
@@ -80,7 +80,7 @@
                                     @endphp
                                     {!! QrCode::size(250)->generate($b); !!}</td>
                                 <td class="text-center">
-                                    <a class="btn btn-outline-dark btn-sm" href="/pdpa/{{ $items->id }}/edit" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
+                                    <a class="btn btn-outline-dark btn-sm" href="/cms/pdpa/{{ $items->id }}/edit" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
                                         <i class="fa fa-edit">แก้ไข</i>
                                     </a>
 
@@ -180,7 +180,7 @@ function deleteConf(id) {
                                 '_token': "{{ csrf_token() }}",
                                 id: id
                             },
-                            url: '/pdpa/' + id,
+                            url: '/cms/pdpa/' + id,
                             success: function(datas){
 
                             location.reload();

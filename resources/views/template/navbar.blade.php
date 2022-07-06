@@ -44,7 +44,7 @@
                                 <a href="#"> <i class="livicon" data-name="lock" data-s="18"></i> Lock </a>
                             </div>
                             <div class="pull-right">
-                                <a href="/logout"> <i class="livicon" data-name="sign-out" data-s="18"></i> Logout </a>
+                                <a href="/cms/logout"> <i class="livicon" data-name="sign-out" data-s="18"></i> Logout </a>
                             </div>
                         </li>
                     </ul>
