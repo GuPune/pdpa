@@ -18,7 +18,7 @@
     <div class="text-5xl text-blue-100 my-5">
       0
     </div>
-    <div class="text-lg text-blue-300">ภาพนั่งสมาธิ</div>
+    <div class="text-lg text-blue-300">ภาพกิจกรรม</div>
 </div>
     <div class="my-auto w-full inline-block"><div class="text-lg text-blue-300 inline-block">
       เป้าหมาย
@@ -28,7 +28,7 @@
      <div class="text-2xl text-blue-100 my-5 inline-block">
       0
     </div>
-    <div class="text-lg text-blue-300 inline-block">ภาพนั่งสมาธิ</div></div> <!----> <!----> <div id="countdown" class="text-white text-xl mt-5"></div></div> <div class="w-full text-center p-5 text-blue-600"><a href="/statuser"><img src="https://www.meditationphoto.com/images/medal1.png" class="w-7 h-7 inline-block"> User
+    <div class="text-lg text-blue-300 inline-block">ภาพกิจกรรม</div></div> <!----> <!----> <div id="countdown" class="text-white text-xl mt-5"></div></div> <div class="w-full text-center p-5 text-blue-600"><a href="/statuser"><img src="https://www.meditationphoto.com/images/medal1.png" class="w-7 h-7 inline-block"> User
 ที่มีการ Upload สูงสุด</a> <br> <a href="/stat"><img src="https://www.meditationphoto.com/images/photo.png" class="w-7 h-7 inline-block">
 แสดงภาพตามหน่วยงาน</a> <br> <a href="/certcard"><img src="https://www.meditationphoto.com/images/cer1.jpg" class="w-6 h-6 inline-block">
 ออกใบประกาศเกียรติคุณ</a> <br></div></div></div></div> <div><div class="bg-gray-100"><div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-center"><div class="p-5 w-48"><div class="text-xs uppercase text-gray-500 font-medium">

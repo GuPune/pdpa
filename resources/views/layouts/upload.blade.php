@@ -1,23 +1,11 @@
 
 <!doctype html>
-<html lang="th">
+<html lang="th" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22th%22%7D%7D">
   <head >
-    <title>ศูนย์รวมภาพนั่งสมาธิ ที่ใหญ่ที่สุดในโลก</title>
-
-
-
+    <title>Upload ภาพนั่งสมาธิเพื่อสร้างสันติภาพโลก</title>
 
     <style>/*purgecss start ignore*/
 
-.google{
-    color: #ec4918!important
-}
-.face{
-    color: #0a06d9!important
-}
-.line{
-    color: #06d93b!important
-}
 .vue-advanced-cropper{
   text-align:center;
   position:relative;
@@ -1832,42 +1820,29 @@ html{
   cursor:auto;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.modal{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  visibility:hidden;
+  z-index:999;
+  --tw-bg-opacity:1;
+  --tw-bg-opacity:0.4;
+  background-color:hsla(var(--nf) / var(--tw-bg-opacity, 1));
+  transition-property:background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration:.15s;
+  transition-duration:.2s;
+  transition-timing-function:cubic-bezier(.4, 0, .2, 1);
+  overflow-y:hidden;
+  -ms-scroll-chaining:none;
+  overscroll-behavior:contain;
 }
 
 @media (min-width:640px){
@@ -2457,7 +2432,7 @@ html{
 
 .btn-outline.btn-primary{
   --tw-text-opacity:1;
-  color:#1e40af;
+  color:hsla(var(--p) / var(--tw-text-opacity, 1));
 }
 
 .btn-outline.btn-primary:hover{
@@ -6158,7 +6133,24 @@ html{
   }
 }
 /*purgecss start ignore*/
-
+.nuxt-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:7px;
+  width:0;
+  opacity:1;
+  transition:width .1s,opacity .4s;
+  background-color:#00007a;
+  z-index:999999
+}
+.nuxt-progress.nuxt-progress-notransition{
+  transition:none
+}
+.nuxt-progress-failed{
+  background-color:red
+}
 
 /*purgecss end ignore*/
 /*purgecss start ignore*/
@@ -6171,128 +6163,92 @@ header .header_inner{
 }
 }
 
+/*purgecss end ignore*/
+/*purgecss start ignore*/
+.input-file-hidden{
+  visibility:hidden;
+  position:absolute;
+  width:0;
+  height:0
+}
+.file-container{
+  overflow-x:auto;
+  flex-wrap:nowrap
+}
+.file-image-block{
+  width:200px;
+  height:150px
+}
+.file-image-block,.file-image-block-mb{
+  flex:0 0 auto;
+  position:relative;
+  margin-right:1rem
+}
+.file-image-block-mb{
+  width:100px;
+  height:75px
+}
+.file-image-block img{
+  width:100%;
+  height:100%;
+  -o-object-fit:cover;
+     object-fit:cover
+}
+.file-remove{
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  position:absolute;
+  right:-.5rem;
+  top:-.75rem;
+  background-color:rgba(0,0,0,.5);
+  padding:.4rem .525rem;
+  border-radius:50%;
+  color:hsla(0,0%,100%,.5)
+}
+.file-remove:hover{
+  color:hsla(0,0%,100%,.9)
+}
+.carousel-cell{
+  height:100%;
+  background:#222;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.carousel.is-fullscreen .carousel-cell{
+  height:100%
+}
+.carousel-cell img{
+  display:block;
+  max-height:100%
+}
+.flickity-page-dots{
+  bottom:20px
+}
+.flickity-page-dots .dot{
+  width:12px;
+  height:12px;
+  opacity:1;
+  background:transparent;
+  border:2px solid #fff
+}
+.flickity-page-dots .dot.is-selected{
+  background:#fff
+}
+
 /*purgecss end ignore*/</style>
   </head>
   <body >
     <div data-server-rendered="true" id="__nuxt"><!---->
         <div id="__layout">
-        <div data-fetch-key="0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"><div>
+            <div data-fetch-key="0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+                <div>
 
-            @include('template.fronttemp.header')
-
+</div>
 
     </div>
-    <div>
-        @yield('content')
-        @if(Request::is('/'))
-        @include('template.fronttemp.display')
-        @include('template.fronttemp.showup')
-        @include('template.fronttemp.galleryshow')
-        @include('template.fronttemp.longfooter')
-        @endif
-        @include('template.fronttemp.footer')
-
-
-
-
 </div>
-</div>
-</div>
-</div>
-
-
-<div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-box" style="
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-">
-<div id="withKey"><p class="text-lg">Login</p></div>
-<div class="p-4 text-center">
-    <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm">
-    <label for="policy">
-    ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
-</label>
-</div>
-<div class="my-5"><div class="w-full text-center google">
-    <div class="btn btn-primary btn-outline mx-auto google">
-    Login to Google
-  </div>
-</div>
-</div>
-  <div class="my-5">
-    <div class="w-full text-center face">
-    <div class="btn btn-primary btn-outline mx-auto face">
-    Login to Face
-  </div>
-</div>
-</div>
-<div class="my-5">
-    <div class="w-full text-center">
-    <div class="btn btn-primary btn-outline mx-auto line">
-    Login to Line
-  </div>
-</div>
-</div>
-    </div>
-
-  </div>
-
-
-</div>
-</div>
-
-
-
-
-<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin = "anonymous">
-</script>
-
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-crossorigin = "anonymous">
-</script>
-
-<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-crossorigin = "anonymous">
-</script>
-
-
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-    </script>
-
-
 
   </body>
 </html>

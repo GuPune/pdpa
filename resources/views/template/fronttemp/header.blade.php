@@ -56,7 +56,9 @@ justify-between
         lg:text-lg
         pt-10
         md:pt-0
-      "><a href="/view" class="text-gray-700">Gallery</a></li> <li class="
+      "><a href="/gallery" class="text-gray-700">Gallery</a></li>
+
+<li class="
         text-gray-700
         hover:text-gray-900
         cursor-pointer
@@ -65,25 +67,9 @@ justify-between
         pt-10
         md:pt-0 md:ml-5
         lg:ml-10
-      "><a href="https://072.sh/bd4izKZ/1" target="_blank">เสียงนำนั่งสมาธิ</a></li><li class="
-        text-gray-700
-        hover:text-gray-900
-        cursor-pointer
-        text-base
-        lg:text-lg
-        pt-10
-        md:pt-0 md:ml-5
-        lg:ml-10
-      "><a target="_blank">วิธีนั่งสมาธิ</a></li><li class="
-        text-gray-700
-        hover:text-gray-900
-        cursor-pointer
-        text-base
-        lg:text-lg
-        pt-10
-        md:pt-0 md:ml-5
-        lg:ml-10
-      "><a>ติดต่อ</a></li></ul></div></div> <button class="
+      "><a href="/contact">ติดต่อ</a></li></ul></div></div>
+      <a href="/upload">
+       <button class="
   focus:outline-none
   lg:text-lg lg:font-bold
   focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700
@@ -102,9 +88,12 @@ justify-between
   py-1
   sm:py-3
   text-sm
-">
-Upload ภาพนั่งสมาธิ
-</button> <div class="dropdown dropdown-end"><a tabindex="0" href="#"><img src="https://www.meditationphoto.com/images/user.png" alt class="mask mask-circle w-12 h-12"></a> <ul tabindex="0" class="
+" >
+Upload ภาพกิจกรรม
+</button>
+</a>
+ <div class="dropdown dropdown-end"><a tabindex="0" href="#"><img src="https://www.meditationphoto.com/images/user.png" alt class="mask mask-circle w-12 h-12"></a>
+    <ul tabindex="0" class="
     p-2
     shadow
     menu
@@ -112,6 +101,18 @@ Upload ภาพนั่งสมาธิ
     bg-base-100
     rounded-box
     w-52
-  "><li><!----> <div class="cursor-pointer my-2"><img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Login
-    </div></li> <!----></ul></div></div>
+  "><li><!---->
+
+
+    <div class="cursor-pointer my-2" id="myBtn">
+        <img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Login
+
+
+    </div>
+</li> <!---->
+</ul>
+</div>
+</div>
+
+
 </nav>

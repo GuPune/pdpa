@@ -20,6 +20,9 @@ Auth::routes();
 
 
  Route::resource('/', 'App\Http\Controllers\FrontHomeController');
+ Route::resource('/gallery', 'App\Http\Controllers\GallaryController');
+ Route::resource('/contact', 'App\Http\Controllers\ContactController');
+ Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
  Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
