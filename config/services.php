@@ -42,4 +42,10 @@ return [
         'redirect' => 'http://laravel.localhost/login/github/callback',
      ],
 
+     'line' => [
+        'client_id' => '1655673015',
+        'client_secret' =>'9df2e9c970c7d8d131cd22a6487bcee4',
+        'redirect' => 'https://cmsecom2.idtest.work/login/line/callback',
+    ],
+
 ];
