@@ -6233,11 +6233,13 @@ header .header_inner{
 </a>
 </div>
 <div class="my-5">
+    <a href="{{ url('login/line') }}">
     <div class="w-full text-center">
     <div class="btn btn-primary btn-outline mx-auto line">
     Login to Line
   </div>
 </div>
+</a>
 </div>
     </div>
 
