@@ -179,6 +179,7 @@ return [
         Stevebauman\Location\LocationServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
 
     ],
@@ -240,6 +241,7 @@ return [
         'Location' => 'Stevebauman\Location\Facades\Location',
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
 
     ],

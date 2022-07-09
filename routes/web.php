@@ -53,5 +53,9 @@ Route::post('saveconsent', [App\Http\Controllers\ConsentController::class, 'save
 Route::resource('/thanks', 'App\Http\Controllers\ThanskController');
 
 
+Route::get('/login/{social}', [LoginController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+
+
 
 

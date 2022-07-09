@@ -6224,11 +6224,13 @@ header .header_inner{
 </div>
 </div>
   <div class="my-5">
+    <a href="{{ url('login/facebook') }}">
     <div class="w-full text-center face">
     <div class="btn btn-primary btn-outline mx-auto face">
     Login to Face
   </div>
 </div>
+</a>
 </div>
 <div class="my-5">
     <div class="w-full text-center">
