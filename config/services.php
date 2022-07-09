@@ -33,7 +33,7 @@ return [
     'facebook' => [
         'client_id' => '341307871528372', //Facebook API
         'client_secret' => '3f9cd514ef5bb1bdec74b7cf2512dfd4', //Facebook Secret
-        'redirect' => 'http://cmsecom2.idtest.work/login/facebook/callback',
+        'redirect' => 'https://cmsecom2.idtest.work/login/facebook/callback',
      ],
 
      'google' => [
