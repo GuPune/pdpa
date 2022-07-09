@@ -3,6 +3,7 @@
 use App\Http\Controllers\BranchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,10 @@ Route::resource('/thanks', 'App\Http\Controllers\ThanskController');
 
 Route::get('/login/{social}', [LoginController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket||line');
 Route::get('/login/{social}/callback',[LoginController::class, 'handleProviderCallback'])->where('social','twitter|facebook|linkedin|google|github|bitbucket|line');
+
+
+
+Route::get('/auth/line', [AuthController::class, 'redirectToProvider'])->name('line.auth');;
 
 
 
