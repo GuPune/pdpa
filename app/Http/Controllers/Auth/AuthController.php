@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     //
 
-    public function redirectToProvider()
+    public function redirectToProvider(Request $request)
 	{
 		return Socialite::driver('line')->redirect();
 	}
