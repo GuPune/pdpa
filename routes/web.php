@@ -4,6 +4,7 @@ use App\Http\Controllers\BranchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,8 @@ Route::get('/login/{social}/callback',[LoginController::class, 'handleProviderCa
 
 Route::get('/auth/line', [AuthController::class, 'redirectToProvider'])->name('line.auth');;
 
+
+Route::post('/register', [RegisterController::class, 'create'])->name('register.perform');;
 
 
 
