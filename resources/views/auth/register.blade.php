@@ -13,34 +13,65 @@
 
                         <input id="avatar" type="text" class="form-control" name="avatar" value="{{$avatar}}" required autocomplete="avatar" >
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+
+                            <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                            @if(!empty($name))
+
+                                <input id="name" type="text" class="form-control" name="name" value="{{$name}}" required autofocus>
+
+                            @else
+
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                            @endif
+
+                                @if ($errors->has('name'))
+
+                                    <span class="help-block">
+
+                                        <strong>{{ $errors->first('name') }}</strong>
+
                                     </span>
-                                @enderror
+
+                                @endif
+
                             </div>
+
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                @if(!empty($email))
+
+                                <input id="email" type="email" class="form-control" name="email" value="{{$email}}" required>
+
+                                @else
+
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                @endif
+
+                                @if ($errors->has('email'))
+
+                                    <span class="help-block">
+
+                                        <strong>{{ $errors->first('email') }}</strong>
+
                                     </span>
-                                @enderror
-                            </div>
-                        </div>
 
+                                @endif
+
+                            </div>
+
+                        </div>
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
