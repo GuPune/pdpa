@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Request;
-use App\Http\Requests\RegisterRequest;
+
 
 class RegisterController extends Controller
 {
@@ -76,11 +76,9 @@ class RegisterController extends Controller
     }
 
 
-    public function register(RegisterRequest $request)
+    public function register(Request $request)
     {
-
-
-return redirect('/')->with('success', "Account successfully registered.");
+dd($request->all());
 
 
     }
