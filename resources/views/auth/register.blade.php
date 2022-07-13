@@ -10,7 +10,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <input id="avatar" type="hidden" class="form-control" name="avatar" value="{{$avatar}}" required autocomplete="avatar" >
                         <input id="id" type="hidden" class="form-control" name="id" value="{{$id}}" required autocomplete="avatar" >
 
