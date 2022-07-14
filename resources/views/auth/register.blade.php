@@ -199,8 +199,8 @@
       if(checkmail == 'N'){
         return false;
       }else {
-        alert('ผ่าน');
-        return false;
+
+        return true;
       }
 
     }
