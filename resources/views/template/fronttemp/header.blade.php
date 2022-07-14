@@ -67,7 +67,17 @@ justify-between
         pt-10
         md:pt-0 md:ml-5
         lg:ml-10
-      "><a href="/contact">ติดต่อ  {{ Auth::user()->name }}</a></li></ul></div></div>
+      "><a href="/contact">ติดต่อ
+
+
+        @auth
+        {{ Auth::user()->name }}
+         @else
+
+         @endauth
+
+
+    </a></li></ul></div></div>
       <a href="/upload">
        <button class="
   focus:outline-none
