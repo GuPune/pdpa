@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Request;
+use App\Http\Requests\RegisterRequest;
 
 
 class RegisterController extends Controller
@@ -76,9 +77,11 @@ class RegisterController extends Controller
     }
 
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-dd($request->all());
+
+        $user = User::create($request->validated());
+dd($user);
 
 
     }
