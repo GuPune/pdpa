@@ -3,11 +3,32 @@
 
 @section('content')
 
+<style>
+
+
+    </style>
 <div>
     <div>
-        <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css"> <div class="w-full my-3 text-center md:w-1/2 mx-auto text-lg"><button class="btn btn-primary">Login Google</button> <div class="text-md p-3">
-          หากไม่ Login จะไม่สามารถแก้ไขภาพด้วยตัวท่านเองได้
-        </div></div> <div class="alert alert-info"><div class="mx-auto text-center mt-2 mb-2"><input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm mr-1"> <label for="policy">
+        <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css"> <div class="w-full my-3 text-center md:w-1/2 mx-auto text-lg">
+
+            @auth
+
+             @else
+             <div class="my-5"  data-toggle="modal" data-target='#practice_modal'>
+                <div class="w-full text-center google">
+                <div class="btn btn-primary btn-outline mx-auto google">
+                Login
+              </div>
+            </div>
+            </div>
+            <div class="text-md p-3">
+                หากไม่ Login จะไม่สามารถแก้ไขภาพด้วยตัวท่านเองได้
+              </div>
+
+             @endauth
+
+
+    </div> <div class="alert alert-info"><div class="mx-auto text-center mt-2 mb-2"><input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm mr-1"> <label for="policy">
             อนุญาตให้ใช้ภาพในการสร้างสถิติ และยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a></label></div></div> <div class="text-md text-center p-2 w-full md:w-1/2 mx-auto"><div class="
             text-blue-600
             btn btn-secondary btn-outline
@@ -70,6 +91,101 @@
 
 
 </div>
+
+
+
+
+<div id="practice_modal" class="modal fade">
+
+    <!-- Modal content -->
+    <div class="modal-box" style="
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+">
+<div id="withKey"><p class="text-lg">Login</p></div>
+<div class="p-4 text-center">
+    <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm">
+    <label for="policy">
+    ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
+</label>
+</div>
+<div class="my-5"><div class="w-full text-center google">
+    <div class="btn btn-primary btn-outline mx-auto google">
+    Login to Google
+  </div>
+</div>
+</div>
+  <div class="my-5">
+    <a href="{{ url('login/facebook') }}">
+    <div class="w-full text-center face">
+    <div class="btn btn-primary btn-outline mx-auto face">
+    Login to Facebook
+  </div>
+</div>
+</a>
+</div>
+<div class="my-5">
+    <a href="{{ url('auth/line') }}">
+    <div class="w-full text-center">
+    <div class="btn btn-primary btn-outline mx-auto line">
+    Login to Line
+  </div>
+</div>
+</a>
+</div>
+    </div>
+
+  </div>
+
+
+
+  <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin = "anonymous">
+</script>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+crossorigin = "anonymous">
+</script>
+
+<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+crossorigin = "anonymous">
+</script>
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
+
 
 @endsection
 

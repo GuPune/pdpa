@@ -102,7 +102,8 @@ justify-between
 Upload ภาพกิจกรรม
 </button>
 </a>
- <div class="dropdown dropdown-end"><a tabindex="0" href="#"><img src="https://www.meditationphoto.com/images/user.png" alt class="mask mask-circle w-12 h-12"></a>
+ <div class="dropdown dropdown-end">
+    <a tabindex="0" href="#"><img src="https://www.meditationphoto.com/images/user.png" alt class="mask mask-circle w-12 h-12"></a>
     <ul tabindex="0" class="
     p-2
     shadow
