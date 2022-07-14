@@ -104,8 +104,8 @@ Upload ภาพกิจกรรม
   "><li><!---->
 
     @auth
-    <div class="cursor-pointer my-2" id="myBtn">
-        <img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Logout
+    <div class="cursor-pointer my-2" id="myBtn" href="{{ route('logout') }}">
+        <img src="https://www.meditationphoto.com/images/logout.png" class="w-5 h-5 mr-2 inline-block"> Logout
     </div>
 @else
 <div class="cursor-pointer my-2" id="myBtn">
