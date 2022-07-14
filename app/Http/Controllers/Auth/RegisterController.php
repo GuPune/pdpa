@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Models\UserSocial;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -95,6 +96,12 @@ $usersocail = UserSocial::create([
     'service' => $request->service,
     'user_id' => $registerData->id,
 ]);
+
+
+Auth::login($registerData);
+
+
+return redirect('/')->with('success', "Account successfully registered.");
     }
 
 
