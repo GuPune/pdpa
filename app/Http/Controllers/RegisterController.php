@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\RegisterRequest;
+
 
 
 class RegisterController extends Controller
@@ -22,8 +23,28 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function register(RegisterRequest $request)
+
+
+    public function checkemail(Request $request)
     {
-      dd('register');
+
+
+$checkmail = User::where('email',$request->email)->first();
+
+if($checkmail){
+    return response()->json([
+        'data' => false,
+    ]);
+
+}else {
+    return response()->json([
+        'data' => true,
+    ]);
+
+}
+
+
+
+
     }
 }

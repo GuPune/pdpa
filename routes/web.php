@@ -30,6 +30,8 @@ Auth::routes();
  Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
  Route::post('/login', [LoginController::class,'adminLogin']);
 
+ Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
+
 
 Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
 
@@ -72,6 +74,7 @@ Route::group(['middleware' => ['guest']], function() {
      */
 
     Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
+
 
 
 
