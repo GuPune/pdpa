@@ -239,7 +239,7 @@ crossorigin = "anonymous">
                 paramName: 'file_upload',
                 url: '{{route("dropzoneFileUpload")}}',
                 acceptedFiles: '.jpeg,.jpg,.png,.gif',
-                maxFiles: 4,
+                maxFiles: 12,
                 maxFilesize: 50, // MB
                 addRemoveLinks: true,
                 dictRemoveFile: 'ลบรูปภาพ',

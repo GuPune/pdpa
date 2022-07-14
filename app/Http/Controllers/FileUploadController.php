@@ -26,34 +26,26 @@ class FileUploadController extends Controller
         // $destinationPathThumbnail = public_path('/thumbnail');
 
 
-        $originalImage= $request->file('file_upload');
-        $thumbnailImage = Image::make($originalImage);
-        $thumbnailPath = public_path().'/thumbnail/';
-        $originalPath = public_path().'/images/';
-        $thumbnailImage->save($originalPath.time().$originalImage->getClientOriginalName());
-        $thumbnailImage->resize(150,150);
-        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
-
-        // $img = Image::make($image->path());
-        // $img->resize(100, 100, function ($constraint) {
-        //     $constraint->aspectRatio();
-        // })->save($destinationPathThumbnail.'/'.$imageName);
-
-        // $destinationPath = public_path('/images');
-        // $image->move($destinationPath, $imageName);
-
-
-        // $img = Image::make($image->path());
-        // $img->resize(100, 100, function ($constraint) {
-        //     $constraint->aspectRatio();
-        // })->save($destinationPathThumbnail.'/'.$imageName);
 
 
 
-        // \Log::info($img);
 
-        return response()->json([
-            'data' => $path,
-        ], 200);
+        $image = $request->file('file_upload');
+        $input['imagename'] = time().'.'.$image->extension();
+
+        $destinationPath = public_path('\storage\thumbnails');
+
+
+        $img = Image::make($image->path());
+        $img->resize(100, 100, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$input['imagename']);
+
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $input['imagename']);
+
+        return response()->json(['success'=>$input['imagename']]);
+
+
     }
 }

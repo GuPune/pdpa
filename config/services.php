@@ -37,10 +37,10 @@ return [
      ],
 
      'google' => [
-        'client_id' => 'af54e6bae9a4edfc6cbb',
-        'client_secret' => '95afc7b40e6aca6419a7623c34bb6d86cb2ac',
-        'redirect' => 'http://laravel.localhost/login/github/callback',
-     ],
+        'client_id' => '854638499526-lksucnqe3ltqmqe5phbmcsna264d3l4d.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'https://cmsecom2.idtest.work/login/google/callback',
+    ],
 
      'line' => [
         'client_id' => '1655673015',
