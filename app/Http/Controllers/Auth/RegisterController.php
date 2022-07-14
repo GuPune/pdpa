@@ -90,6 +90,8 @@ $registerData = User::create([
     'avatar' => $request->avatar,
 ]);
 
+dd($registerData);
+
 $usersocail = UserSocial::create([
     'social_id' => $request->id,
     'service' => $request->service,
