@@ -77,11 +77,11 @@ class RegisterController extends Controller
     }
 
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
 
-        $user = User::create($request->validated());
-dd($user);
+
+dd($request->all());
 
 
     }
