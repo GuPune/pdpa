@@ -103,12 +103,21 @@ Upload ภาพกิจกรรม
     w-52
   "><li><!---->
 
-
+    @auth
     <div class="cursor-pointer my-2" id="myBtn">
-        <img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Login
-
-
+        <img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Logout
     </div>
+@else
+<div class="cursor-pointer my-2" id="myBtn">
+    <img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Login
+</div>
+
+    {{-- @if (Route::has('register'))
+        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+    @endif --}}
+@endauth
+
+
 </li> <!---->
 </ul>
 </div>
