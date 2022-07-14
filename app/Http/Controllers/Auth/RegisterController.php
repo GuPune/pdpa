@@ -80,8 +80,8 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
 
-
-dd($request->all());
+        $user = User::create($request->validated());
+dd($user);
 
 
     }
