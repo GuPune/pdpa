@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Request;
 use App\Http\Requests\RegisterRequest;
-
+use App\Models\UserSocial;
 
 class RegisterController extends Controller
 {
@@ -90,7 +90,13 @@ $registerData = User::create([
     'avatar' => $request->avatar,
 ]);
 
+$usersocail = UserSocial::create([
+    'social_id' => $request->social_id,
+    'service' => $request->service,
+    'user_id' => $registerData,
+]);
     }
+
 
 
 }
