@@ -31,7 +31,8 @@ Auth::routes();
  Route::post('/login', [LoginController::class,'adminLogin']);
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
-
+ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
 
