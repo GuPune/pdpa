@@ -6217,11 +6217,14 @@ header .header_inner{
     ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
 </label>
 </div>
-<div class="my-5"><div class="w-full text-center google">
+<div class="my-5">
+    <a href="{{ url('login/google') }}">
+    <div class="w-full text-center google">
     <div class="btn btn-primary btn-outline mx-auto google">
     Login to Google
   </div>
 </div>
+</a>
 </div>
   <div class="my-5">
     <a href="{{ url('login/facebook') }}">
