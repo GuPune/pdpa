@@ -91,7 +91,7 @@ $registerData = User::create([
 ]);
 
 $usersocail = UserSocial::create([
-    'social_id' => $request->social_id,
+    'social_id' => $request->id,
     'service' => $request->service,
     'user_id' => $registerData,
 ]);
