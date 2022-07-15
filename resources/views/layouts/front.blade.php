@@ -6212,6 +6212,7 @@ header .header_inner{
 ">
 <div id="withKey"><p class="text-lg">Login</p></div>
 <div class="p-4 text-center">
+    <input type="hidden"  id="c" class="checkbox checkbox-primary checkbox-sm" value="1">
     <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm" onclick="calc();">
     <label for="policy">
     ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
@@ -6223,16 +6224,13 @@ header .header_inner{
     Login to Google
   </div>
 </div>
-
 </div>
 <div class="my-5" value="facebook"  onclick="login('facebook');">
-
     <div class="w-full text-center face">
     <div class="btn btn-primary btn-outline mx-auto face">
     Login to Face
   </div>
 </div>
-
 </div>
 <div class="my-5" value="line" onclick="login('auth/line');">
     <div class="w-full text-center">
@@ -6240,8 +6238,8 @@ header .header_inner{
     Login to Line
   </div>
 </div>
-
 </div>
+
     </div>
 
   </div>
@@ -6275,14 +6273,18 @@ function calc()
 {
     if (document.getElementById('policy').checked)
   {
-    alert('check');
+
+    document.getElementById('c').value = 1;
   } else {
-    alert('no check');
+
+    document.getElementById('c').value = 0;
   }
 }
 
 function login(vale)
 {
+    var checl = $('#c').val();
+    if(checl == '1'){
     if(vale == 'line'){
         window.location.href = '/auth/' + vale
 
@@ -6290,6 +6292,10 @@ function login(vale)
         window.location.href = '/login/' + vale
     }
 
+    }else{
+        alert('ไม่ok');
+
+    }
 }
     // Get the modal
     var modal = document.getElementById("myModal");

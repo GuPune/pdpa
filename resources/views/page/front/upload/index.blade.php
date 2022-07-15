@@ -147,42 +147,39 @@
     top: 50%;
     transform: translate(-50%, -50%);
 ">
-<div id="withKey"><p class="text-lg">Login</p></div>
+<div id="withKey">
+<p class="text-lg">Login</p></div>
 <div class="p-4 text-center">
+    <input type="text"  id="c" class="checkbox checkbox-primary checkbox-sm" value="1">
     <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm">
     <label for="policy">
     ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
 </label>
 </div>
-<div class="my-5">
-    <a href="{{ url('login/facebook') }}">
+<div class="my-5"  value="google" id="google">
     <div class="w-full text-center google">
     <div class="btn btn-primary btn-outline mx-auto google">
     Login to Google
   </div>
 </div>
-    </a>
 </div>
-  <div class="my-5">
-    <a href="{{ url('login/facebook') }}">
+<div class="my-5" value="facebook" id="facebook">
     <div class="w-full text-center face">
     <div class="btn btn-primary btn-outline mx-auto face">
-    Login to Facebook
+    Login to Face
   </div>
 </div>
-</a>
 </div>
-<div class="my-5">
-    <a href="{{ url('auth/line') }}">
+<div class="my-5" value="line" id="line">
     <div class="w-full text-center">
     <div class="btn btn-primary btn-outline mx-auto line">
     Login to Line
   </div>
 </div>
-</a>
 </div>
-    </div>
 
+
+    </div>
   </div>
 
 
@@ -210,11 +207,84 @@ crossorigin = "anonymous">
 
 
 
+
+
 <script>
 
+$('input[type="checkbox"]').on('change', function(e){
+    if(e.target.checked){
+        document.getElementById('c').value = 1;
+  }else {
+    document.getElementById('c').value = 0;
+  }
+});
 
 
+$('#google').on('click', function(e){
 
+
+var checl = $('#c').val();
+if(checl == '1'){
+    window.location.href = '/login/google'
+}else {
+    alert('ใช้ไม่ได้');
+
+}
+
+
+});
+$('#facebook').on('click', function(e){
+
+
+var checl = $('#c').val();
+if(checl == '1'){
+    window.location.href = '/login/facebook/'
+}else {
+
+
+}
+});
+$('#line').on('click', function(e){
+
+
+var checl = $('#c').val();
+if(checl == '1'){
+    window.location.href = '/auth/login/'
+}else {
+
+
+}
+});
+
+function calc()
+{
+
+if (document.getElementById('policy').checked)
+  {
+
+    document.getElementById('c').value = 1;
+  } else {
+
+    document.getElementById('c').value = 0;
+  }
+}
+
+function login(vale)
+{
+    var checl = $('#c').val();
+    if(checl == '1'){
+    if(vale == 'line'){
+        window.location.href = '/auth/' + vale
+
+    }else {
+        window.location.href = '/login/' + vale
+    }
+
+    }else{
+        alert('ไม่ok');
+
+    }
+}
 
     Dropzone.autoDiscover = false;
         if ($('#productForm').length) {
