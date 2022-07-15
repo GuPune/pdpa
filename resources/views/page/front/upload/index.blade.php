@@ -46,42 +46,53 @@
         <div class="text-gray-800 my-1 cursor-pointer text-center"><!----></div></div>
         <div class="mx-auto text-center w-full md:w-1/2"><!----></div>
         <div class="mx-auto text-center w-full md:w-1/2"><!----></div>
-         <div class="w-full p-4 text-gray-500 text-center">
-            <h2 class="max-w-sm mx-auto text-blue-600 cursor-pointer">
-          เลือกสายงาน (สำหรับท่านที่ทราบสังกัด *ไม่เลือกก็ได้)
-        </h2> <div class="max-w-xs mx-auto text-center"><label class="text-sm"></label> <div class="w-full border text-center"><div class="text-center"><select class="select block w-full select-primary"><option selected="selected" value="">เลือกสายงาน</option> <option value="ชพส.">
-                  ชพส.
-                </option><option value="ต่างประเทศ">
-                  ต่างประเทศ
-                </option><option value="นครหลวง">
-                  นครหลวง / แก้วภูธร
-                </option><option value="ภูมิภาค">
-                  ภูมิภาค / ต่างจังหวัด
-                </option><option value="สำนัก,อื่นๆ">
-                  สำนัก
-                </option></select> <!----></div></div></div></div>
-                <div class="text-center text-blue-600 px-4"><span class="cursor-pointer">
+
+                <div class="text-center text-blue-600 px-4">
+                    <span class="cursor-pointer">
           เพิ่มคำอธิบาย
-        </span> <!----></div>
+        </span> <!---->
+    </div>
+
+    @auth
+    <div class="w-full lg:w-1/3 mx-auto p-5">
+        <form action="https://api.meditationphoto.com/api/upload" method="post"  id="productForm" enctype="multipart/form-data" class="dropzone dz-clickable w-full rounded-xl">
+            <div class="previews"></div>
+            <input type="text" name="multifile" id="multifile" value="">
+            <div  id="uploadDropzone">
 
 
+            <div data-dz-message class="dz-message">
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span></div></form> <input type="file" multiple="multiple" tabindex="-1" class="dz-hidden-input hidden" style="\n        visibility: hidden;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        height: 0px;\n        width: 0px;\n      ">
+            </div>
+     @else
 
-        <div class="mx-auto text-center mt-2 mb-2">
+     <div class="w-full lg:w-1/3 mx-auto p-5">
+        <div class="dropzone dz-clickable w-full rounded-xl" id="uu">
+
+            <div class="previews"></div>
+
+            <div  id="uploadDropzone">
+
+
+            <div data-dz-message class="dz-message">
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span>
+            </div>
+
+        </div>
+
+            </div>
+
+     @endauth
+
+        {{-- <div class="mx-auto text-center mt-2 mb-2">
             <label class="cursor-pointer">
                 <input type="checkbox" id="allowOnlyWeb" checked="checked" class="checkbox checkbox-secondary rounded-full self-end"> <span class="ml-3 text-left text-lg text-blue-600">ฉันไม่ต้องการแสดงภาพในหน้า Gallery</span></label>
-            </div>
-                 <div class="w-full lg:w-1/3 mx-auto p-5">
-                    <form action="https://api.meditationphoto.com/api/upload" method="post"  id="productForm" enctype="multipart/form-data" class="dropzone dz-clickable w-full rounded-xl">
-                        <div class="previews"></div>
-                        <input type="text" name="multifile" id="multifile" value="">
-                        <div  id="uploadDropzone">
+            </div> --}}
 
-
-                        <div data-dz-message class="dz-message">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพนั่งสมาธิ<br>(แตะเลือกภาพ หรือ ลากวาง)</span></div></form> <input type="file" multiple="multiple" tabindex="-1" class="dz-hidden-input hidden" style="\n        visibility: hidden;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        height: 0px;\n        width: 0px;\n      ">
-                        </div>
                     </div>
+
 
 
                             <div class="mx-auto mb-2 rounded-xl bg-white w-full md:w-2/3 lg:w-5/12"><!---->
@@ -113,21 +124,8 @@
                 </div>
             </div>
 
-            <form name="myForm" action="#" id="productForm" onsubmit="return validateForm()" method="post">
-                {{ csrf_field() }}
-
-                <div class="row">
-                    <div class="col-sm-8 col-12">
 
 
-
-                        </div>
-
-
-
-                </div>
-                <button type="button" class="btn btn-primary btn-save">บันทึก</button>
-            </form>
 
 
 
@@ -204,6 +202,7 @@ crossorigin = "anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 
 
@@ -221,8 +220,6 @@ $('input[type="checkbox"]').on('change', function(e){
 
 
 $('#google').on('click', function(e){
-
-
 var checl = $('#c').val();
 if(checl == '1'){
     window.location.href = '/login/google'
@@ -230,8 +227,6 @@ if(checl == '1'){
 
 
 }
-
-
 });
 $('#facebook').on('click', function(e){
 
@@ -254,6 +249,10 @@ if(checl == '1'){
 
 
 }
+});
+
+$('#uu').on('click', function(e){
+    swal("กรุณาเข้าสู่ระบบ!", "กรุณาเข้าสู่ระบบ!", "error");
 });
 
 function calc()
@@ -288,6 +287,8 @@ function login(vale)
 
     Dropzone.autoDiscover = false;
         if ($('#productForm').length) {
+
+
 
 
             $.ajaxSetup({
