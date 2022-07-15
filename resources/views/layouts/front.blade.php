@@ -6212,37 +6212,35 @@ header .header_inner{
 ">
 <div id="withKey"><p class="text-lg">Login</p></div>
 <div class="p-4 text-center">
-    <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm">
+    <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm" onclick="calc();">
     <label for="policy">
     ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
 </label>
 </div>
-<div class="my-5">
-    <a href="{{ url('login/google') }}">
+<div class="my-5"  value="google" onclick="login('google');">
     <div class="w-full text-center google">
     <div class="btn btn-primary btn-outline mx-auto google">
     Login to Google
   </div>
 </div>
-</a>
+
 </div>
-  <div class="my-5">
-    <a href="{{ url('login/facebook') }}">
+<div class="my-5" value="facebook"  onclick="login('facebook');">
+
     <div class="w-full text-center face">
     <div class="btn btn-primary btn-outline mx-auto face">
     Login to Face
   </div>
 </div>
-</a>
+
 </div>
-<div class="my-5">
-    <a href="{{ url('auth/line') }}">
+<div class="my-5" value="line" onclick="login('auth/line');">
     <div class="w-full text-center">
     <div class="btn btn-primary btn-outline mx-auto line">
     Login to Line
   </div>
 </div>
-</a>
+
 </div>
     </div>
 
@@ -6272,6 +6270,27 @@ crossorigin = "anonymous">
 
 
 <script>
+
+function calc()
+{
+    if (document.getElementById('policy').checked)
+  {
+    alert('check');
+  } else {
+    alert('no check');
+  }
+}
+
+function login(vale)
+{
+    if(vale == 'line'){
+        window.location.href = '/auth/' + vale
+
+    }else {
+        window.location.href = '/login/' + vale
+    }
+
+}
     // Get the modal
     var modal = document.getElementById("myModal");
 

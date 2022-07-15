@@ -61,7 +61,7 @@ Route::post('saveconsent', [App\Http\Controllers\ConsentController::class, 'save
 Route::resource('/thanks', 'App\Http\Controllers\ThanskController');
 
 
-Route::get('/login/{social}', [LoginController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket||line');
+Route::get('/login/{social}', [LoginController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket||line')->name('s');
 Route::get('/login/{social}/callback',[LoginController::class, 'handleProviderCallback'])->where('social','twitter|facebook|linkedin|google|github|bitbucket|line');
 
 
@@ -73,15 +73,8 @@ Route::get('/auth/line', [AuthController::class, 'redirectToProvider'])->name('l
 
 
 Route::group(['middleware' => ['guest']], function() {
-    /**
-     * Register Routes
-     */
 
     Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
-
-
-
-
 });
 
 
