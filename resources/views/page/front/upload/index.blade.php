@@ -150,7 +150,7 @@
 <div id="withKey">
 <p class="text-lg">Login</p></div>
 <div class="p-4 text-center">
-    <input type="text"  id="c" class="checkbox checkbox-primary checkbox-sm" value="1">
+    <input type="hidden"  id="c" class="checkbox checkbox-primary checkbox-sm" value="1">
     <input type="checkbox" checked="checked" id="policy" class="checkbox checkbox-primary checkbox-sm">
     <label for="policy">
     ยอมรับ<a href="/privacy" class="text-blue-600">นโยบายความเป็นส่วนตัว</a>
@@ -227,7 +227,7 @@ var checl = $('#c').val();
 if(checl == '1'){
     window.location.href = '/login/google'
 }else {
-    alert('ใช้ไม่ได้');
+
 
 }
 
