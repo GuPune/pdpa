@@ -36,15 +36,15 @@ class FileUploadController extends Controller
         $destinationPath = public_path('\storage\thumbnails');
 
 
-        $img = Image::make($image->path());
-        $img->resize(100, 100, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save($destinationPath.'/'.$input['imagename']);
+        // $img = Image::make($image->path());
+        // $img->resize(100, 100, function ($constraint) {
+        //     $constraint->aspectRatio();
+        // })->save($destinationPath.'/'.$input['imagename']);
 
-        $destinationPath = public_path('/images');
-        $image->move($destinationPath, $input['imagename']);
+        // $destinationPath = public_path('/images');
+        // $image->move($destinationPath, $input['imagename']);
 
-        return response()->json(['success'=>$input['imagename']]);
+        // return response()->json(['success'=>$input['imagename']]);
 
 
     }
