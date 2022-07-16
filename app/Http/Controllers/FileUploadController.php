@@ -38,7 +38,7 @@ class FileUploadController extends Controller
 
 
         $img = Image::make($image->path());
-        $img->resize(200, 200, function ($constraint) {
+        $img->resize(250, 250, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath.'/'.$input['imagename']);
 
