@@ -33,7 +33,7 @@ class FileUploadController extends Controller
         $image = $request->file('file_upload');
         $input['imagename'] = time().'.'.$image->extension();
 
-        $destinationPath = public_path('\storage\thumbnails');
+        $destinationPath = public_path('/storage/thumbnails');
 
 
         $img = Image::make($image->path());
