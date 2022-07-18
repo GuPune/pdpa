@@ -6284,8 +6284,6 @@ function calc()
 function login(vale)
 {
     var checl = $('#c').val();
-
-
     if(checl == '1'){
     if(vale == 'auth/line'){
 
