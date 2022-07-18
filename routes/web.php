@@ -69,7 +69,7 @@ Route::get('/login/{social}/callback',[LoginController::class, 'handleProviderCa
 Route::get('/auth/line', [AuthController::class, 'redirectToProvider'])->name('line.auth');
 
 
-
+Route::resource('/post', 'App\Http\Controllers\PostController');
 
 
 Route::group(['middleware' => ['guest']], function() {
