@@ -6284,9 +6284,12 @@ function calc()
 function login(vale)
 {
     var checl = $('#c').val();
+
+
     if(checl == '1'){
-    if(vale == 'line'){
-        window.location.href = '/auth/' + vale
+    if(vale == 'auth/line'){
+
+        window.location.href = vale
 
     }else {
         window.location.href = '/login/' + vale
