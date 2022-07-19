@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Images;
 use Illuminate\Support\Facades\Auth;
+use App\CoreFunction\Datatable;
 
 class PostController extends Controller
 {
