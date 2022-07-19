@@ -75,10 +75,6 @@ if($request->images_upload){
 }
 
 
-
-
-
-
     return response()->json($inpost->id, 200);
     }
 
@@ -99,7 +95,21 @@ $datapost = Post::where('id',$id)->first();
         $datas = [];
 
         $datas['id'] = $datapost->id;
+        $datas['url'] = $datapost->url;
         $datas['images'] = [];
+
+        $image = Images::where('posts_id',$datapost->id)->where('status','Y')->get();
+
+        foreach ($image as $key => $shareLocationData) {
+
+            $datas['images'][$key] = $shareLocationData;
+
+
+        }
+
+
+dd($datas);
+
 
 
         return view('page.front.post.index');
