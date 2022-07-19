@@ -57,7 +57,7 @@ class PostController extends Controller
 
 
 
-        return response()->json(1, 200);
+        return response()->json($inpost->id, 200);
     }
 
     /**
