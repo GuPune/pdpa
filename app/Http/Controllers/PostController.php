@@ -42,7 +42,8 @@ class PostController extends Controller
 
 
         $id = Auth::user()->id;
-        $url = env('APP_URL'). '/post/'.$id;
+        $getpost = Post::max('id') + 1;
+        $url = env('APP_URL'). '/post/'.$getpost;
         $inpost = Post::create([
             'url' => $url,
             'status' => 'Y'
