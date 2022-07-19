@@ -40,7 +40,7 @@ class PostController extends Controller
     {
         //
 
-\Log::info($request->all());
+\Log::info($request->images_upload);
         // $id = Auth::user()->id;
         // $getpost = Post::max('id') + 1;
         // $url = env('APP_URL'). '/post/'.$getpost;
@@ -58,10 +58,10 @@ class PostController extends Controller
 
 
 
-        foreach ($request->images_upload as $key => $images) {
-\Log::info($images);
+//         foreach ($request->images_upload as $key => $images) {
+// \Log::info($images);
 
-        }
+//         }
 
 
 
