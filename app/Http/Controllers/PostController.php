@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Images;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -36,7 +39,23 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
-        \Log::info($request->all());
+
+
+        $id = Auth::user()->id;
+
+        $inpost = Post::create([
+            'status' => 'Y'
+        ]);
+
+        $saveimages = Images::create([
+            'user_id' => $id,
+            'posts_id' => $inpost->id,
+            'images' => 'Y',
+            'status' => 'Y',
+        ]);
+
+
+
 
         return response()->json(1, 200);
     }
