@@ -72,6 +72,7 @@
             <div data-dz-message class="dz-message" id="uplo">
                 <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span></div></form> <input type="file" multiple="multiple" tabindex="-1" class="dz-hidden-input hidden" style="\n        visibility: hidden;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        height: 0px;\n        width: 0px;\n      ">
+                   </div>
 
      @else
 
@@ -94,7 +95,7 @@
 
 
             {{-- <div class="w-full lg:w-1/3 mx-auto p-5">
-                <form action="#" method="post"  id="productForm" enctype="multipart/form-data" class="dropzone dz-clickable w-full rounded-xl">
+                <form action="#" onsubmit=" return validateForm();" method="post" id="productForm" enctype="multipart/form-data" class="dropzone dz-clickable w-full rounded-xl">
                     <div class="previews"></div>
                     <input type="hidden" name="multifile" id="multifile" value="">
                     <div  id="uploadDropzone">
@@ -118,13 +119,13 @@
                     </div>
 
 
-    <div id="showOK" class="w-full p-4 text-gray-500 text-center">
+    <div id="showOK" class="w-full p-4 text-gray-500 text-center" >
         <div class="alert alert-info text-center shadow-sm mx-5 mb-4">
             <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-3 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>ได้รับภาพแล้ว อัพโหลดภาพเพิ่มเติมได้อีก เสร็จแล้วกดปุ่ม ok
                     </span>
                 </div>
             </div>
-             <button id="goPost" class="
+             <button id="goPost"  type="submit" class="
                     btn btn-primary btn-xs
                     mx-auto
                     sm:btn-sm
@@ -222,10 +223,7 @@
 
 
 
-  <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin = "anonymous">
-</script>
+
 
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
 integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -251,8 +249,54 @@ crossorigin = "anonymous">
 <script>
 
 
-function validateForm(){
-      alert('ok');
+
+        $( "#showOK" ).click(function() {
+            var images_upload = $('#multifile').val();
+
+
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+$.ajax({
+    dataType: 'json',
+    type:'POST',
+    data:{images_upload:images_upload},
+    url: '/post',
+    success: function(datas){
+        console.log(datas);
+
+    }
+})
+
+});
+
+function saveupload(){
+
+
+      var images_upload = $('#multifile').val();
+
+
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                dataType: 'json',
+                type:'POST',
+                data:{images_upload:images_upload},
+                url: '/post',
+                success: function(datas){
+                    console.log(datas);
+
+                }
+            })
 }
 
 

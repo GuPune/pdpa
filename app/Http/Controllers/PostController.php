@@ -24,6 +24,7 @@ class PostController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -35,6 +36,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        \Log::info($request->all());
+
+        return response()->json(1, 200);
     }
 
     /**
