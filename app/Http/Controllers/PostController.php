@@ -40,7 +40,7 @@ class PostController extends Controller
     {
         //
 
-\Log::info($request->images_upload);
+
         // $id = Auth::user()->id;
         // $getpost = Post::max('id') + 1;
         // $url = env('APP_URL'). '/post/'.$getpost;
@@ -62,6 +62,14 @@ class PostController extends Controller
 // \Log::info($images);
 
 //         }
+
+
+if($request->images_upload){
+    $Checkimp = \App\CoreFunction\Datatable::checkimplode($request->images_upload);
+    \Log::info($Checkimp);
+
+}
+
 
 
 
