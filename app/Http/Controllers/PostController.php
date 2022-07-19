@@ -66,7 +66,7 @@ class PostController extends Controller
 
 
 if($request->images_upload){
-    $Checkimp = \App\CoreFunction\Datatable::checkimplode($request->images_upload);
+    $Checkimp = Datatable::checkimplode($request->images_upload);
     \Log::info($Checkimp);
 
 }
