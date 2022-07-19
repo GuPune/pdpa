@@ -79,7 +79,7 @@ if($request->images_upload){
 
 
 
-     //   return response()->json($inpost->id, 200);
+    return response()->json($inpost->id, 200);
     }
 
     /**
