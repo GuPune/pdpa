@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\CoreFunction\Datatable;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Images;
+use App\Helpers\UserSystemInfoHelper;
 use Illuminate\Support\Facades\Auth;
-use App\CoreFunction\Datatable;
+
 
 class PostController extends Controller
 {
@@ -42,32 +44,33 @@ class PostController extends Controller
         //
 
 
-        // $id = Auth::user()->id;
-        // $getpost = Post::max('id') + 1;
-        // $url = env('APP_URL'). '/post/'.$getpost;
-        // $inpost = Post::create([
-        //     'url' => $url,
-        //     'status' => 'Y'
-        // ]);
-
-        // $saveimages = Images::create([
-        //     'user_id' => $id,
-        //     'posts_id' => $inpost->id,
-        //     'images' => 'Y',
-        //     'status' => 'Y',
-        // ]);
+       $id = Auth::user()->id;
+         $getpost = Post::max('id') + 1;
+        $url = env('APP_URL'). '/post/'.$getpost;
+        $inpost = Post::create([
+            'url' => $url,
+            'status' => 'Y'
+        ]);
 
 
 
-//         foreach ($request->images_upload as $key => $images) {
-// \Log::info($images);
 
-//         }
+
 
 
 if($request->images_upload){
-    $Checkimp = Datatable::checkimplode($request->images_upload);
-    \Log::info($Checkimp);
+    $Checkimp = UserSystemInfoHelper::checkimplode($request->images_upload);
+    foreach ($Checkimp as $key => $shareLocationData) {
+             $saveimages = Images::create([
+            'user_id' => $id,
+            'posts_id' => $inpost->id,
+            'images' => $shareLocationData,
+            'status' => 'Y',
+        ]);
+
+
+    }
+
 
 }
 

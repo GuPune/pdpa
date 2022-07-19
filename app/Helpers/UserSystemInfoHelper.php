@@ -217,4 +217,17 @@ class UserSystemInfoHelper
 
     return $result;
 }
+
+
+public static function checkimplode($request)
+{
+    if($request[0] == ','){
+        $request =  substr($request, 1);
+    }
+
+    $checkdata = (explode(",",$request));
+
+    return $checkdata;
+}
+
 }
