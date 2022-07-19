@@ -81,7 +81,7 @@ $datapost = Post::where('id',$id)->first();
         $datas['id'] = $datapost->id;
         $datas['images'] = [];
 
-        dd($datas);
+
         return view('page.front.post.index');
     }
 
