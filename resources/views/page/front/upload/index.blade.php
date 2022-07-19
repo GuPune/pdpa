@@ -268,7 +268,7 @@ $.ajax({
     url: '/post',
     success: function(datas){
         console.log(datas);
-
+        window.location.href = '/post/' + datas
     }
 })
 
