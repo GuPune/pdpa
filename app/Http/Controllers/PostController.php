@@ -58,10 +58,10 @@ class PostController extends Controller
 
 
 
-        // foreach ($data as $key => $databranch) {
+        foreach ($request->images_upload as $key => $images) {
+\Log::info($images);
 
-
-        // }
+        }
 
 
 
