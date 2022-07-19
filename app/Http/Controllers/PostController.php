@@ -40,26 +40,34 @@ class PostController extends Controller
     {
         //
 
+\Log::info($request->all());
+        // $id = Auth::user()->id;
+        // $getpost = Post::max('id') + 1;
+        // $url = env('APP_URL'). '/post/'.$getpost;
+        // $inpost = Post::create([
+        //     'url' => $url,
+        //     'status' => 'Y'
+        // ]);
 
-        $id = Auth::user()->id;
-        $getpost = Post::max('id') + 1;
-        $url = env('APP_URL'). '/post/'.$getpost;
-        $inpost = Post::create([
-            'url' => $url,
-            'status' => 'Y'
-        ]);
-
-        $saveimages = Images::create([
-            'user_id' => $id,
-            'posts_id' => $inpost->id,
-            'images' => 'Y',
-            'status' => 'Y',
-        ]);
-
-
+        // $saveimages = Images::create([
+        //     'user_id' => $id,
+        //     'posts_id' => $inpost->id,
+        //     'images' => 'Y',
+        //     'status' => 'Y',
+        // ]);
 
 
-        return response()->json($inpost->id, 200);
+
+        // foreach ($data as $key => $databranch) {
+
+
+        // }
+
+
+
+
+
+     //   return response()->json($inpost->id, 200);
     }
 
     /**
