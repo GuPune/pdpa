@@ -44,6 +44,7 @@ class PostController extends Controller
         $id = Auth::user()->id;
 
         $inpost = Post::create([
+            'url' => env('APP_URL')+'/post',
             'status' => 'Y'
         ]);
 
@@ -69,8 +70,13 @@ class PostController extends Controller
     public function show($id)
     {
         //
+$datapost = Post::where('id',$id)->first();
+        $datas = [];
 
-dd($id);
+        $datas['id'] = $datapost->id;
+        $datas['images'] = [];
+
+        dd($datas);
         return view('page.front.post.index');
     }
 
