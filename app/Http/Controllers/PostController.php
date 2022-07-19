@@ -70,7 +70,7 @@ class PostController extends Controller
     {
         //
 
-
+dd($id);
         return view('page.front.post.index');
     }
 
