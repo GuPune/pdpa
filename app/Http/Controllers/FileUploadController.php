@@ -45,7 +45,7 @@ class FileUploadController extends Controller
         // $destinationPath = public_path('/images');
         // $image->move($destinationPath, $input['imagename']);
 
-\Log::info($input['imagename']);
+
 
         return response()->json([
             'data' => $input['imagename']
