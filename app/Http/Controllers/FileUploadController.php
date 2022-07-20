@@ -16,51 +16,46 @@ class FileUploadController extends Controller
 
 
 
-        // $filePath = $request->file('file_upload');
-        // $fileName = $filePath->getClientOriginalName();
-        // $path = $request->file('file_upload')->storeAs('thumbnails', $fileName, 'public');
 
 
-        // $image = $request->file('file_upload');
-        // $imageName = time().'.'.$image->extension();
+    //     $image = $request->file('file_upload');
 
-        // $destinationPathThumbnail = public_path('/thumbnail');
+
+    //   $imageName = time().'.'.$image->extension();
 
 
 
+    //     $destinationPath = public_path('/storage/thumbnails');
 
 
 
-        $image = $request->file('file_upload');
+    //     $img = Image::make($image->path());
+    //     $img->resize(250, 250, function ($constraint) {
+    //         $constraint->aspectRatio();
+    //     })->save($destinationPath.'/'.$imageName);
 
-        $x = $request->files->all();
-        \Log::info($x);
-        foreach ($request->file('file_upload') as $key => $file)
+
+
+        if($request->hasfile('file_upload'))
         {
+           foreach($request->file('file_upload') as $key => $file)
+           {
 
+            \Log::info('if');
+
+           }
         }
-      //  $Checkimp = UserSystemInfoHelper::checkimplode($image);
-
-      $imageName = time().'.'.$image->extension();
 
 
 
-        $destinationPath = public_path('/storage/thumbnails');
 
 
 
-        $img = Image::make($image->path());
-        $img->resize(250, 250, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save($destinationPath.'/'.$imageName);
 
-        // $destinationPath = public_path('/images');
-        // $image->move($destinationPath, $input['imagename']);
 
-\Log::info($imageName);
 
         return response()->json([
-            'data' => $imageName
+            'data' => 0
         ], 200);
 
       //  return response()->json(['success'=>$input['imagename']]);
