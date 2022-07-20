@@ -18,17 +18,18 @@ class FileUploadController extends Controller
 
 
 
-        $image = $request->hasFile('file_upload');
+
+
 
         if($request->hasFile('file_upload'))
         {
+            \Log::info('เข้าif');
             //run actions with files
             $files = $request->file('file_upload');
 
             foreach($files as $key => $file)
             {
                 //Action your file thing here!
-                \Log::info($key);
 
             }
         }
@@ -36,23 +37,23 @@ class FileUploadController extends Controller
 
 
 
-      $imageName = time().'.'.$image->extension();
+    //   $imageName = time().'.'.$image->extension();
 
 
-        $destinationPath = public_path('/storage/thumbnails');
+    //     $destinationPath = public_path('/storage/thumbnails');
 
 
-        $img = Image::make($image->path());
-        $img->resize(250, 250, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save($destinationPath.'/'.$imageName);
+    //     $img = Image::make($image->path());
+    //     $img->resize(250, 250, function ($constraint) {
+    //         $constraint->aspectRatio();
+    //     })->save($destinationPath.'/'.$imageName);
 
 
 
 
-        return response()->json([
-            'data' => $imageName
-        ], 200);
+    //     return response()->json([
+    //         'data' => $imageName
+    //     ], 200);
 
       //  return response()->json(['success'=>$input['imagename']]);
 
