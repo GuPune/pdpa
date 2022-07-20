@@ -2,137 +2,117 @@
 
 
 @section('content')
+<style>
 
+
+</style>
 <div>
     <div>
-        <div class="bg-gray-100">
-            <div class="container mx-auto flex flex-col items-center py-12 sm:py-24">
+        <div>
+            <div class="mx-auto text-center w-full md:w-1/2">
 
-  <div class="
-    w-11/12
-    sm:w-2/3
-    lg:flex
-    justify-center
-    items-center
-    flex-col
-    mb-5
-    sm:mb-10
-  "><h1 class="
-      text-2xl
-      sm:text-3xl
-      md:text-4xl
-      lg:text-5xl
-      xl:text-6xl
-      text-center text-gray-800
-      font-black
-      leading-7
-      md:leading-10
-    ">
-    Meditation Photos
-    <br> <span class="text-indigo-700"><span class="text-indigo-700">ศูนย์รวม</span>   ภาพนั่งสมาธิ</span></h1> <div class="flex pt-10 space-x-5 mx-auto justify-center"><img src="https://www.meditationphoto.com/images/medlogo2.png" alt="logo" class="w-24 h-24 inline-block"> <img src="https://www.meditationphoto.com/images/guinesslogo.jpeg" class="w-24 h-24"></div> <span class="mx-auto w-full text-center"><p
-      class="
-        mt-5
-        sm:mt-10
-        text-gray-400
-        font-normal
-        text-center text-lg
-        sm:text-lg
-      "
-    >
-      เรากำลังรวบรวมภาพนั่งสมาธิ เพื่อสร้างสถิติโลก กับ Guiness World
-      Record <br />ในหัวข้อ
-      "ศูนย์รวมภาพนั่งสมาธิที่มีจำนวนภาพมากที่สุดในโลก" <br />เป้าหมาย
-      1,000,000 ภาพนั่งสมาธิ
-    </p></span>
-</div>
-     <div class="flex justify-center items-center">
-        <button class="
-      focus:outline-none
-      focus:ring-2
-      focus:ring-offset-2
-      focus:ring-indigo-700
-      bg-indigo-700
-      transition
-      duration-150
-      ease-in-out
-      hover:bg-indigo-600
-      lg:text-xl lg:font-bold
-      rounded
-      text-white
-      px-4
-      sm:px-10
-      border border-indigo-700
-      py-2
-      sm:py-4
-      text-lg
-    ">
-    Upload ภาพกิจกรรม
-  </button>
-   <a href="/view" class="
-      ml-4
-      focus:outline-none
-      focus:ring-2
-      focus:ring-offset-2
-      focus:ring-indigo-700
-      bg-transparent
-      transition
-      duration-150
-      ease-in-out
-      hover:border-indigo-600
-      lg:text-xl lg:font-bold
-      hover:text-indigo-600
-      rounded
-      border border-indigo-700
-      text-indigo-700
-      px-4
-      sm:px-10
-      py-2
-      sm:py-4
-      text-sm
-    ">
-    รับชมภาพ
-  </a>
-</div>
-   <a href="/viewlove" class="
-    my-4
-    focus:outline-none
-    focus:ring-2
-    focus:ring-offset-2
-    focus:ring-indigo-700
-    bg-transparent
-    transition
-    duration-150
-    ease-in-out
-    hover:border-indigo-600
-    lg:text-xl lg:font-bold
-    hover:text-indigo-600
-    rounded
-    border border-indigo-700
-    text-indigo-700
-    px-4
-    sm:px-10
-    py-2
-    sm:py-4
-    text-sm
-  "><img src="https://www.meditationphoto.com/images/love.png" class="w-7 h-7 inline-block">
-  Editors' Picks'
-</a>
-<div class="w-full text-center p-5 text-blue-600">
-    <a href="/statuser">
-        <img src="https://www.meditationphoto.com/images/medal1.png" class="w-7 h-7 inline-block"> User  ที่มีการ Upload สูงสุด
-</a>
-<br>
-<a href="/stat">
-<img src="https://www.meditationphoto.com/images/photo.png" class="w-7 h-7 inline-block">
-แสดงภาพตามหน่วยงาน</a> <br>
-<a href="/certcard">
-<img src="https://www.meditationphoto.com/images/cer1.jpg" class="w-6 h-6 inline-block">
-ออกใบประกาศเกียรติคุณ</a> <br>
+
+             <div>
+
+
+
+
+
+
+
+
+
+
+           </div>
+
+
+
+
+
 </div>
 </div>
 </div>
-</div>
-</div>
+
+<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin = "anonymous">
+</script>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+crossorigin = "anonymous">
+</script>
+
+<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+crossorigin = "anonymous">
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+<script>
+
+
+         // Get the modal
+    var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function myclose()
+{
+    var modal = document.getElementById("practice_modal");
+
+
+    modal.style.display = "none";
+
+
+
+}
+
+
+function myFunction()
+{
+    var copyText = document.getElementById("textshare");
+
+/* Select the text field */
+copyText.select();
+copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+/* Copy the text inside the text field */
+navigator.clipboard.writeText(copyText.value);
+
+/* Alert the copied text */
+
+
+
+}
+        </script>
 
 @endsection
 
