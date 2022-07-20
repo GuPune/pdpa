@@ -35,17 +35,7 @@ class FileUploadController extends Controller
     //     })->save($destinationPath.'/'.$imageName);
 
 
-
-        if($request->hasfile('file_upload'))
-        {
-           foreach($request->file('file_upload') as $key => $file)
-           {
-
-            \Log::info('if');
-
-           }
-        }
-
+\Log::info($request->hasfile('file_upload'));
 
 
 
