@@ -51,9 +51,9 @@ class FileUploadController extends Controller
 
 
 
-    //     return response()->json([
-    //         'data' => $imageName
-    //     ], 200);
+        return response()->json([
+            'data' => 1
+        ], 200);
 
       //  return response()->json(['success'=>$input['imagename']]);
 
