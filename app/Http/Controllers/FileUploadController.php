@@ -32,10 +32,15 @@ class FileUploadController extends Controller
 
 
         $image = $request->file('file_upload');
+
+        foreach ($request->file('file_upload') as $key => $file)
+        {
+\Log::info($file);
+        }
       //  $Checkimp = UserSystemInfoHelper::checkimplode($image);
 
 
-        \Log::info($image);
+
         $input['imagename'] = time().'.'.$image->extension();
 
         $destinationPath = public_path('/storage/thumbnails');
