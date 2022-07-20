@@ -42,7 +42,7 @@
                     "><a id="confirmDelete" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></a></div>
                          <img src="{{$post->images}}" class="rounded-xl">
-                         {{-- <img src="/images/approve.png" class="absolute bottom-4 right-4 w-10 h-10"> --}}
+                         <img src="https://www.meditationphoto.com/images/approve.png" class="absolute bottom-4 right-4 w-10 h-10">
                         </div>
                          <div class="text-center"><a href="/photo/15392" class="">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
@@ -67,22 +67,30 @@
         </div>
 
 
-          <div class="mx-auto text-center font-bold flex justify-center" >
-            <a href="/stat?org1=%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%84&amp;org2=%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5" class="text-blue-600">ส่งในนาม : ภูมิภาค สระบุรี</a> <a href="/uploaddrop/%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%84/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5" data-tip="upload ในนาม ภูมิภาค สระบุรี" class="ml-2 tooltip tooltip-secondary cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg></a></div> <div data-tip="แก้ไขส่งยอดในนาม" class="cursor-pointer tooltip tooltip-secondary"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div> <!----> <div><div class="w-1/2 md:w-1/3 lg:w-1/4 mx-auto text-center">
+          {{-- <div class="mx-auto text-center font-bold flex justify-center" >
+            <a href="/stat?org1=%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%84&amp;org2=%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5" class="text-blue-600">ส่งในนาม : ภูมิภาค สระบุรี</a>
+             <a href="/uploaddrop/%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%84/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5" data-tip="upload ในนาม ภูมิภาค สระบุรี" class="ml-2 tooltip tooltip-secondary cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg></a>
+            </div>
+              <div data-tip="แก้ไขส่งยอดในนาม" class="cursor-pointer tooltip tooltip-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                </div> <!----> --}}
+             <div>
+                 {{-- <div class="w-1/2 md:w-1/3 lg:w-1/4 mx-auto text-center">
                 <button class="btn btn-secondary rounded-full mx-auto m-5 w-full">
                 <i class="fa fa-share mr-1 inline-block"></i>
                 <span class="hidden lg:block"> Share
                     </span>
                 </button>
-            </div>
+            </div> --}}
 
 
             <div class="my-5"  data-toggle="modal" data-target='#practice_modal'>
-                <div class="w-full text-center google">
-                <div class="btn btn-primary btn-outline mx-auto google">
-                Login
-              </div>
-            </div>
+                <button class="btn btn-secondary rounded-full mx-auto m-5 w-full">
+                    <i class="fa fa-share mr-1 inline-block"></i>
+                    <span class="hidden lg:block"> Share
+                        </span>
+                    </button>
             </div>
              <div  id="practice_modal" class="modal">
                 <div class="modal-box" style="
@@ -93,7 +101,7 @@
             ">
                     <div id="withKey">
                         <p class="text-lg">แชร์ลิงค์หน้านี้</p>
-                    <input id="textshare" value="" class="w-full p-2 bg-base-200 border-base-100 rounded-xl">
+                    <input id="textshare" value="{{$item['url']}}" class="w-full p-2 bg-base-200 border-base-100 rounded-xl">
                     <div class="w-full">
                 <div class="text-right">
                             <a class="w-1/3 btn btn-outline border-0 p-1 left-3">
