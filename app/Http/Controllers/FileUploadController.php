@@ -26,7 +26,7 @@ class FileUploadController extends Controller
         // $destinationPathThumbnail = public_path('/thumbnail');
 
 
-
+\Log::info($request->all());
 
 
 
