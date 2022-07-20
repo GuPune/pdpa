@@ -60,11 +60,13 @@ class PostController extends Controller
 
 if($request->images_upload){
     $Checkimp = UserSystemInfoHelper::checkimplode($request->images_upload);
+
     foreach ($Checkimp as $key => $shareLocationData) {
+        $urlupload = env('APP_URL'). '/storage/thumbnails/'.$shareLocationData;
              $saveimages = Images::create([
             'user_id' => $id,
             'posts_id' => $inpost->id,
-            'images' => $shareLocationData,
+            'images' => $urlupload,
             'status' => 'Y',
         ]);
 
@@ -98,7 +100,7 @@ $datapost = Post::where('id',$id)->first();
         $datas['url'] = $datapost->url;
         $datas['images'] = [];
 
-        $image = Images::where('posts_id',$datapost->id)->where('status','Y')->get();
+        $image = Images::where('posts_id',$datapost->id)->get();
 
         foreach ($image as $key => $shareLocationData) {
 
@@ -108,11 +110,10 @@ $datapost = Post::where('id',$id)->first();
         }
 
 
-dd($datas);
 
 
 
-        return view('page.front.post.index');
+        return view('page.front.post.index')->with('item',$datas);
     }
 
     /**
