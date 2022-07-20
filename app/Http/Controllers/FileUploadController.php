@@ -33,9 +33,11 @@ class FileUploadController extends Controller
 
         $image = $request->file('file_upload');
 
+        $x = $request->files->all();
+        \Log::info($x);
         foreach ($request->file('file_upload') as $key => $file)
         {
-\Log::info($file);
+
         }
       //  $Checkimp = UserSystemInfoHelper::checkimplode($image);
 
