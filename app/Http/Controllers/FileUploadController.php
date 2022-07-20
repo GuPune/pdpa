@@ -20,8 +20,21 @@ class FileUploadController extends Controller
 
         $image = $request->hasFile('file_upload');
 
+        if($request->hasFile('file_upload'))
+        {
+            //run actions with files
+            $files = $request->file('file_upload');
 
-\Log::info($image);
+            foreach($files as $key => $file)
+            {
+                //Action your file thing here!
+                \Log::info($key);
+
+            }
+        }
+
+
+
 
       $imageName = time().'.'.$image->extension();
 
