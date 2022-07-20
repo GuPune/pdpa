@@ -54,9 +54,7 @@
                        อนุมัติ
                         @endif
                    </span>
-                     <a href="/viewdup/385c385e3bde3a50fe5fba1a863a84188e3b0c3f043f067d00fc017d3b7d079d" class="text-blue-600 cursor-pointer mb-4 block">
-                      ตรวจสอบภาพซ้ำ
-                    </a>
+
                 </div>
                 @endforeach
                 </div>
