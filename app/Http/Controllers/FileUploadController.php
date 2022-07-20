@@ -29,6 +29,7 @@ class FileUploadController extends Controller
 
             foreach($files as $key => $file)
             {
+                \Log::info('เข้าloop');
                 //Action your file thing here!
 
             }
