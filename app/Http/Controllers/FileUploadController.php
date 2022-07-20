@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Helpers\UserSystemInfoHelper;
 
 class FileUploadController extends Controller
 {
@@ -26,11 +27,15 @@ class FileUploadController extends Controller
         // $destinationPathThumbnail = public_path('/thumbnail');
 
 
-\Log::info($request->all());
+
 
 
 
         $image = $request->file('file_upload');
+        $Checkimp = UserSystemInfoHelper::checkimplode($image);
+
+
+        \Log::info($Checkimp);
         $input['imagename'] = time().'.'.$image->extension();
 
         $destinationPath = public_path('/storage/thumbnails');
