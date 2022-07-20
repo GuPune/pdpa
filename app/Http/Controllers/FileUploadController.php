@@ -41,9 +41,9 @@ class FileUploadController extends Controller
         }
       //  $Checkimp = UserSystemInfoHelper::checkimplode($image);
 
+      $imageName = time().'.'.$image->extension();
 
 
-        $input['imagename'] = time().'.'.$image->extension();
 
         $destinationPath = public_path('/storage/thumbnails');
 
@@ -52,15 +52,15 @@ class FileUploadController extends Controller
         $img = Image::make($image->path());
         $img->resize(250, 250, function ($constraint) {
             $constraint->aspectRatio();
-        })->save($destinationPath.'/'.$input['imagename']);
+        })->save($destinationPath.'/'.$imageName);
 
         // $destinationPath = public_path('/images');
         // $image->move($destinationPath, $input['imagename']);
 
-
+\Log::info($imageName);
 
         return response()->json([
-            'data' => $input['imagename']
+            'data' => $imageName
         ], 200);
 
       //  return response()->json(['success'=>$input['imagename']]);
