@@ -65,7 +65,7 @@
         <form action="#" onsubmit=" return validateForm();" method="post" id="productForm" enctype="multipart/form-data" class="dropzone dz-clickable w-full rounded-xl">
             {!! csrf_field() !!}
             <div class="previews"></div>
-            <input type="hidden" name="multifile" id="multifile" value="">
+            <input type="text" name="multifile" id="multifile" value="">
             <div  id="uploadDropzone">
 
 
