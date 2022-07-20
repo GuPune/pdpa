@@ -18,8 +18,10 @@ class FileUploadController extends Controller
 
 
 
-        $image = $request->file('file_upload');
+        $image = $request->hasFile('file_upload');
 
+
+\Log::info($image);
 
       $imageName = time().'.'.$image->extension();
 
