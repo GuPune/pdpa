@@ -29,7 +29,15 @@
                     </div> <!---->
                     <img src="{{$post->images}}" class="rounded-xl" style="
                     width: 100%;">
-                    <img src="https://www.meditationphoto.com/images/approve.png" class="absolute bottom-4 right-4 w-10 h-10" >
+
+@if ($post->status == 'Y')
+<img src="https://cmsecom2.idtest.work/storage/thumbnails/pending.png" class="absolute bottom-4 right-4 w-10 h-10" >
+@elseif ($post->status == 'N')
+<img src="https://cmsecom2.idtest.work/storage/thumbnails/stop.png" class="absolute bottom-4 right-4 w-10 h-10" >
+@else
+<img src="https://cmsecom2.idtest.work/storage/thumbnails/approve.png" class="absolute bottom-4 right-4 w-10 h-10" >
+@endif
+
                     </div>
                     <div class="text-center">
                         <a href="/photo/971744" class="">
@@ -91,7 +99,7 @@
                        <p class="text-lg">แชร์ลิงค์หน้านี้</p>
                    <input id="textshare" value="{{$item['url']}}" class="w-full p-2 bg-base-200 border-base-100 rounded-xl">
                    <div class="w-full">
-               <div class="text-right">
+               <div class="text-right" onclick="myFunction()">
                            <a class="w-1/3 btn btn-outline border-0 p-1 left-3">
                                <i class="far fa-clone mr-2"></i> Copy
                  </a>
@@ -189,6 +197,24 @@ function myclose()
 
 
     modal.style.display = "none";
+
+
+
+}
+
+
+function myFunction()
+{
+    var copyText = document.getElementById("textshare");
+
+/* Select the text field */
+copyText.select();
+copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+/* Copy the text inside the text field */
+navigator.clipboard.writeText(copyText.value);
+
+/* Alert the copied text */
 
 
 
