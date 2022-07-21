@@ -41,40 +41,55 @@
                         </div>
 
 </div>
- <div class="w-full mx-auto absolute bottom-0 left-0" id="profileTime">
+
+
+
+<div class="w-full mx-auto absolute bottom-0 left-0" id="profileTop">
     <div class="
-            h-full
-            m-0
-            p-2
-            bg-gray-900
-            opacity-70
-            flex
-            space-x-1
-            items-start
-            justify-start
-            rounded-lg
-            w-full
-          ">
-          <div class="flex-none">
-            <div class="text-white text-left">
-                <a href="/post/131454" class="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 inline-block"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg></a>
-                <a href="/photo/998782" class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 inline-block">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></a>
-                         <a href="/stat?org1=%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81,%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B9%86&amp;org2=%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%9C%E0%B8%A2%E0%B9%81%E0%B8%9C%E0%B9%88" class="hover:font-bold hover:text-blue-600"><span class="mr-1">สำนักเผยแผ่ -</span></a>
-                <a href="/post/131454" class="hover:font-bold hover:text-blue-600">
-                    {{-- {{ $post->created_at->day }} วัน
-                    {{ $post->created_at->hour }} ชั่วโมง
-                    {{ $post->created_at->minute }} นาที --}}
-
-                    {{ $diff = Carbon\Carbon::parse($post->created_at)->diffForHumans(Carbon\Carbon::now()) }}
-
-
-                </a>
-            </div>
+    h-full
+    m-0
+    p-2
+    bg-gray-900
+    opacity-70
+    flex
+    space-x-1
+    items-start
+    justify-start
+    rounded-lg
+    w-full
+  ">
+  <div class="flex-none opacity-100"><a href="/user2586" class="">
+    <img alt="user" src="{{$post->profileuser->avatar}}" class="
+          mx-auto
+          w-10
+          h-10
+          lg:w-10 lg:h-10
+          bg-gradient-to-tr
+          from-yellow-600
+          to-pink-600
+          p-1
+          object-cover object-center
+          rounded-full
+        ">
+    </a>
+</div>
+ <div class="flex-none text-left">
+    <div class="
+        text-lg text-white
+        font-medium
+        mb-0
+        text-left
+        hover:font-bold hover:text-blue-600
+      ">
+      <a href="#" class="">{{$post->profileuser->name}}</a></div>
+      <div class="text-white inline-block -mt-3 text-left">
+        <a href="/photo/990458" class=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></a> <a href="/stat?org1=%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81,%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B9%86&amp;org2=%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%B9%E0%B8%9B%E0%B8%81%E0%B8%B2%E0%B8%A3" class="hover:font-bold hover:text-blue-600">
+          </a>
+            <a href="/post/130998" class="hover:font-bold hover:text-blue-600">
+                {{ $diff = Carbon\Carbon::parse($post->created_at)->diffForHumans(Carbon\Carbon::now()) }}</a>
         </div>
     </div>
+</div>
 </div>
 </div>
 <!--reta-->

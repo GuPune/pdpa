@@ -20,4 +20,9 @@ class Images extends Model
         'status',
 
     ];
+
+    public function profileuser()
+    {
+        return $this->hasOne(User::class,'id','user_id');
+    }
 }

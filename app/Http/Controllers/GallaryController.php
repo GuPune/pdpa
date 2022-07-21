@@ -15,7 +15,11 @@ class GallaryController extends Controller
     public function index()
     {
         //
-$images = Images::where('status','Y')->orderBy('created_at', 'DESC')->paginate(25);
+// $images = Images::where('status','Y')->orderBy('created_at', 'DESC')->paginate(25);
+
+$images = Images::with('profileuser')->where('status','Y')->paginate(10);
+
+
 
         return view('page.front.gallery.index')->with('item',$images);
     }
