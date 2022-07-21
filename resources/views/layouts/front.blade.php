@@ -3920,9 +3920,7 @@ html{
   display:grid;
 }
 
-.hidden{
-  display:none;
-}
+
 
 .h-1{
   height:0.25rem;
@@ -5587,7 +5585,12 @@ html{
 }
 
 @media (min-width: 640px){
-  .sm\:btn-sm{
+
+    .sm\:hidden{
+        display: none;
+
+    }
+    .sm\:btn-sm{
     height:2rem;
     padding-left:.75rem;
     padding-right:.75rem;

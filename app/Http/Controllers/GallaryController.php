@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Images;
 use Illuminate\Http\Request;
 
 class GallaryController extends Controller
@@ -14,8 +15,9 @@ class GallaryController extends Controller
     public function index()
     {
         //
+$images = Images::where('status','Y')->orderBy('created_at', 'DESC')->paginate(25);
 
-        return view('page.front.gallery.index');
+        return view('page.front.gallery.index')->with('item',$images);
     }
 
     /**
