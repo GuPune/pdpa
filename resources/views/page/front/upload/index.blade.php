@@ -74,12 +74,16 @@
 
             <div data-dz-message class="dz-message" id="uplo">
                 <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span></div></form> <input type="file" multiple="multiple" tabindex="-1" class="dz-hidden-input hidden-upload" style="\n        visibility: hidden;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        height: 0px;\n        width: 0px;\n      ">
-                   </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span>
+            </div>
+        </form>
+        <input type="file" multiple="multiple" tabindex="-1" class="dz-hidden-input hidden-upload" style="\n        visibility: hidden;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        height: 0px;\n        width: 0px;\n      ">
+
+    </div>
 
      @else
 
-     <div class="w-full lg:w-1/3 mx-auto p-5">
+     {{-- <div class="w-full lg:w-1/3 mx-auto p-5">
         <div class="dropzone dz-clickable w-full rounded-xl" id="uu">
             <div class="previews"></div>
             <div  id="uploadDropzone">
@@ -88,12 +92,12 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span>
             </div>
         </div>
-            </div>
+            </div> --}}
 
 
 
 
-            {{-- <div class="w-full lg:w-1/3 mx-auto p-5">
+            <div class="w-full lg:w-1/3 mx-auto p-5">
                 <form action="#" onsubmit=" return validateForm();" method="post" id="productForm" enctype="multipart/form-data" class="dropzone dz-clickable w-full rounded-xl">
                     <div class="previews"></div>
                     <input type="hidden" name="multifile" id="multifile" value="">
@@ -104,7 +108,7 @@
                         <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-6 w-6 mr-2 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>Upload ภาพกิจกรรม<br>(แตะเลือกภาพ หรือ ลากวาง)</span></div></form>
                         <input type="file" multiple="multiple" tabindex="-1" class="dz-hidden-input hidden-upload" style="\n        visibility: hidden;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        height: 0px;\n        width: 0px;\n      ">
-                    </div> --}}
+                    </div>
 
 
 
@@ -347,8 +351,34 @@ if(checl == '1'){
 });
 
 $('#uu').on('click', function(e){
+
+
+var s = document.getElementById('policy').checked;
+alert(s);
+
+
     swal("กรุณาเข้าสู่ระบบ!", "กรุณาเข้าสู่ระบบ!", "error");
 });
+
+$('#uplo').on('click', function(e){
+
+
+var poci = document.getElementById('policy').checked;
+
+
+if(poci == false){
+
+
+    return false;
+}
+
+return true;
+
+
+
+});
+
+
 
 function calc()
 {
