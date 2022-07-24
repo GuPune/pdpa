@@ -115,10 +115,11 @@
 
      @endauth
 
-        {{-- <div class="mx-auto text-center mt-2 mb-2">
+        <div class="mx-auto text-center mt-2 mb-2">
             <label class="cursor-pointer">
-                <input type="checkbox" id="allowOnlyWeb" checked="checked" class="checkbox checkbox-secondary rounded-full self-end"> <span class="ml-3 text-left text-lg text-blue-600">ฉันไม่ต้องการแสดงภาพในหน้า Gallery</span></label>
-            </div> --}}
+                <input type="checkbox" id="allowOnlyWeb"  class="checkbox checkbox-secondary rounded-full self-end">
+                <span class="ml-3 text-left text-lg text-blue-600">ฉันไม่ต้องการแสดงภาพในหน้า Gallery</span></label>
+            </div>
 
                     </div>
 
@@ -257,6 +258,10 @@ crossorigin = "anonymous">
         $( "#showOK" ).click(function() {
             var images_upload = $('#multifile').val();
 
+            var allow = document.getElementById('allowOnlyWeb').checked;
+
+
+
 
 
 $.ajaxSetup({
@@ -268,7 +273,7 @@ $.ajaxSetup({
 $.ajax({
     dataType: 'json',
     type:'POST',
-    data:{images_upload:images_upload},
+    data:{images_upload:images_upload,allow:allow},
     url: '/post',
     success: function(datas){
         console.log(datas);
@@ -374,6 +379,14 @@ if(poci == false){
 
 return true;
 
+
+
+});
+
+$('#allowOnlyWeb').on('click', function(e){
+
+
+var allow = document.getElementById('allowOnlyWeb').checked;
 
 
 });
