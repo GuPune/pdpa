@@ -4,10 +4,10 @@
 @section('description','เว็ปไซต์ศูนย์รวมภาพกิจกรรม ที่ใหญ่ที่สุดในโลก เพื่อสร้างสถิติ Guiness World Record')
 @section('keywords','นั่งสมาธิ,ภาพนั่งสมาธิ, ภาพวิธีการนั่งสมาธิ, ภาพการทำภาวนา, meditation, photo')
 @foreach ($item['images'] as $key => $post)
-{{++$key}}
+
 @section('image',{{$post->images}})
 @section('imageurl',{{$post->images}})
-@break
+
 @endforeach
 @section('content')
 
