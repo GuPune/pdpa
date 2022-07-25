@@ -10,10 +10,6 @@
         <meta name="keywords" content="@yield('keywords')">
         <meta property='article:published_time' content='testpost' />
         <meta property='article:section' content='event' />
-
-        <meta property="og:description" content="testpost" />
-        <meta property="og:title" content="testpost" />
-        <meta property="og:url" content="testpost" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="en-us" />
         <meta property="og:locale:alternate" content="en-us" />
