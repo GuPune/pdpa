@@ -21,24 +21,23 @@ use App\Http\Controllers\Auth\RegisterController;
 Auth::routes();
 
 
- Route::resource('/', 'App\Http\Controllers\FrontHomeController');
- Route::resource('/gallery', 'App\Http\Controllers\GallaryController');
- Route::resource('/contact', 'App\Http\Controllers\ContactController');
- Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
+//  Route::resource('/', 'App\Http\Controllers\FrontHomeController');
+//  Route::resource('/gallery', 'App\Http\Controllers\GallaryController');
+//  Route::resource('/contact', 'App\Http\Controllers\ContactController');
+//  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
  Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
- Route::post('/login', [LoginController::class,'adminLogin']);
+//  Route::post('/login', [LoginController::class,'adminLogin']);
 
- Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
+//  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
 
 
- Route::any('file-upload', [\App\Http\Controllers\FileUploadController::class, 'dropzoneFileUpload' ])->name('dropzoneFileUpload');
+//  Route::any('file-upload', [\App\Http\Controllers\FileUploadController::class, 'dropzoneFileUpload' ])->name('dropzoneFileUpload');
 
  Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
-
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/branch', 'App\Http\Controllers\BranchController');
     Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
@@ -56,26 +55,26 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
 });
 
 
-Route::get('/consent/{id}', [App\Http\Controllers\ConsentController::class, 'show'])->name('consent.data');
-Route::post('saveconsent', [App\Http\Controllers\ConsentController::class, 'saveconsent'])->name('saveconsent.data');
-Route::resource('/thanks', 'App\Http\Controllers\ThanskController');
+// Route::get('/consent/{id}', [App\Http\Controllers\ConsentController::class, 'show'])->name('consent.data');
+// Route::post('saveconsent', [App\Http\Controllers\ConsentController::class, 'saveconsent'])->name('saveconsent.data');
+// Route::resource('/thanks', 'App\Http\Controllers\ThanskController');
 
 
-Route::get('/login/{social}', [LoginController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket||line')->name('s');
-Route::get('/login/{social}/callback',[LoginController::class, 'handleProviderCallback'])->where('social','twitter|facebook|linkedin|google|github|bitbucket|line');
+// Route::get('/login/{social}', [LoginController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket||line')->name('s');
+// Route::get('/login/{social}/callback',[LoginController::class, 'handleProviderCallback'])->where('social','twitter|facebook|linkedin|google|github|bitbucket|line');
 
 
 
-Route::get('/auth/line', [AuthController::class, 'redirectToProvider'])->name('line.auth');
+// Route::get('/auth/line', [AuthController::class, 'redirectToProvider'])->name('line.auth');
 
 
-Route::resource('/post', 'App\Http\Controllers\PostController');
+// Route::resource('/post', 'App\Http\Controllers\PostController');
 
 
-Route::group(['middleware' => ['guest']], function() {
+// Route::group(['middleware' => ['guest']], function() {
 
-    Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
-});
+//     Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
+// });
 
 
 
