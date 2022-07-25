@@ -1,8 +1,8 @@
 @extends('layouts.front')
 
-@section('title','testtitle2')
-@section('description','testtitledescription2')
-@section('keywords','testtitlekeywords2')
+@section('title','ศูนย์รวมภาพกิจกรรม')
+@section('description','เว็ปไซต์ศูนย์รวมภาพกิจกรรม ที่ใหญ่ที่สุดในโลก เพื่อสร้างสถิติ Guiness World Record')
+@section('keywords','นั่งสมาธิ,ภาพนั่งสมาธิ, ภาพวิธีการนั่งสมาธิ, ภาพการทำภาวนา, meditation, photo')
 @section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 @section('imageurl','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 @section('content')
