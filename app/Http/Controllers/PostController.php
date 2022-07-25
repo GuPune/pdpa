@@ -43,7 +43,7 @@ class PostController extends Controller
     {
         //
 
-\Log::info($request->all());
+\Log::info($request->allow);
        $id = Auth::user()->id;
          $getpost = Post::max('id') + 1;
         $url = env('APP_URL'). '/post/'.$getpost;
@@ -53,7 +53,6 @@ class PostController extends Controller
         }
         else {
             \Log::info('false');
-
         }
         // $inpost = Post::create([
         //     'url' => $url,
