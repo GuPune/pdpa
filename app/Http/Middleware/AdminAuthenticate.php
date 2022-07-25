@@ -26,12 +26,12 @@ class AdminAuthenticate
         if($admin == null){
           //  dd($admin);
 
-          return $next($request);
-     //   return redirect('/');
+          //  return redirect()->guest('/cms/login');
+          return view('auth.login', ['url' => 'cms']);
+
+
 
         }
-
-
 
         return $next($request);
 
