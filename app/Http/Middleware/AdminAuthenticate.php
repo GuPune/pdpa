@@ -22,13 +22,13 @@ class AdminAuthenticate
         $admin = Auth::guard('admin')->user();
 
 
-dd($admin);
+
         if($admin == null){
           //  dd($admin);
 
       //return redirect()->guest('/cms/login');
        //     return redirect('/cms/login');
-      // return view('auth/login');
+             return view('auth/login');
 
 
 
