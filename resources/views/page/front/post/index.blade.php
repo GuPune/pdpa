@@ -14,7 +14,7 @@
 @section('image',$post->images)
 @break
 @endforeach
-@section('imageurl',$item['url'])
+@section('imageurl',{{$item['url']}})
 @section('content')
 
 
