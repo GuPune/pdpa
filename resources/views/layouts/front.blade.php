@@ -3,11 +3,24 @@
 <html lang="th">
   <head >
     <title>ศูนย์รวมภาพนั่งสมาธิ</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="John Doe">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='description' itemprop='description' content='test' />
+
+    <meta name='keywords' content='test' />
+    <meta property='article:published_time' content='test' />
+    <meta property='article:section' content='event' />
+
+    <meta property="og:description" content="test" />
+    <meta property="og:title" content="test" />
+    <meta property="og:url" content="test" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en-us" />
+    <meta property="og:locale:alternate" content="en-us" />
+    <meta property="og:site_name" content="test" />
+    <meta property="og:image" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
+    <meta property="og:image:url" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
+    <meta property="og:image:size" content="300" />
+
+
 
 
 
