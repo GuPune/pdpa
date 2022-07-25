@@ -3,8 +3,10 @@
 @section('title','ศูนย์รวมภาพกิจกรรม')
 @section('description','เว็ปไซต์ศูนย์รวมภาพกิจกรรม ที่ใหญ่ที่สุดในโลก เพื่อสร้างสถิติ Guiness World Record')
 @section('keywords','นั่งสมาธิ,ภาพนั่งสมาธิ, ภาพวิธีการนั่งสมาธิ, ภาพการทำภาวนา, meditation, photo')
+
 @section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 @section('imageurl','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
+
 @section('content')
 
 
@@ -23,7 +25,8 @@
                     2xl:grid-cols-3
                     gap-5
                   ">
-                  @foreach ($item['images'] as $post)
+                  @foreach ($item['images'] $key => $post)
+                  {{$key}}
                   <div class="relative row-span-2 cursor-pointer  modal-open text-center">
                       <div class="relative">
                           <div class="absolute left-1 top-1 text-center flex">
