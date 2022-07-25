@@ -27,11 +27,11 @@ class AdminAuthenticate
           //  dd($admin);
 
           //  return redirect()->guest('/cms/login');
-       //     return redirect('/cms/login');
-
-            return redirect()->to('/cms/login');
+        return redirect('/');
 
         }
+
+
 
         return $next($request);
 
