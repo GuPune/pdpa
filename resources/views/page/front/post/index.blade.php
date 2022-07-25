@@ -6,8 +6,8 @@
 
  <meta property="og:title" content="ภาพกิจกรรม" />
 <meta property="og:type" content="video.movie" />
-<meta property="og:url" content="https://www.meditationphoto.com/photo1088259" />
-<meta property="og:image" content="https://www.meditationphoto.com/photo1088259" />
+<meta property="og:url" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
+<meta property="og:image" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
 
 
 
