@@ -49,15 +49,20 @@ class PostController extends Controller
         $url = env('APP_URL'). '/post/'.$getpost;
 
         if($request->allow == 'true'){
-            \Log::info('true');
+
+            $inpost = Post::create([
+            'url' => $url,
+            'status' => 'Y'
+        ]);
         }
         else {
-            \Log::info('false');
+
+                    $inpost = Post::create([
+            'url' => $url,
+            'status' => 'F'
+        ]);
         }
-        // $inpost = Post::create([
-        //     'url' => $url,
-        //     'status' => 'Y'
-        // ]);
+
 
 
 
