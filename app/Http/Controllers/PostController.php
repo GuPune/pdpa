@@ -57,7 +57,7 @@ class PostController extends Controller
         }
         else {
 
-                    $inpost = Post::create([
+        $inpost = Post::create([
             'url' => $url,
             'status' => 'F'
         ]);
