@@ -17,41 +17,16 @@ class AdminAuthenticate
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-//     public function handle(Request $request, Closure $next)
-//     {
-//         $admin = Auth::guard('admin')->user();
-
-
-
-//         if($admin == null){
-//           //  dd($admin);
-
-//  //  return redirect()->guest('/cms/login');
-//        //     return redirect('/cms/login');
-//       // return view('auth/login');
-
-
-
-
-//         }else {
-//             return $next($request);
-//         }
-
-
-
-//     }
-
-    public function handle($request, Closure $next, $guard = null)
+    public function handle(Request $request, Closure $next)
     {
+        $admin = Auth::guard('admin')->user();
 
-        dd($guard);
-        if ($guard == "admin" && Auth::guard($guard)->check()) {
-            return redirect('/home');
+        if($admin == null){
+
+            return redirect()->guest('/cms/login');
         }
 
+        return $next($request);
 
-
-
-        return redirect()->guest(route('login'));
     }
 }
