@@ -3,24 +3,24 @@
 @section('title','ศูนย์รวมภาพกิจกรรม')
 @section('description','เว็ปไซต์ศูนย์รวมภาพกิจกรรม ที่ใหญ่ที่สุดในโลก เพื่อสร้างสถิติ Guiness World Record')
 @section('keywords','นั่งสมาธิ,ภาพนั่งสมาธิ, ภาพวิธีการนั่งสมาธิ, ภาพการทำภาวนา, meditation, photo')
-@section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
-@section('imageurl','https://www.meditationphoto.com/photo/8757')
+
+@foreach ($item['images'] as $key => $post)
+@section('image',$post->images)
+@endforeach
+@section('imageurl',$item['url'])
+{{-- @section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
+@section('imageurl','https://www.meditationphoto.com/photo/8757') --}}
 @section('content')
 
 
-{{-- @foreach ($item['images'] as $key => $post)
-
-@section('image',$post->images)
-@section('imageurl',$post->images)
-
-@endforeach --}}
 
 
 <div>
     <div>
         <div>
             <div class="mx-auto text-center w-full md:w-1/2">
-                <div id="samplePhoto" class="my-5"><div class="
+                <div id="samplePhoto" class="my-5">
+                    <div class="
                     grid grid-cols-1 grid-flow-row-dense
                     md:grid-cols-2
                     lg:grid-cols-3
