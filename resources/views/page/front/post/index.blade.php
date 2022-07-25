@@ -7,7 +7,7 @@
 @foreach ($item['images'] as $key => $post)
 @section('image',$post->images)
 @endforeach
-@section('imageurl',$item['url'])
+@section('imageurl','https://www.meditationphoto.com')
 {{-- @section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 @section('imageurl','https://www.meditationphoto.com/photo/8757') --}}
 @section('content')
