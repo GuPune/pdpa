@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="th">
   <head >
-    <title>ศูนย์รวมภาพนั่งสมาธิ</title>
+    <title>ศูนย์รวมภาพกิจกรรม</title>
     <meta name='description' itemprop='description' content='test' />
 
     <meta name='keywords' content='test' />
