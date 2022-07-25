@@ -30,7 +30,7 @@ class AdminAuthenticate
        //     return redirect('/cms/login');
       // return view('auth/login');
 
-
+      return $next($request);
 
 
         }else {
