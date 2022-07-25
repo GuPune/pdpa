@@ -23,7 +23,7 @@ class AdminAuthenticate
 
         if($admin == null){
 
-            return route('/login');
+            return redirect()->guest(route('auth.login'));
         }
 
 
