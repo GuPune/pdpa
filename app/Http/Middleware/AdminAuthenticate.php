@@ -28,7 +28,9 @@ class AdminAuthenticate
 
           //  return redirect()->guest('/cms/login');
        //     return redirect('/cms/login');
-            return view('home');
+        //    return view('home');
+
+        dd('if');
 
 
         }
