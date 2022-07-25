@@ -27,7 +27,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
- Route::get('/backoffice/login', [LoginController::class, 'showAdminLoginForm']);
+ Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
  Route::post('/login', [LoginController::class,'adminLogin']);
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
@@ -50,6 +50,14 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
     Route::get('file-export', [App\Http\Controllers\ExcelController::class, 'fileExport'])->name('file-export');
 
     Route::get('/logout', [App\Http\Controllers\LogoutController::class, 'perform'])->name('logout.perform');
+
+
+
+
+});
+
+Route::group(['prefix' => 'cms'],function(){
+
 
 
 });
