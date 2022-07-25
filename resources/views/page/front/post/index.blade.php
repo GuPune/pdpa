@@ -4,51 +4,17 @@
 @section('content')
 
 
-<title> แสดงภาพนั่งสมาธิ - MeditationPhoto.com</title>
-<meta data-n-head="ssr" charset="utf-8">
-<meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-<meta data-n-head="ssr" name="format-detection" content="telephone=no">
-<meta data-n-head="ssr" data-hid="charset" charset="utf-8">
-<meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes">
-<meta data-n-head="ssr" data-hid="apple-mobile-web-app-capable" name="apple-mobile-web-app-capable" content="yes">
-<meta data-n-head="ssr" data-hid="apple-mobile-web-app-status-bar-style" name="apple-mobile-web-app-status-bar-style" content="default">
-<meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="Meditation Photo ศูนย์รวมภาพนั่งสมาธิ">
-<meta data-n-head="ssr" data-hid="author" name="author" content="TungDMC">
-<meta data-n-head="ssr" data-hid="theme-color" name="theme-color" content="#EC4899">
-<meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Meditation Photo ศูนย์รวมภาพนั่งสมาธิ">
-<meta data-n-head="ssr" data-hid="description" name="description" content="">
-<meta data-n-head="ssr" data-hid="keywords" name="keywords" content="">
-<meta data-n-head="ssr" data-hid="og:url" name="og:url" content="https://www.meditationphoto.com/photo1088259">
-<meta data-n-head="ssr" data-hid="og:type" name="og:type" property="og:type" content="article">
-<meta data-n-head="ssr" data-hid="og:title" name="og:title" property="og:title" content="">
-<meta data-n-head="ssr" data-hid="og:description" name="og:description" property="og:description" content="">
-<meta data-n-head="ssr" data-hid="og:image" property="og:image" name="og:image" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg">
-<link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
-<link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="/_nuxt/icons/icon_64x64.ed6a25.png">
-<link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.ed6a25.png" sizes="512x512">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_iphonese_640x1136.ed6a25.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-iphonese">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_iphone6_50x1334.ed6a25.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-iphone6">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_iphoneplus_1080x1920.ed6a25.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-iphoneplus">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_iphonex_1125x2436.ed6a25.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-iphonex">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_iphonexr_828x1792.ed6a25.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-iphonexr">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_iphonexsmax_1242x2688.ed6a25.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-iphonexsmax">
-<link data-n-head="ssr" href="/_nuxt/icons/splash_ipad_1536x2048.ed6a25.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-ipad">
-<link data-n-head="ssr" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-ipadpro1">
-<link data-n-head="ssr" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-ipadpro2">
-<link data-n-head="ssr" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" data-hid="apple-touch-startup-image-ipadpro3">
-<link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.2bf5619c.json" data-hid="manifest">
-<script data-n-head="ssr" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-<link rel="preload" href="/_nuxt/2e843b6.js" as="script">
-<link rel="preload" href="/_nuxt/18f8a62.js" as="script">
-<link rel="preload" href="/_nuxt/6cd06a3.js" as="script">
-<link rel="preload" href="/_nuxt/9a8e6f6.js" as="script">
-<style data-vue-ssr-id="7ff0867c:0 162bc1c5:0 54b08540:0 53f61d5f:0 1239d49d:0 7d9f8c38:0">/*purgecss start ignore*/
+ <meta property="og:title" content="ภาพกิจกรรม" />
+<meta property="og:type" content="video.movie" />
+<meta property="og:url" content="https://www.meditationphoto.com/photo1088259" />
+<meta property="og:image" content="https://www.meditationphoto.com/photo1088259" />
 
 
 
 
 
-</style>
+
+
 <div>
     <div>
         <div>
