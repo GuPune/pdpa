@@ -27,8 +27,8 @@ class AdminAuthenticate
           //  dd($admin);
 
           //  return redirect()->guest('/cms/login');
-          return view('auth.login', ['url' => 'cms']);
-
+       //     return redirect('/cms/login');
+            return view('home');
 
 
         }
