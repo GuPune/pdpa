@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginFormController extends Controller
 {
@@ -12,6 +13,17 @@ class LoginFormController extends Controller
     public function showAdminLoginForm()
     {
 
-  return view('auth.login');
+
+        $admin = Auth::guard('admin')->user();
+
+
+if($admin){
+
+    return view('cms/home');
+}else {
+    return view('auth.login');
+
+}
+
     }
 }
