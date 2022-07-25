@@ -85,3 +85,4 @@ Route::group(['middleware' => ['guest']], function() {
 
 
 
+Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
