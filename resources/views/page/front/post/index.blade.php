@@ -25,7 +25,7 @@
                     2xl:grid-cols-3
                     gap-5
                   ">
-                  @foreach ($item['images'] $key => $post)
+                  @foreach ($item['images'] as $key => $post)
                   {{$key}}
                   <div class="relative row-span-2 cursor-pointer  modal-open text-center">
                       <div class="relative">
