@@ -29,7 +29,7 @@ class LoginController extends Controller
      * @var string
      */
   //  protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/home';
     /**
      * Create a new controller instance.
      *
@@ -49,8 +49,8 @@ class LoginController extends Controller
 
     public function showAdminLoginForm()
     {
-
-          return view('auth.login', ['url' => 'cms']);
+dd('login');
+          return view('auth.login', ['url' => 'bac']);
     }
 
 }
