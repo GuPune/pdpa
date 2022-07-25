@@ -49,8 +49,8 @@ class LoginController extends Controller
 
     public function showAdminLoginForm()
     {
-dd('login');
-          return view('auth.login', ['url' => 'bac']);
+
+          return view('auth.login', ['url' => 'back']);
     }
 
 }

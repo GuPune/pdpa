@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LoginFormController;
 
 
 /*
@@ -28,7 +29,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
- Route::get('/back/login', [LoginController::class, 'showAdminLoginForm']);
+
  Route::post('/login', [LoginController::class,'adminLogin']);
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
@@ -84,4 +85,4 @@ Route::group(['middleware' => ['guest']], function() {
 
 
 
-
+Route::get('/cms/login', [LoginFormController::class, 'showAdminLoginForm']);
