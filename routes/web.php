@@ -27,7 +27,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
- Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
+
  Route::post('/login', [LoginController::class,'adminLogin']);
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
@@ -59,7 +59,7 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
 Route::group(['prefix' => 'cms'],function(){
 
 
-
+    Route::get('/login', [LoginController::class, 'showAdminLoginForm']);
 });
 
 
