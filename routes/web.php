@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +28,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
-
+ Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
  Route::post('/login', [LoginController::class,'adminLogin']);
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
@@ -48,18 +49,14 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
     Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'delupdate'])->name('branchdel.data');
     Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
     Route::get('file-export', [App\Http\Controllers\ExcelController::class, 'fileExport'])->name('file-export');
-
     Route::get('/logout', [App\Http\Controllers\LogoutController::class, 'perform'])->name('logout.perform');
-
-
-
 
 });
 
 Route::group(['prefix' => 'cms'],function(){
 
 
-    Route::get('/login', [LoginController::class, 'showAdminLoginForm']);
+
 });
 
 
