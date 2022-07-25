@@ -19,7 +19,7 @@ class LoginFormController extends Controller
 
 if($admin){
 
-    return view('cms/home');
+    return view('home');
 }else {
     return view('auth.login');
 
