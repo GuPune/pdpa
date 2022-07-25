@@ -48,7 +48,7 @@ class PostController extends Controller
          $getpost = Post::max('id') + 1;
         $url = env('APP_URL'). '/post/'.$getpost;
 
-        if($request->allow == true){
+        if($request->allow == 'true'){
             \Log::info('true');
         }
         else {
