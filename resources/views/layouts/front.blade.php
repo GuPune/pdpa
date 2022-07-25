@@ -2,7 +2,28 @@
 <!doctype html>
 <html lang="th">
 
+    <head >
 
+
+        <title>@yield('title')</title>
+        <meta name="description" content="@yield('description')">
+        <meta name="keywords" content="@yield('keywords')">
+        <meta property='article:published_time' content='testpost' />
+        <meta property='article:section' content='event' />
+
+        <meta property="og:description" content="testpost" />
+        <meta property="og:title" content="testpost" />
+        <meta property="og:url" content="testpost" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en-us" />
+        <meta property="og:locale:alternate" content="en-us" />
+        <meta property="og:site_name" content="test" />
+        <meta property="og:image"  content="@yield('image')"/>
+        <meta property="og:image:url" content="@yield('imageurl')" />
+        <meta property="og:image:size" content="300" />
+
+
+    </head>
 
     <style>/*purgecss start ignore*/
 
