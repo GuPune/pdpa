@@ -17,8 +17,6 @@
         <meta property="og:image"  content="@yield('image')"/>
         <meta property="og:image:url" content="@yield('imageurl')" />
         <meta property="og:image:size" content="300" />
-
-
     </head>
 
 
