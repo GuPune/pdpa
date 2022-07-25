@@ -26,7 +26,7 @@
                     gap-5
                   ">
                   @foreach ($item['images'] as $key => $post)
-                  {{$key}}
+                  {{++$key}}
                   <div class="relative row-span-2 cursor-pointer  modal-open text-center">
                       <div class="relative">
                           <div class="absolute left-1 top-1 text-center flex">
