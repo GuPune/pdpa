@@ -12,7 +12,6 @@ class LoginFormController extends Controller
     public function showAdminLoginForm()
     {
 
-        dd('ok');
-     //   return view('auth.login');
+  return view('auth.login');
     }
 }
