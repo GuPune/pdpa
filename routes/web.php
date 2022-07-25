@@ -29,7 +29,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
- Route::get('/cms/login', [LoginFormController::class, 'showAdminLoginForm']);
+ Route::get('/login', [LoginFormController::class, 'showAdminLoginForm']);
  Route::post('/login', [LoginController::class,'adminLogin'])->name('login');
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
