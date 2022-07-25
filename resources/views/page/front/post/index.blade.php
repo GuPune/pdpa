@@ -1,15 +1,11 @@
 @extends('layouts.front')
 
-@section('title','testtitle')
-@section('description','testtitledescription')
-@section('keywords','testtitlekeywords')
-@section('image','https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg')
-@section('imageurl','https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg')
+@section('title','testtitle2')
+@section('description','testtitledescription2')
+@section('keywords','testtitlekeywords2')
+@section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
+@section('imageurl','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 @section('content')
-
-
-
-
 
 
 
