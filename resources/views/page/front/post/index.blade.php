@@ -5,8 +5,8 @@
 @section('keywords','นั่งสมาธิ,ภาพนั่งสมาธิ, ภาพวิธีการนั่งสมาธิ, ภาพการทำภาวนา, meditation, photo')
 @foreach ($item['images'] as $key => $post)
 
-@section('image',{{$post->images}})
-@section('imageurl',{{$post->images}})
+@section('image',$post->images)
+@section('imageurl',$post->images)
 
 @endforeach
 @section('content')
