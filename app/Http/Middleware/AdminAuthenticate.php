@@ -23,8 +23,10 @@ class AdminAuthenticate
 
         if($admin == null){
 
-            return redirect()->guest('/cms/login');
+            return route('login');
         }
+
+
 
         return $next($request);
 
