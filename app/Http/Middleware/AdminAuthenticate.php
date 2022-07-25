@@ -44,7 +44,7 @@ class AdminAuthenticate
     public function handle($request, Closure $next, $guard = null)
     {
 
-
+        dd($guard);
         if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect('/home');
         }
