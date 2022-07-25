@@ -5,7 +5,7 @@
     <title>ศูนย์รวมภาพกิจกรรม</title>
     <meta name='description' itemprop='description' content='test' />
 
-    <meta name='keywords' content='test' />
+    <meta name='keywords' content='test'/>
     <meta property='article:published_time' content='test' />
     <meta property='article:section' content='event' />
 
@@ -21,7 +21,7 @@
     <meta property="og:image:size" content="300" />
 
 
-
+</head>
 
 
     <style>/*purgecss start ignore*/
@@ -6191,8 +6191,9 @@ header .header_inner{
 }
 }
 
-/*purgecss end ignore*/</style>
-  </head>
+/*purgecss end ignore*/
+</style>
+
   <body >
     <div data-server-rendered="true" id="__nuxt"><!---->
         <div id="__layout">
