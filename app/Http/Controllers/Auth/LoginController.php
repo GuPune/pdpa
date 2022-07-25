@@ -46,4 +46,11 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+
+    public function showAdminLoginForm()
+    {
+
+          return view('auth.login', ['url' => 'cms']);
+    }
+
 }
