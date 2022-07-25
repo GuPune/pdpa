@@ -27,7 +27,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
-
+ Route::get('/backoffice/login', [LoginController::class, 'showAdminLoginForm']);
  Route::post('/login', [LoginController::class,'adminLogin']);
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
@@ -72,7 +72,7 @@ Route::resource('/post', 'App\Http\Controllers\PostController');
 
 
 Route::group(['middleware' => ['guest']], function() {
-    Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
+
     Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
 });
 
