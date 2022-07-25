@@ -24,9 +24,11 @@ class AdminAuthenticate
 
 
         if($admin == null){
-            dd($admin);
+          //  dd($admin);
 
-            return redirect()->guest('/cms/login');
+          //  return redirect()->guest('/cms/login');
+            return redirect('/cms/login');
+
         }
 
         return $next($request);
