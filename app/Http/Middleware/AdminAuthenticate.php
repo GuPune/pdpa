@@ -21,6 +21,8 @@ class AdminAuthenticate
     {
         $admin = Auth::guard('admin')->user();
 
+        dd($admin);
+
         if($admin == null){
 
             return redirect()->guest('/cms/login');

@@ -37,7 +37,7 @@ Auth::routes();
 
  Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::group(['prefix' => 'cms'],function(){
+Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/branch', 'App\Http\Controllers\BranchController');
     Route::post('branch/datatables', [\App\Http\Controllers\BranchController::class, 'getDatashoptable'])->name('branch.data');
