@@ -9,7 +9,7 @@
 @section('imageurl','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 @break
 @endforeach --}}
-@section('imageurl',$post->images)
+@section('imageurl',$post['url'])
 @foreach ($item['images'] as $key => $post)
 @section('image',$post->images)
 @break
