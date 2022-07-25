@@ -1,27 +1,7 @@
 
 <!doctype html>
 <html lang="th">
-  <head >
-    <title>ศูนย์รวมภาพกิจกรรม</title>
-    <meta name='description' itemprop='description' content='test' />
 
-    <meta name='keywords' content='test'/>
-    <meta property='article:published_time' content='test' />
-    <meta property='article:section' content='event' />
-
-    <meta property="og:description" content="test" />
-    <meta property="og:title" content="test" />
-    <meta property="og:url" content="test" />
-    <meta property="og:type" content="article" />
-    <meta property="og:locale" content="en-us" />
-    <meta property="og:locale:alternate" content="en-us" />
-    <meta property="og:site_name" content="test" />
-    <meta property="og:image" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
-    <meta property="og:image:url" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
-    <meta property="og:image:size" content="300" />
-
-
-</head>
 
 
     <style>/*purgecss start ignore*/

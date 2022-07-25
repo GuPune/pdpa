@@ -3,11 +3,27 @@
 
 @section('content')
 
+<head >
+    <title>ศูนย์รวมภาพกิจกรรม</title>
+    <meta name='description' itemprop='description' content='testpost' />
 
- <meta property="og:title" content="ภาพกิจกรรม" />
-<meta property="og:type" content="video.movie" />
-<meta property="og:url" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
-<meta property="og:image" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
+    <meta name='keywords' content='testpost'/>
+    <meta property='article:published_time' content='testpost' />
+    <meta property='article:section' content='event' />
+
+    <meta property="og:description" content="testpost" />
+    <meta property="og:title" content="testpost" />
+    <meta property="og:url" content="testpost" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en-us" />
+    <meta property="og:locale:alternate" content="en-us" />
+    <meta property="og:site_name" content="test" />
+    <meta property="og:image" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
+    <meta property="og:image:url" content="https://image.meditationphoto.com/uploads/large_S_1794445_d05fac15e7.jpg" />
+    <meta property="og:image:size" content="300" />
+
+
+</head>
 
 
 
