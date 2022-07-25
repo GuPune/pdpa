@@ -25,8 +25,8 @@ class AdminAuthenticate
 
         if($admin == null){
           //  dd($admin);
-
-   return redirect()->guest('/cms/login');
+dd($admin);
+ //  return redirect()->guest('/cms/login');
        //     return redirect('/cms/login');
           //  return view('auth/login');
 
