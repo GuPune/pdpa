@@ -28,7 +28,7 @@ class AdminAuthenticate
 
     //   return redirect()->guest('/cms/login');
        //     return redirect('/cms/login');
-            return view('/');
+            return view('auth/login');
 
 
 
