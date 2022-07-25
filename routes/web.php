@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LoginFormController;
 
 
 /*
@@ -28,8 +29,8 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
- Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
- Route::post('/login', [LoginController::class,'adminLogin']);
+ Route::get('/cms/login', [LoginFormController::class, 'showAdminLoginForm']);
+ Route::post('/login', [LoginController::class,'adminLogin'])->name('login');
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
 
