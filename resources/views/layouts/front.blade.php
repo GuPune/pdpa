@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="th">
   <head >
-    <title>ศูนย์รวมภาพนั่งสมาธิ ที่ใหญ่ที่สุดในโลก</title>
+    <title>ศูนย์รวมภาพกิจกรรม</title>
 
     <style>/*purgecss start ignore*/
 
