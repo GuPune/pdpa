@@ -28,6 +28,7 @@
 
 
 
+
                         <li>
                             <a href="#">
                                 <i class="livicon" data-name="comment" data-c="#F89A14" data-hc="#F89A14" data-size="18" data-loop="true"></i>
@@ -41,6 +42,27 @@
 
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="livicon" data-name="medal" data-size="18" data-c="#00bc8c" data-hc="#00bc8c" data-loop="true"></i>
+                                <span class="title">ร้องขอแสดงรูปภาพกิจกรรม</span>
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="/cms/postrequest">
+                                        <i class="fa fa-angle-double-right"></i> รายการขอแสดงรูปภาพ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/cms/branch">
+                                        <i class="fa fa-angle-double-right"></i> อนุมัติการแสดงรูปภาพ
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
 
                         <li>
                             <a href="#">

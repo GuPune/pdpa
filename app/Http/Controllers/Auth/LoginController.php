@@ -29,7 +29,7 @@ class LoginController extends Controller
      * @var string
      */
   //  protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
     /**
      * Create a new controller instance.
      *
@@ -41,16 +41,6 @@ class LoginController extends Controller
         $this->middleware('guest:admin')->except('logout');
     }
 
-    public function showLoginForm()
-    {
-        return view('auth.login');
-    }
 
-
-    public function showAdminLoginForm()
-    {
-
-          return view('auth.login', ['url' => 'back']);
-    }
 
 }

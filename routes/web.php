@@ -29,7 +29,7 @@ Auth::routes();
  Route::resource('/upload', 'App\Http\Controllers\FrontUploadController');
 
 
- Route::get('/login', [LoginFormController::class, 'showAdminLoginForm']);
+ Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
  Route::post('/login', [LoginController::class,'adminLogin'])->name('login');
 
  Route::post('/checkemail', [App\Http\Controllers\RegisterController::class, 'checkemail']);
@@ -47,6 +47,7 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
     Route::get('/downloadPDF/{id}', [App\Http\Controllers\ReportController::class, 'downloadPDF'])->name('downloadPDF');
     Route::post('report/datatables', [\App\Http\Controllers\ReportController::class, 'getDataalltable'])->name('reportall.data');
     Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');
+    Route::resource('/postrequest', 'App\Http\Controllers\BackPostController');
     Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'delupdate'])->name('branchdel.data');
     Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
     Route::get('file-export', [App\Http\Controllers\ExcelController::class, 'fileExport'])->name('file-export');
@@ -54,11 +55,7 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
 
 });
 
-Route::group(['prefix' => 'cms'],function(){
 
-
-
-});
 
 
 Route::get('/consent/{id}', [App\Http\Controllers\ConsentController::class, 'show'])->name('consent.data');
@@ -86,4 +83,4 @@ Route::group(['middleware' => ['guest']], function() {
 
 
 
-Route::get('/cms/login', [LoginController::class, 'showAdminLoginForm']);
+

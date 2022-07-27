@@ -18,9 +18,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function __construct(){
-        $this->middleware(['admin_auth']);
-      }
+
     public function index()
     {
         return view('home');
