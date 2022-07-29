@@ -188,7 +188,7 @@ function shareFacebook(){
     // var url = 'https://www.facebook.com/sharer.php?u='+web+'&caption='+slogan+'&description='+description+'&picture='+url_image;
 	// window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height='+winWidth+',width='+winHeight);
 
-var url = "https://cmsecom2.idtest.work/post/25";
+var url = "https://cmsecom2.idtest.work/post/26";
 window.open('http://facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
 
 }
