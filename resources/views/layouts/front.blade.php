@@ -28,7 +28,7 @@
 
 <meta name="twitter:title" content="European Travel Destinations ">
 <meta name="twitter:description" content=" Offering tour packages for individuals or groups.">
-<meta name="twitter:image" content=" http://euro-travel-example.com/thumbnail.jpg">
+<meta name="twitter:image" content="@yield('image')">
 <meta name="twitter:card" content="summary_large_image">
 
         {{-- <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
