@@ -11,11 +11,11 @@
     @endif
     <section class="content-header">
         <!--section starts-->
-        <h1>ข้อมูลสาขา</h1>
+        <h1>ข้อมูลรายการ</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">
-                    <i class="livicon" data-name="home" data-size="14" data-loop="true"></i> ข้อมูลสาขา
+                    <i class="livicon" data-name="home" data-size="14" data-loop="true"></i> ข้อมูลรายการ
                 </a>
             </li>
             <li>
@@ -33,15 +33,7 @@
                     </h4>
 
                 </div>
-                <br />
-                <div class="col-md-offset-0 col-md-12">
-                    <div class="card-header py-3"  style="text-align:right; margin: 0 0 2% 0;">
-                        <a href="/cms/branch/create" class="btn btn-success">
-                            เพิ่มสาขา
-                        </a>
-                    </div>
-                </div>
-                <br />
+
                 <div class="panel-body">
 
 
@@ -64,7 +56,12 @@
 
                                 <tr>
                                     <td class="text-center">{{ ++$k }}</td>
-                                    <td class="text-center">{{ $rs->url}}</td>
+                                    <td class="text-center" >
+
+                                        <a href="{{ route('postrequest.edit',$rs->id) }}">
+                                              {{ $rs->url}}</a>
+                                        </a>
+                                       </td>
                                     <td class="text-center">
 
 
