@@ -10,7 +10,7 @@ items-center
 justify-between
 ">
 <div aria-label="Home. logo" role="img"><a href="/" aria-current="page" class="router-link-exact-active router-link-active">
-    <img src="https://www.meditationphoto.com/images/medlogo2.png" alt="logo" class="w-20 h-20">
+    <img src="https://cmsecom2.idtest.work/storage/thumbnails/browser.png" alt="logo" class="w-20 h-20">
 
 
 

@@ -5,9 +5,14 @@
           space-y-6
           md:space-y-0 md:flex md:gap-6
           lg:items-center lg:gap-12
-        "><div class="md:5/12 lg:w-5/12"><img src="https://image.meditationphoto.com//uploads/medium_4990417_bcebd40be8.jpg" alt="image" loading="lazy" class="rounded-2xl"></div> <div class="md:7/12 lg:w-6/12"><h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
-            ร่วมส่งภาพนั่งสมาธิ เพื่อสร้างสถิติโลก
-          </h2> <p class="mt-6 text-gray-600">  เรากำลังรวบรวมภาพนั่งสมาธิ เพื่อสร้างสถิติโลก กับ Guiness World  Record <br />ในหัวข้อ               "ศูนย์รวมภาพนั่งสมาธิที่มีจำนวนภาพมากที่สุดในโลก" โดยมีเป้าหมาย               1,000,000 ภาพนั่งสมาธิ</p> <p class="mt-4 text-gray-600">มาร่วมสร้างสถิติกับเรา</p> <button class="
+        "><div class="md:5/12 lg:w-5/12"><img src="https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg" alt="image" loading="lazy" class="rounded-2xl">
+        </div>
+        <div class="md:7/12 lg:w-6/12">
+            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
+            ร่วมส่งภาพกิจกรรม
+          </h2> <p class="mt-6 text-gray-600">  เรากำลังรวบรวมภาพกิจกรรม เพื่อสร้างสถิติโลก กับ Guiness World  Record <br />
+            ในหัวข้อ               "ศูนย์รวมภาพนั่งสมาธิที่มีจำนวนภาพมากที่สุดในโลก" โดยมีเป้าหมาย               1,000,000 ภาพกิจกรรม</p>
+            <p class="mt-4 text-gray-600">มาร่วมสร้างสถิติกับเรา</p> <button class="
               mt-8
               focus:outline-none
               focus:ring-2

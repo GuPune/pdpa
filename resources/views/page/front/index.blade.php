@@ -37,7 +37,9 @@
     <br>
     <span class="text-indigo-700"><span class="text-indigo-700">ศูนย์รวม</span>   ภาพกิจกรรม</span></h1>
     <div class="flex pt-10 space-x-5 mx-auto justify-center">
-        <img src="https://www.meditationphoto.com/images/medlogo2.png" alt="logo" class="w-24 h-24 inline-block"> <img src="https://www.meditationphoto.com/images/guinesslogo.jpeg" class="w-24 h-24"></div> <span class="mx-auto w-full text-center"><p
+        <img src="https://cmsecom2.idtest.work/storage/thumbnails/browser.png" alt="logo" class="w-24 h-24 inline-block">
+        <img src="https://cmsecom2.idtest.work/storage/thumbnails/browser.png" class="w-24 h-24">
+    </div> <span class="mx-auto w-full text-center"><p
       class="
         mt-5
         sm:mt-10
