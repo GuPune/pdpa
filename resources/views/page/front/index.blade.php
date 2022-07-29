@@ -5,7 +5,7 @@
 @section('keywords','ภาพกิจกรรม,photo')
 @section('content')
 
-@section('image','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
+@section('image','https://cmsecom2.idtest.work')
 @section('imageurl','https://image.meditationphoto.com/uploads/large_S_1794431_c008bee93d.jpg')
 
 <div>
