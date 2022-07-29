@@ -56,7 +56,7 @@
                             <tr>
                                 <td class="text-center">
 
-                                    <input id="switch-primary-{{$rs->id}}" value="{{$rs->id}}" name="toggle" type="checkbox" {{ $rs->status == 'Y' ? 'checked' : '' }}>
+                                    <input id="switch-primary-{{$rs->id}}" value="{{$rs->id}}" name="toggle" type="checkbox" {{ $rs->status == 'S' ? 'checked' : '' }}>
 
                                 </td>
 
@@ -129,9 +129,9 @@ $('input[name=toggle]').change(function(){
 
 
         if(productObj.mode == true){
-            productObj.status = 'Y';
+            productObj.status = 'S';
         }else {
-            productObj.status = 'N';
+            productObj.status = 'Y';
         }
 
 
