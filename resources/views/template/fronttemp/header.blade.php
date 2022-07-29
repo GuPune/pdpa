@@ -115,7 +115,7 @@ Upload ภาพกิจกรรม
     <a tabindex="0" href="#">
 
     @auth
-    {{ Auth::user()->name }}
+    <img src="{{ Auth::user()->avatar }}" alt class="mask mask-circle w-12 h-12">
      @else
      <img src="https://www.meditationphoto.com/images/user.png" alt class="mask mask-circle w-12 h-12">
      @endauth
