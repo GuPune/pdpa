@@ -33,7 +33,7 @@
       leading-7
       md:leading-10
     ">
-    Meditation Photosปปปปปปปปปป
+ Photos
     <br>
     <span class="text-indigo-700"><span class="text-indigo-700">ศูนย์รวม</span>   ภาพนั่งกิจกรรม</span></h1>
     <div class="flex pt-10 space-x-5 mx-auto justify-center">
