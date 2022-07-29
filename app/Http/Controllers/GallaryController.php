@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Images;
 use Illuminate\Http\Request;
+use DB;
 
 class GallaryController extends Controller
 {
@@ -17,7 +18,18 @@ class GallaryController extends Controller
         //
 // $images = Images::where('status','Y')->orderBy('created_at', 'DESC')->paginate(25);
 
-$images = Images::with('profileuser')->where('status','Y')->paginate(10);
+$images = DB::table('images')
+->select('images.id','images.images','images.status','images.user_id','images.updated_at','images.posts_id','posts.status','users.avatar','users.name','images.status as img_status')
+->join('users', 'users.id', '=', 'images.user_id')
+->join('posts', 'posts.id', '=', 'images.posts_id')
+->where('posts.status','=','Y')
+->where('images.status','=','S')
+->orderBy('images.updated_at', 'desc')
+->paginate(10);
+
+// dd
+
+// $images = Images::with('profileuser')->where('status','S')->orderBy('updated_at', 'DESC')->get();
 
 
 

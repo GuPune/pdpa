@@ -59,7 +59,7 @@
     w-full
   ">
   <div class="flex-none opacity-100"><a href="/user2586" class="">
-    <img alt="user" src="{{$post->profileuser->avatar}}" class="
+    <img alt="user" src="{{$post->avatar}}" class="
           mx-auto
           w-10
           h-10
@@ -81,12 +81,12 @@
         text-left
         hover:font-bold hover:text-blue-600
       ">
-      <a href="#" class="">{{$post->profileuser->name}}</a></div>
+      <a href="#" class="">{{$post->name}}</a></div>
       <div class="text-white inline-block -mt-3 text-left">
         <a href="/photo/990458" class=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></a> <a href="/stat?org1=%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81,%E0%B8%AD%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B9%86&amp;org2=%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%B9%E0%B8%9B%E0%B8%81%E0%B8%B2%E0%B8%A3" class="hover:font-bold hover:text-blue-600">
           </a>
             <a href="/post/130998" class="hover:font-bold hover:text-blue-600">
-                {{ $diff = Carbon\Carbon::parse($post->created_at)->diffForHumans(Carbon\Carbon::now()) }}</a>
+                {{ $diff = Carbon\Carbon::parse($post->updated_at)->diffForHumans(Carbon\Carbon::now()) }}</a>
         </div>
     </div>
 </div>
