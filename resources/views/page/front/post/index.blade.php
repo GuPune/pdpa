@@ -121,7 +121,7 @@
            </div>
                  <div class="mt-2 mb-5 w-full flex flex-row text-center justify-center">
                    <div class="my-3 w-full text-white flex mx-2">
-                       <a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-facebook" style="background-color:#1877f2;"><i class="fab fah fa-lg fa-facebook-f"></i> <span></span></a></div>
+                       <a  onClick="shareFacebook();" class="rounded-xl p-1 w-full share-network-facebook" style="background-color:#1877f2;"><i class="fab fah fa-lg fa-facebook-f"></i> <span></span></a></div>
                        <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-line" style="background-color:#00c300;"><i class="fab fah fa-lg fa-line"></i> <span></span></a></div>
                        <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-twitter" style="background-color:#1da1f2;"><i class="fab fah fa-lg fa-twitter"></i> <span></span></a></div>
 
@@ -175,6 +175,23 @@ crossorigin = "anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 <script>
+
+var winWidth = 600;
+var winHeight = 600;
+var title = 'หัวข้อเว็บไซต์';
+var caption = 'รายละเอียดโดยย่อ';
+var description = 'รายละเอียดเต็ม';
+var url_image = 'รูปที่ต้องการให้แสดงตอนแชร์';
+
+function shareFacebook(){
+
+    // var url = 'https://www.facebook.com/sharer.php?u='+web+'&caption='+slogan+'&description='+description+'&picture='+url_image;
+	// window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height='+winWidth+',width='+winHeight);
+
+var url = "https://cmsecom2.idtest.work/post/25";
+window.open('http://facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+
+}
 
 
          // Get the modal
