@@ -20,11 +20,16 @@
 
 
 
-<meta name="twitter:card" content="summary_large_image" />
+{{-- <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@yield('description')" />
 <meta name="twitter:title" content="Sammy the Shark" />
 <meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
-<meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
+<meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" /> --}}
+
+<meta name="twitter:title" content="European Travel Destinations ">
+<meta name="twitter:description" content=" Offering tour packages for individuals or groups.">
+<meta name="twitter:image" content=" http://euro-travel-example.com/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
         {{-- <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
 <meta property=”og:title” content=”LINE : Free Calls & Messages”>
