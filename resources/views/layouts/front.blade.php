@@ -14,15 +14,15 @@
         <meta property="og:locale" content="en-us" />
         <meta property="og:locale:alternate" content="en-us" />
         <meta property="og:site_name" content="test" />
-        {{-- <meta property="og:image"  content="@yield('image')"/>
-        <meta property="og:url" content="@yield('imageurl')" />
-        <meta property="og:image:size" content="300" /> --}}
+        <meta property="og:image"  content="@yield('image')"/>
+        {{-- <meta property="og:url" content="@yield('imageurl')" /> --}}
+        {{-- <meta property="og:image:size" content="300" /> --}}
 
  <meta property="og:url" content="https://cmsecom2.idtest.work">
 <meta property="og:type" content="website">
 
 <meta property="og:description" content="เว็ปไซต์ศูนย์รวมภาพกิจกรรม">
-<meta property="og:image" content="https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg">
+{{-- <meta property="og:image" content="https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg"> --}}
     </head>
 
 
