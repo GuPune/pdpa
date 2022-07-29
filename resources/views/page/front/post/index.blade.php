@@ -11,6 +11,7 @@
 @endforeach --}}
 
 @foreach ($item['images'] as $key => $post)
+
 @section('image',$post->images)
 @break
 @endforeach
@@ -122,7 +123,7 @@
                  <div class="mt-2 mb-5 w-full flex flex-row text-center justify-center">
                    <div class="my-3 w-full text-white flex mx-2">
                        <a  onClick="shareFacebook();" class="rounded-xl p-1 w-full share-network-facebook" style="background-color:#1877f2;"><i class="fab fah fa-lg fa-facebook-f"></i> <span></span></a></div>
-                       <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-line" style="background-color:#00c300;"><i class="fab fah fa-lg fa-line"></i> <span></span></a></div>
+                       <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-line" style="background-color:#00c300;" data-sharer="line" data-title="Sharer.js is the ultimate sharer js lib" data-url="{{$item['url']}}"><i class="fab fah fa-lg fa-line"></i> <span></span></a></div>
                        <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-twitter" style="background-color:#1da1f2;"><i class="fab fah fa-lg fa-twitter"></i> <span></span></a></div>
 
 
@@ -173,6 +174,7 @@ crossorigin = "anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
 
 <script>
 
@@ -191,6 +193,20 @@ function shareFacebook(){
 
 window.open('http://facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
 
+}
+
+function lineshare(){
+    var url = $('#textshare').val();
+	var link = "https://social-plugins.line.me/lineit/share?url=";
+	var now_url = encodeURIComponent(url);
+	link += now_url;
+	if(document.getElementById("line_detail")){
+		link += '&text=';
+		var detail = document.getElementById("line_detail").value;
+		link += detail;
+	}
+	window.open( link, 'LINE 分享', config='height=500,width=500');
+	return false;
 }
 
 
