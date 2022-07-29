@@ -26,8 +26,8 @@
 <meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
 <meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" /> --}}
 
-<meta name="twitter:title" content="European Travel Destinations ">
-<meta name="twitter:description" content=" Offering tour packages for individuals or groups.">
+<meta name="twitter:title" content="@yield('title')">
+<meta name="twitter:description" content="@yield('description')">
 <meta name="twitter:image" content="@yield('image')">
 <meta name="twitter:card" content="summary_large_image">
 
