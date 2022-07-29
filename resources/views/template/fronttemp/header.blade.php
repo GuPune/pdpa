@@ -79,11 +79,7 @@ justify-between
       "><a href="/contact">ติดต่อ
 
 
-        @auth
-        {{ Auth::user()->name }}
-         @else
 
-         @endauth
 
 
     </a></li></ul></div></div>
