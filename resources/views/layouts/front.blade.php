@@ -22,7 +22,7 @@
 <meta property="og:type" content="website">
 
 <meta property="og:description" content="เว็ปไซต์ศูนย์รวมภาพกิจกรรม">
-<meta property="og:image" content="https://cmsecom2.idtest.work/storage/thumbnails/62d7aa8a609ac.jpg">
+<meta property="og:image" content="https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg">
     </head>
 
 
