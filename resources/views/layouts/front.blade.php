@@ -19,16 +19,12 @@
         <meta property="og:image:size" content="300" />
 
 
-<meta name="twitter:title" content="@yield('title')">
-<meta name="twitter:description" content="@yield('description')">
-<meta name="twitter:creator" content="@yield('description')">
-<meta name="twitter:image" content="@yield('image')">
 
-<meta name="twitter:card" content="@yield('title')" />
-<meta name="twitter:site" content="@yield('title')" />
-<meta name="twitter:title" content="@yield('title')" />
-<meta name="twitter:description" content="@yield('description')" />
-<meta name="twitter:image" content="@yield('image')" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@yield('description')" />
+<meta name="twitter:title" content="Sammy the Shark" />
+<meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
+<meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
 
         {{-- <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
 <meta property=”og:title” content=”LINE : Free Calls & Messages”>
