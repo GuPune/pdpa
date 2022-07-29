@@ -5,8 +5,8 @@
 @section('keywords','ภาพกิจกรรม,photo')
 @section('content')
 
-@section('image','https://cmsecom2.idtest.work')
-@section('imageurl','https://www.iddriver.com/wp-content/uploads/2021/01/IDdriver_NoBG-150x88.png')
+@section('image','https://cmsecom2.idtest.work/storage/thumbnails/62d7aa8a609ac.jpg')
+@section('imageurl','https://cmsecom2.idtest.work/storage/thumbnails/62d7aa8a609ac.jpg')
 
 <div>
     <div>
