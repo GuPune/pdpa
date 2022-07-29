@@ -18,9 +18,9 @@
         <meta property="og:url" content="@yield('imageurl')" />
         <meta property="og:image:size" content="300" />
 
-        <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
+        {{-- <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
 <meta property=”og:title” content=”LINE : Free Calls & Messages”>
-<meta property=”og:description” content=”LINE is a new communication app”>
+<meta property=”og:description” content=”LINE is a new communication app”> --}}
 
  {{-- <meta property="og:url" content="https://cmsecom2.idtest.work">
 <meta property="og:type" content="website"> --}}
