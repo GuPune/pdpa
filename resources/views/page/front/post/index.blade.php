@@ -123,8 +123,8 @@
                  <div class="mt-2 mb-5 w-full flex flex-row text-center justify-center">
                    <div class="my-3 w-full text-white flex mx-2">
                        <a  onClick="shareFacebook();" class="rounded-xl p-1 w-full share-network-facebook" style="background-color:#1877f2;"><i class="fab fah fa-lg fa-facebook-f"></i> <span></span></a></div>
-                       <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-line" style="background-color:#00c300;" data-sharer="line" data-title="Sharer.js is the ultimate sharer js lib" data-url="{{$item['url']}}"><i class="fab fah fa-lg fa-line"></i> <span></span></a></div>
-                       <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-twitter" style="background-color:#1da1f2;"><i class="fab fah fa-lg fa-twitter"></i> <span></span></a></div>
+                       <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-line" style="background-color:#00c300;" data-sharer="line" data-title="Share In Line" data-url="{{$item['url']}}"><i class="fab fah fa-lg fa-line"></i> <span></span></a></div>
+                       <div class="my-3 w-full text-white flex mx-2"><a onClick="shareTwitter();" class="rounded-xl p-1 w-full share-network-twitter" style="background-color:#1da1f2;"><i class="fab fah fa-lg fa-twitter"></i> <span></span></a></div>
 
 
                    </div>
@@ -207,6 +207,12 @@ function lineshare(){
 	}
 	window.open( link, 'LINE 分享', config='height=500,width=500');
 	return false;
+}
+
+function shareTwitter(){
+    var web = $('#textshare').val();
+	var url = 'http://www.twitter.com/share?url='+web+'&text='+title;
+	window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height='+winWidth+',width='+winHeight);
 }
 
 

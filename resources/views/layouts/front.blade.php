@@ -18,6 +18,12 @@
         <meta property="og:url" content="@yield('imageurl')" />
         <meta property="og:image:size" content="300" />
 
+
+        <meta name="twitter:title" content="บริษัท โค๊ดบี จำกัด">
+<meta name="twitter:description" content="รับทำเว็บไซต์และโมบายแอพพลิเคชั่น">
+<meta name="twitter:creator" content="@codebee">
+<meta name="twitter:image" content="https://www.codebee.co.th/logo.png">
+
         {{-- <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
 <meta property=”og:title” content=”LINE : Free Calls & Messages”>
 <meta property=”og:description” content=”LINE is a new communication app”> --}}
