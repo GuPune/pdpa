@@ -113,7 +113,7 @@ Upload ภาพกิจกรรม
     @auth
     <img src="{{ Auth::user()->avatar }}" alt class="mask mask-circle w-12 h-12">
      @else
-     <img src="https://www.meditationphoto.com/images/user.png" alt class="mask mask-circle w-12 h-12">
+     <img src="https://cmsecom2.idtest.work/storage/thumbnails/user.png" alt class="mask mask-circle w-12 h-12">
      @endauth
 
 
@@ -136,7 +136,7 @@ Upload ภาพกิจกรรม
     </a>
 @else
 <div class="cursor-pointer my-2" id="myBtn">
-    <img src="https://www.meditationphoto.com/images/user.png" class="w-5 h-5 mr-2 inline-block"> Login
+    <img src="https://cmsecom2.idtest.work/storage/thumbnails/user.png" class="w-5 h-5 mr-2 inline-block"> Login
 </div>
 
     {{-- @if (Route::has('register'))
