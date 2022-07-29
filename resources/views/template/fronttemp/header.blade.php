@@ -8,7 +8,19 @@ px-6
 flex
 items-center
 justify-between
-"><div aria-label="Home. logo" role="img"><a href="/" aria-current="page" class="router-link-exact-active router-link-active"><img src="https://www.meditationphoto.com/images/medlogo2.png" alt="logo" class="w-20 h-20"></a></div> <div><button onclick="toggleMenu(true)" class="
+">
+<div aria-label="Home. logo" role="img"><a href="/" aria-current="page" class="router-link-exact-active router-link-active">
+
+    @auth
+    {{ Auth::user()->name }}
+     @else
+     <img src="https://www.meditationphoto.com/images/medlogo2.png" alt="logo" class="w-20 h-20">
+     @endauth
+
+</a>
+</div>
+ <div>
+    <button onclick="toggleMenu(true)" class="
     sm:block
     md:hidden
     text-gray-500
