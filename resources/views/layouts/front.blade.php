@@ -15,7 +15,7 @@
         <meta property="og:locale:alternate" content="en-us" />
         <meta property="og:site_name" content="test" />
         <meta property="og:image"  content="@yield('image')"/>
-        {{-- <meta property="og:url" content="@yield('imageurl')" /> --}}
+        <meta property="og:url" content="@yield('imageurl')" />
         {{-- <meta property="og:image:size" content="300" /> --}}
 
  <meta property="og:url" content="https://cmsecom2.idtest.work">
