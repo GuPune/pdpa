@@ -5,7 +5,7 @@
 @section('keywords','ภาพกิจกรรม,photo')
 @section('content')
 
-@section('image','https://cmsecom2.idtest.work/storage/thumbnails/122799.jpg')
+@section('image','https://cmsecom2.idtest.work/storage/thumbnails/browser.png')
 @section('imageurl','https://cmsecom2.idtest.work')
 
 <div>
