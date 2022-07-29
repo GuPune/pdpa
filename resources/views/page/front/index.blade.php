@@ -1,6 +1,8 @@
 @extends('layouts.front')
 
-
+@section('title','ศูนย์รวมภาพกิจกรรม')
+@section('description','เว็ปไซต์ศูนย์รวมภาพกิจกรรม')
+@section('keywords','ภาพกิจกรรม,photo')
 @section('content')
 
 <div>
