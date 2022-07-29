@@ -36,58 +36,41 @@
 
                 <div class="panel-body">
 
-
-
-
                     <table class="table table-bordered " id="datatables-example">
                         <thead>
                             <tr class="filters">
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>URL</th>
+
                                 <th>
-                                    Status
+                                   Picture
                                 </th>
-                                <th>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($item as $k => $rs)
 
-                                <tr>
-                                    <td class="text-center">{{ ++$k }}</td>
-                                    <td class="text-center" >
+                            @foreach($items as $k => $rs)
 
-                                        <a href="{{ route('settingimages.edit',$rs->id) }}">
-                                              {{ $rs->url}}</a>
-                                        </a>
-                                       </td>
-                                    <td class="text-center">
-                                        @if($rs->status == 'Y')
-                                        <button class="btn btn-success" data-popup="tooltip" title="ลบ" data-placement="bottom">
-                                            แสดง
-                                       </button>
+                            <tr>
+                                <td class="text-center">
+
+                                    <input id="switch-primary-{{$rs->id}}" value="{{$rs->id}}" name="toggle" type="checkbox" {{ $rs->status == 'Y' ? 'checked' : '' }}>
+
+                                </td>
+
+                                <td class="text-center">{{ ++$k }}</td>
+                                <td class="text-center" >
+                                    {{$rs->images}}
+                                   </td>
+                                   <td class="text-center" >
+                                    <img src="{{$rs->images}}" alt="รูปภาพประจำสินค้า" class="img-fluid" id="showImageZoom" width="100" height="100">
+                                                                       </td>
 
 
-                                        @else
-
-                                        <button class="btn btn-warning" data-popup="tooltip" title="ลบ" data-placement="bottom">
-                                            ไม่แสดง
-                                       </button>
-                                        @endif
-
-                                    </td>
-                                    <td class="text-center">
-                                        <a  class="btn btn-outline-dark btn-sm"  href="{{ route('postrequest.edit',$rs->id) }}" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
-                                            <i class="fa fa-edit"></i> แก้ไข</a>
-                                        </a>
-                                        <button class="btn btn-outline-dark btn-sm btn-delete" data-id="{{ $rs->id}}" data-popup="tooltip" title="ลบ" data-placement="bottom">
-                                            <i class="fa fa-trash"></i> ลบ</a>
-                                        </button>
-                                    </td>
-
-                                </tr>
-                                @endforeach
+                            </tr>
+                            @endforeach
 
 
 
@@ -121,10 +104,58 @@
         <!-- row-->
     </section>
 </aside>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script type="text/javascript">
+
+
+$('.toggle-btn').click(function() {
+$(this).toggleClass('active').siblings().removeClass('active');
+});
+
+
+$('input[name=toggle]').change(function(){
+
+
+    var mode= $(this).prop('checked');
+    var id=$(this).val();
+
+        var productObj = {};
+        productObj.mode = $(this).prop('checked');
+        productObj.id = $( this ).val();
+        productObj._token = '{{csrf_token()}}';
+
+
+        if(productObj.mode == true){
+            productObj.status = 'Y';
+        }else {
+            productObj.status = 'N';
+        }
+
+
+
+        $.ajax({
+                    dataType: 'json',
+                    type:'POST',
+                    data:productObj,
+                    url: '/cms/updateactive',
+                    success: function(datas){
+
+
+                        if(datas.code_return == 200){
+                            swal("บันทึก", "บันทึกเรียบร้อย!", "success");
+
+
+                        }else{
+                            swal("บันทึกไม่สำเร็จ", "บันทึกไม่สำเร็จ!", "error");
+                        }
+                    }
+                })
+
+
+  });
 
 
 
@@ -189,7 +220,7 @@ function deleteConf(id) {
                                 '_token': "{{ csrf_token() }}",
                                 id: id
                             },
-                            url: '/cms/postrequest/' + id,
+                            url: '/cms/branch/' + id,
                             success: function(datas){
 
                             location.reload();

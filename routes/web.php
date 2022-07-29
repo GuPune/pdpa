@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\LoginFormController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +49,10 @@ Route::group(['prefix' => 'cms','middleware' => 'admin_auth'],function(){
     Route::post('report/datatables', [\App\Http\Controllers\ReportController::class, 'getDataalltable'])->name('reportall.data');
     Route::resource('/pdpa', 'App\Http\Controllers\PdpaController');
     Route::resource('/postrequest', 'App\Http\Controllers\BackPostController');
+    Route::resource('/settingimages', 'App\Http\Controllers\ImagessettingController');
+
+    Route::post('updateactive', [\App\Http\Controllers\ImagessettingController::class, 'updateactive']);
+
     Route::post('branch/delete', [\App\Http\Controllers\BranchController::class, 'delupdate'])->name('branchdel.data');
     Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
     Route::get('file-export', [App\Http\Controllers\ExcelController::class, 'fileExport'])->name('file-export');

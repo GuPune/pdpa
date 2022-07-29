@@ -6,7 +6,7 @@ use App\Models\Images;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class BackPostController extends Controller
+class ImagessettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,6 @@ class BackPostController extends Controller
     public function index()
     {
         //
-
-$post = Post::all();
-
-        return view('page.post.index')->with('item',$post);
     }
 
     /**
@@ -64,10 +60,8 @@ $post = Post::all();
     {
         //
 
-        $sepost = Post::where('id',$id)->first();
-
-
-        return view('page.post.edit')->with('items',$sepost);
+        $sepost = Images::where('posts_id',$id)->get();
+        return view('page.settingimage.edit')->with('items',$sepost);
     }
 
     /**
@@ -80,11 +74,6 @@ $post = Post::all();
     public function update(Request $request, $id)
     {
         //
-
-     $uppost = Post::where('id',$id)->update(['status' => $request->status]);
-
-        return redirect()->route('postrequest.index')
-        ->with('success','แก้ไขสำเร็จ');
     }
 
     /**
@@ -96,15 +85,18 @@ $post = Post::all();
     public function destroy($id)
     {
         //
+    }
+
+    public function updateactive(Request $request)
+    {
 
 
-
-        $delpost = Post::where('id',$id)->delete();
-        $delimage = Images::where('posts_id',$id)->delete();
+        $activeuser = Images::find($request->id)->update([
+            'status'=> $request->status
+        ]);
 
         return response()->json([
-            'msg_return' => 'ลบสำเร็จ',
-            'code_return' => 1
+            'code_return' => 200
         ]);
     }
 }

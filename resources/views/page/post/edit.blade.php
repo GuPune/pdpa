@@ -19,27 +19,27 @@
                         </span>
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" action="" method="POST">
+                        <form class="form-horizontal" action="{{ route('postrequest.update',$items->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <fieldset>
                                 <!-- Name input-->
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="name">รหัสสาขา</label>
-                                    <div class="col-md-9">
-                                        <input id="code" name="code" type="text" placeholder="รหัสสาขา" class="form-control" value="" required></div>
+                                    <label class="col-md-2 control-label" for="name">สถานะ</label>
+                                    <div class="col-md-10">
+                                        <select class="form-control" name="status" id="status">
+                                                <option value="Y" @if($items->status == 'Y') {{'selected'}} @endif>แสดง </option>
+                                                <option value="F" @if($items->status == 'F') {{'selected'}} @endif>ไม่แสดง </option>
+                                        </select>
+                                      </div>
                                 </div>
                                 <!-- Email input-->
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="email">ชื่อ</label>
-                                    <div class="col-md-9">
-                                        <input id="name" name="name" type="text" placeholder="ชื่อสาขา" class="form-control"   value="" required></div>
-                                </div>
+
 
                                 <div class="form-group">
                                     <div class="col-md-12 text-right">
-                                        <input id="id" name="id" type="hidden" value="" required>
+                                        <input id="id" name="id" type="hidden" value="{{$items->id}}" required>
 
                                         <button type="submit" class="btn btn-responsive btn-primary btn-sm">บันทึก</button>
                                     </div>

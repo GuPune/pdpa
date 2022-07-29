@@ -52,42 +52,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($item as $k => $rs)
-
-                                <tr>
-                                    <td class="text-center">{{ ++$k }}</td>
-                                    <td class="text-center" >
-
-                                        <a href="{{ route('settingimages.edit',$rs->id) }}">
-                                              {{ $rs->url}}</a>
-                                        </a>
-                                       </td>
-                                    <td class="text-center">
-                                        @if($rs->status == 'Y')
-                                        <button class="btn btn-success" data-popup="tooltip" title="ลบ" data-placement="bottom">
-                                            แสดง
-                                       </button>
-
-
-                                        @else
-
-                                        <button class="btn btn-warning" data-popup="tooltip" title="ลบ" data-placement="bottom">
-                                            ไม่แสดง
-                                       </button>
-                                        @endif
-
-                                    </td>
-                                    <td class="text-center">
-                                        <a  class="btn btn-outline-dark btn-sm"  href="{{ route('postrequest.edit',$rs->id) }}" data-popup="tooltip" title="แก้ไข" data-placement="bottom">
-                                            <i class="fa fa-edit"></i> แก้ไข</a>
-                                        </a>
-                                        <button class="btn btn-outline-dark btn-sm btn-delete" data-id="{{ $rs->id}}" data-popup="tooltip" title="ลบ" data-placement="bottom">
-                                            <i class="fa fa-trash"></i> ลบ</a>
-                                        </button>
-                                    </td>
-
-                                </tr>
-                                @endforeach
 
 
 
@@ -189,7 +153,7 @@ function deleteConf(id) {
                                 '_token': "{{ csrf_token() }}",
                                 id: id
                             },
-                            url: '/cms/postrequest/' + id,
+                            url: '/cms/branch/' + id,
                             success: function(datas){
 
                             location.reload();
