@@ -27,8 +27,8 @@
 <meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" /> --}}
 
 <meta name="twitter:title" content="xxxxxxxxxxxxxxx">
-<meta name="twitter:description" content="xxxxxxxxxxxxxxxxx">
-<meta name="twitter:image" content="@yield('image')">
+<meta name="twitter:description" content=" xxxxxxxxxxxxxxxxx">
+<meta name="twitter:image" content=" @yield('image')">
 <meta name="twitter:card" content="summary_large_image">
 
         {{-- <meta property=”og:image” content=”http://static.naver.jp/line_lp/img/ogp.png”>
