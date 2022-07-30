@@ -142,18 +142,63 @@
             </div>
            <div class="mx-auto mb-2 rounded-xl bg-white w-full md:w-2/3 lg:w-5/12"><!---->
 
-          <div class="w-full p-4 text-gray-500 text-center">
-            <div class="w-1/2 md:w-1/2 lg:w-1/2 mx-auto text-center">
-                <button class="
-                btn btn-secondary btn-outline
-                rounded-full
-                mx-auto
-                m-5
-                w-full
-              "><i class="fa fa-share mr-1 inline-block"></i>
-              <span class="hidden lg:block">Share หน้านี้</span></button>
-            </div>
-        </div>
+            <div>
+                {{-- <div class="w-1/2 md:w-1/3 lg:w-1/4 mx-auto text-center">
+               <button class="btn btn-secondary rounded-full mx-auto m-5 w-full">
+               <i class="fa fa-share mr-1 inline-block"></i>
+               <span class="hidden lg:block"> Share
+                   </span>
+               </button>
+           </div> --}}
+
+
+           <div class="my-5"  data-toggle="modal" data-target='#practice_modal'>
+               <button class="btn btn-secondary rounded-full mx-auto m-5 w-full">
+                   <i class="fa fa-share mr-1 inline-block"></i>
+                   <span class="hidden lg:block"> Share
+                       </span>
+                   </button>
+           </div>
+            <div  id="practice_modal" class="modal">
+               <div class="modal-box" style="
+               position: absolute;
+               left: 50%;
+               top: 50%;
+               transform: translate(-50%, -50%);
+           ">
+                   <div id="withKey">
+                       <p class="text-lg">แชร์ลิงค์หน้านี้</p>
+                   <input id="textshare" value="https://cmsecom2.idtest.work/upload" class="w-full p-2 bg-base-200 border-base-100 rounded-xl">
+                   <div class="w-full">
+               <div class="text-right" onclick="myFunction()">
+                           <a class="w-1/3 btn btn-outline border-0 p-1 left-3">
+                               <i class="far fa-clone mr-2"></i> Copy
+                 </a>
+               </div>
+           </div>
+            <hr class="my-3">
+           </div>
+                 <div class="mt-2 mb-5 w-full flex flex-row text-center justify-center">
+                   <div class="my-3 w-full text-white flex mx-2">
+                       <a  onClick="shareFacebook();" class="rounded-xl p-1 w-full share-network-facebook" style="background-color:#1877f2;"><i class="fab fah fa-lg fa-facebook-f"></i> <span></span></a></div>
+                       <div class="my-3 w-full text-white flex mx-2"><a href="javascript:void(0)" class="rounded-xl p-1 w-full share-network-line" style="background-color:#00c300;" data-sharer="line" data-title="Share In Line" data-url=""><i class="fab fah fa-lg fa-line"></i> <span></span></a></div>
+                       <div class="my-3 w-full text-white flex mx-2"><a onClick="shareTwitter();" class="rounded-xl p-1 w-full share-network-twitter" style="background-color:#1da1f2;"><i class="fab fah fa-lg fa-twitter"></i> <span></span></a></div>
+
+
+                   </div>
+                       <div class="modal-action cursor-pointer"  data-dismiss="modal" onclick="myclose();">
+                           <a class="btn">Close</a>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+
+
+           </div>
     </div>
 
                     <div id="badphoto" class="top-0 left-0 w-screen h-screen fixed modal">
@@ -252,6 +297,41 @@ crossorigin = "anonymous">
 
 
 <script>
+
+
+var winWidth = 600;
+var winHeight = 600;
+var title = 'หัวข้อเว็บไซต์';
+var caption = 'รายละเอียดโดยย่อ';
+var description = 'รายละเอียดเต็ม';
+var url_image = 'รูปที่ต้องการให้แสดงตอนแชร์';
+
+function shareFacebook(){
+    var url = $('#textshare').val();
+
+    window.open('http://facebook.com/sharer/sharer.php?u='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+
+}
+
+function lineshare(){
+    var url = $('#textshare').val();
+	var link = "https://social-plugins.line.me/lineit/share?url=";
+	var now_url = encodeURIComponent(url);
+	link += now_url;
+	if(document.getElementById("line_detail")){
+		link += '&text=';
+		var detail = document.getElementById("line_detail").value;
+		link += detail;
+	}
+	window.open( link, 'LINE 分享', config='height=500,width=500');
+	return false;
+}
+
+function shareTwitter(){
+    var web = $('#textshare').val();
+	var url = 'http://www.twitter.com/share?url='+web+'&text='+title;
+	window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height='+winWidth+',width='+winHeight);
+}
 
 
 
