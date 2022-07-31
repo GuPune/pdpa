@@ -6227,7 +6227,7 @@ header .header_inner{
         @yield('content')
         @if(Request::is('/'))
         @include('template.fronttemp.display')
-        @include('template.fronttemp.showup')
+
         @include('template.fronttemp.galleryshow')
         @include('template.fronttemp.longfooter')
         @endif
