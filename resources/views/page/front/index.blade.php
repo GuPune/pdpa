@@ -6,7 +6,7 @@
 @section('content')
 
 @section('image','https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg')
-@section('imageurl','https://cmsecom2.idtest.work')
+@section('imageurl','https://cmsecom2.idtest.work/')
 
 <div>
     <div>
