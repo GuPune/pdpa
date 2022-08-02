@@ -12,7 +12,7 @@
         2xl:grid-cols-5
         gap-5
       ">
-      @foreach (\App\Models\Images::where('status','S')->orderBy('updated_at', 'desc')->limit(10)->get() as $post)
+      @foreach (\App\Models\Images::where('status','S')->orderBy('updated_at', 'desc')->limit(5)->get() as $post)
       <div class="relative">
         <a class="cursor-pointer  modal-open text-center">
         <img src="{{$post->images}}" class="rounded-xl">
