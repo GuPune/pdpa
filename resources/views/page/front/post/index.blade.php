@@ -15,7 +15,7 @@
 @section('image',$post->images)
 @break
 @endforeach
-@section('imageurl',$item['url'])
+@section('imageurl','https://cmsecom2.idtest.work/post/37')
 @section('content')
 
 
