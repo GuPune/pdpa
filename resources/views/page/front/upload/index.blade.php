@@ -16,7 +16,7 @@
             @auth
 
              @else
-             <div class="my-5"  data-toggle="modal" data-target='#practice_modal'>
+             <div class="my-5"  data-toggle="modal" data-target='#practice_modal2'>
                 <div class="w-full text-center google">
                 <div class="btn btn-primary btn-outline mx-auto google">
                 Login
@@ -227,7 +227,7 @@
 
 
 
-<div id="practice_modal" class="modal fade">
+<div id="practice_modal2" class="modal fade">
 
     <!-- Modal content -->
     <div class="modal-box" style="

@@ -17,7 +17,7 @@ class BackPostController extends Controller
     {
         //
 
-$post = Post::all();
+$post = Post::orderBy('created_at','desc')->get();
 
         return view('page.post.index')->with('item',$post);
     }
