@@ -11,11 +11,11 @@
         <meta property="og:locale" content="en-us" />
         <meta property="og:locale:alternate" content="en-us" />
         <meta property="og:site_name" content="test" />
-        {{-- <meta property="og:image"  content="@yield('image')"/> --}}
+        <meta property="og:image"  content="@yield('image')"/>
         <meta property="og:url" content="@yield('imageurl')" />
         {{-- <meta property="og:image:size" content="300" /> --}}
 
-        <meta property="og:image" content="https://car2day.com/wp-content/uploads/2022/07/COVER-2-2.jpg" />
+        {{-- <meta property="og:image" content="https://car2day.com/wp-content/uploads/2022/07/COVER-2-2.jpg" /> --}}
         <meta property="og:image:width" content="1097" />
         <meta property="og:image:height" content="640" />
         <meta property="og:image:type" content="image/jpeg" />
