@@ -12,7 +12,7 @@
 
 @foreach ($item['images'] as $key => $post)
 
-@section('image','https://car2day.com/wp-content/uploads/2022/07/COVER-2-2.jpg')
+@section('image',$post->images)
 @break
 @endforeach
 @section('imageurl','https://cmsecom2.idtest.work/post/37')
