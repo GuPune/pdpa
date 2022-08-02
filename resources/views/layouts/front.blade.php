@@ -20,7 +20,7 @@
         <meta property="og:url" content="https://cmsecom2.idtest.work/">
         <meta property="og:title" content="Photos ศูนย์รวม ภาพกิจกรรม">
         <meta property="og:description" content="เว็ปไซต์ศูนย์รวมภาพกิจกรรม">
-        <meta property="og:image" content="https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg">
+        <meta property="og:image" content="@yield('image')">
 
 {{-- <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@yield('description')" />
