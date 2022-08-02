@@ -2,6 +2,14 @@
 
 
 @section('content')
+
+@section('title','ศูนย์รวมภาพกิจกรรม')
+@section('description','เว็ปไซต์ศูนย์รวมภาพกิจกรรม')
+@section('keywords','ภาพกิจกรรม,photo')
+@section('content')
+
+@section('image','https://cmsecom2.idtest.work/storage/thumbnails/122798.jpg')
+@section('imageurl','https://cmsecom2.idtest.work/')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
 .hidden-upload{
