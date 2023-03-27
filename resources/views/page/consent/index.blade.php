@@ -112,7 +112,7 @@
 @else
 <div>
     <input id="token" name="token" type="hidden" placeholder="Line แจ้งเตือน" class="form-control" value="{{$item['token']}}">
-    <input id="typeform" name="typeform" type="text" placeholder="typeform" class="form-control" value="{{$item['typeform']}}">
+    <input id="typeform" name="typeform" type="hidden" placeholder="typeform" class="form-control" value="{{$item['typeform']}}">
     <div class="grid grid-cols-1 md:grid-cols-6">
         <div class="p-6">
             <div class="flex items-center justify-center">
