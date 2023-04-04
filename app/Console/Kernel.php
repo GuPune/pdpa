@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
-        $schedule->command('cron:report')->everyMinute(); //แก้ไขบรรนี้เพื่อ เพื่อกำหนดความถี่ ในการทำงานของ command
+        $schedule->command('cron:report')->hourly(); //แก้ไขบรรนี้เพื่อ เพื่อกำหนดความถี่ ในการทำงานของ command
     }
 
     /**
