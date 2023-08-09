@@ -30,7 +30,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-6">
                         <div class="p-6">
                             <div class="flex items-center justify-center center detail">
-                                <div class="ml-4 text-lg leading-7">สาขา : {{$branch}}</div>
+                                <div class="ml-4 text-lg leading-7">{{$branch}}</div>
                             </div>
                         </div>
                     </div>
