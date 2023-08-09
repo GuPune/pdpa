@@ -14,7 +14,7 @@
     <!-- global css -->
 
     <!-- end of global css -->
-    <link href="{{ asset('template/vendors/iCheck/css/all.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('template/vendors/iCheck/css/all.css') }}" rel="stylesheet">
     <!--page level css -->
     <link href="{{ asset('template/vendors/iCheck/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('template/assets/css/pages/alertmessage.css') }}" rel="stylesheet">
@@ -57,7 +57,7 @@
     <script src="{{ asset("template/assets/js/pages/todolist.js") }}"></script>
     <script src="{{ asset("template/assets/js/pages/dashboard.js") }}"></script>
     <script src="{{ asset("template/vendors/datatables/js/jquery.dataTables.js") }}"></script>
-    <script src="{{ asset("template/vendors/datatables/js/dataTables.bootstrap.js") }}"></script>
+    <script src="{{ asset("template/vendors/datatables/js/dataTables.bootstrap.js") }}"></script> --}}
 
 
 
