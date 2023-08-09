@@ -72,7 +72,7 @@
                                 <td class="text-center">
                                     @php
                                          $all = $items->token;
-                                    $a = 'http://consentservice.iddriver.com/consent/';
+                                    $a = 'http://consent.iddriver.com/consent/';
                                     $b = "$a$all";
 
 
