@@ -60,10 +60,7 @@ class PdpaController extends Controller
             'linenoti' => $request->linenoti,
             'agree' => $request->agree,
             'status' => 'Y',
-            'token' => $randomString,
-            'typeform' => $request->currentValue,
-            'bt_name' => $request->bt_name,
-            'bt_color' => $request->bt_color,
+            'token' => $randomString
         ]);
 
 
@@ -123,11 +120,7 @@ class PdpaController extends Controller
             'linenoti' => $request->linenoti,
             'agree' => $request->agree,
             'des' => $request->detail,
-            'branch_id' => $request->branch_id,
-            'bt_name' => $request->bt_name,
-            'bt_color' => $request->bt_color,
-            'des2' => $request->details2,
-            'typeform' => $request->radicurrnet,
+            'branch_id' => $request->branch_id
         ]);
 
 

@@ -28,8 +28,6 @@ class AdminAuthenticate
             return redirect('/cms/login');
         }
 
-
-
         return $next($request);
 
     }

@@ -15,7 +15,7 @@ class AdminModel extends Authenticatable
 
     protected $guard = 'admin';
 
-
+    protected $table = 'tb_admin';
 
     protected $fillable = [
         'name',

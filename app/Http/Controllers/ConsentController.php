@@ -53,17 +53,20 @@ class ConsentController extends Controller
     {
         //
 
+
+
         $getpapd = PdpaForm::where('token',$id)->where('status','Y')->first();
         $collection = collect($getpapd);
+
 
         if($getpapd){
             $getpapd->branch_id;
             $branc = Branch::where('id',$getpapd->branch_id)->first();
+
             $collection->prepend($branc->name, 'branch');
         }else {
             return abort(500);
         }
-
 
     return view('page.consent.index')->with('item',$collection);
     }
