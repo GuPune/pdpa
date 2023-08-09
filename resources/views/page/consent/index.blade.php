@@ -29,7 +29,7 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center">
-                    <img src="http://consentservice.iddriver.com/img/1.png" alt="logo" width="100" height="100">
+                    <img src="http://consent.iddriver.com/img/1.png" alt="logo" width="100" height="100">
                 </div>
 
 
@@ -37,7 +37,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-6">
                         <div class="p-6">
                             <div class="flex items-center justify-center">
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">สาขา :   {{$item['branch']}}</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">{{$item['branch']}}</a></div>
                             </div>
                         </div>
                     </div>
