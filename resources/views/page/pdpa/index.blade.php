@@ -73,7 +73,7 @@
                                     @php
                                     /////////////////
                                          $all = $items->token;
-                                    $a = 'http://consent.iddriver.com/consent/';
+                                    $a = 'https://consent.iddriver.com/consent/';
                                     $b = "$a$all";
 
 
